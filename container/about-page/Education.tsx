@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { Heading, RoundButton } from '@/components';
-import Amikom from '@/public/education/amikom.png';
+import Amikom from '@/public/education/amikom.jpg';
 
 export default function Education() {
 	const [hovered, setHovered] = useState(false);
