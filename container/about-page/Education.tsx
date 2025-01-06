@@ -37,7 +37,7 @@ export default function Education() {
 									<p className="ms-2">• Chairperson of EXPO AMCC 2024</p>
 									<p className="ms-2">• Vice Chairperson of FIRSTMEET AMCC 2024</p>
 									<p className="ms-2">• Computer Network Coordinator AMCC 2024</p>
-									<p className="ms-2">• KSK Coordinator of AGS 2024</p>
+									<p className="ms-2">• KSK Coordinator of AGS 2025</p>
 								</div>
 							</div>
 						</div>
