@@ -1,0 +1,168 @@
+import React, { useRef, useState } from 'react';
+import ButtonContact from '@/components/ButtonContact';
+import { Toaster, toast } from 'sonner';
+
+const Form = () => {
+	const nameRef = useRef<HTMLInputElement>(null);
+	const companyRef = useRef<HTMLInputElement>(null);
+	const goalRef = useRef<HTMLInputElement>(null);
+	const dateRef = useRef<HTMLInputElement>(null);
+	const budgetRef = useRef<HTMLInputElement>(null);
+	const emailRef = useRef<HTMLInputElement>(null);
+	const detailsRef = useRef<HTMLInputElement>(null);
+
+	const handleSendInquiry = () => {
+		const name = nameRef.current?.value.trim() || '';
+		const company = companyRef.current?.value.trim() || '';
+		const goal = goalRef.current?.value.trim() || '';
+		const date = dateRef.current?.value.trim() || '';
+		const budget = budgetRef.current?.value.trim() || '';
+		const email = emailRef.current?.value.trim() || '';
+
+		// Validasi: Jika ada field yang kosong, tampilkan toaster error
+		if (!name || !company || !goal || !date || !budget || !email) {
+			toast.error('All fields are required except Additional Details.');
+			return;
+		}
+
+		const details = detailsRef.current?.value.trim() || '';
+
+		const subject = `Inquiry from ${name}`;
+		const body =
+			`Hi, my name is ${name}\n` +
+			`I work with ${company}\n` +
+			`I’m looking for a partner to help me with: ${goal}\n` +
+			`Aiming to complete it by: ${date}\n` +
+			`My budget range is: ${budget}\n` +
+			`You can reach me at: ${email}\n` +
+			`Additional details: ${details}`;
+
+		const mailtoURL = `https://mail.google.com/mail/u/0/?fs=0&to=muhananaufal8@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}&tf=cm`;
+
+		toast.success('Inquiry sent successfully!');
+		window.location.href = mailtoURL;
+	};
+
+	return (
+		<section className="w-full padding-x padding-y">
+			<div className="w-full flex flex-col gap-[15px]">
+				<div className="w-full flex gap-[15px] sm:flex-col xm:flex-col">
+					<div className="flex gap-[10px] w-[50%] sm:w-full xm:w-full sm:flex-col xm:flex-col">
+						<div className="xl:min-w-max lg:min-w-max md:min-w-max">
+							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry">Hi! My name is</h2>
+						</div>
+						<div className="w-full">
+							<input
+								type="text"
+								placeholder="Enter your name*"
+								ref={nameRef}
+								className="paragraph bg-transparent w-full font-NeueMontreal font-normal text-secondry bg-background border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out sm:w-full xm:w-full"
+							/>
+						</div>
+					</div>
+					<div className="flex gap-[10px] w-[50%] sm:w-full xm:w-full sm:flex-col xm:flex-col">
+						<div className="xl:min-w-max lg:min-w-max md:min-w-max">
+							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry">, and I work with</h2>
+						</div>
+						<div className="w-full">
+							<input
+								type="text"
+								placeholder="Compny name type here*"
+								ref={companyRef}
+								className="paragraph bg-transparent w-full font-NeueMontreal font-normal text-secondry bg-background border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out sm:w-full xm:w-full"
+							/>
+						</div>
+					</div>
+				</div>
+				{/* Input lainnya */}
+				<div className="w-full flex gap-[10px]">
+					<div className="flex gap-[10px] w-full sm:flex-col xm:flex-col">
+						<div className="xl:min-w-max lg:min-w-max md:min-w-max">
+							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry">I&apos;m seeking a partner to assist me with</h2>
+						</div>
+						<div className="w-full">
+							<input
+								type="text"
+								placeholder="Your goal type here*"
+								ref={goalRef}
+								className="paragraph bg-transparent font-NeueMontreal font-normal text-secondry bg-background border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out w-full sm:w-full xm:w-full"
+							/>
+						</div>
+					</div>
+				</div>
+				<div className="w-full flex gap-[10px]">
+					<div className="flex gap-[10px] w-full sm:flex-col xm:flex-col">
+						<div className="xl:min-w-max lg:min-w-max md:min-w-max">
+							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry">Aiming to have it completed by</h2>
+						</div>
+						<div className="w-full">
+							<input
+								type="text"
+								placeholder="Date*"
+								ref={dateRef}
+								className="paragraph bg-transparent font-NeueMontreal font-normal text-secondry bg-background border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out w-full sm:w-full xm:w-full"
+							/>
+						</div>
+					</div>
+				</div>
+				<div className="w-full flex gap-[10px]">
+					<div className="flex gap-[10px] w-full sm:flex-col xm:flex-col">
+						<div className="xl:min-w-max lg:min-w-max md:min-w-max">
+							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry">My budget for this project is approximately</h2>
+						</div>
+						<div className="w-full">
+							<input
+								type="text"
+								placeholder="Select*"
+								ref={budgetRef}
+								className="paragraph bg-transparent font-NeueMontreal font-normal text-secondry bg-background border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out w-full sm:w-full xm:w-full"
+							/>
+						</div>
+					</div>
+				</div>
+				<div className="w-full flex gap-[10px]">
+					<div className="flex gap-[10px] w-full sm:flex-col xm:flex-col">
+						<div className="xl:min-w-max lg:min-w-max md:min-w-max">
+							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry">Feel free to reach out to me at</h2>
+						</div>
+						<div className="w-full">
+							<input
+								type="email"
+								placeholder="name@example.com"
+								ref={emailRef}
+								className="paragraph bg-transparent font-NeueMontreal font-normal text-secondry bg-background border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out w-full sm:w-full xm:w-full"
+							/>
+						</div>
+						<div className="xl:min-w-max lg:min-w-max md:min-w-max">
+							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry">to discuss further.</h2>
+						</div>
+					</div>
+				</div>
+				<div className="w-full flex gap-[10px]">
+					<div className="flex gap-[10px] w-full sm:flex-col xm:flex-col">
+						<div className="xl:min-w-max lg:min-w-max md:min-w-max">
+							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry">Optionally, I&apos;m sharing more:</h2>
+						</div>
+						<div className="w-full">
+							<input
+								type="text"
+								placeholder="Product details type here..."
+								ref={detailsRef}
+								className="paragraph bg-transparent font-NeueMontreal font-normal text-secondry bg-background border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out w-full sm:w-full xm:w-full"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div className="w-full flex items-center justify-end sm:justify-start xm:justify-start pt-[50px]">
+				<div className="flex sm:flex-col xm:flex-col gap-[25px]">
+					<div className="w-fit flex items-center justify-between bg-secondry cursor-pointer rounded-full group">
+						<ButtonContact bgcolor="#212121" title="send inquiry" className="bg-white" onClick={handleSendInquiry} />
+					</div>
+				</div>
+			</div>
+		</section>
+	);
+};
+
+export default Form;
