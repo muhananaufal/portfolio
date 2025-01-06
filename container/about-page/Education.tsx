@@ -1,10 +1,8 @@
 'use client';
 import Image from 'next/image';
 import { useState } from 'react';
-import { LinkHover } from '@/animation';
-import { footerItems } from '@/constants';
 import { Heading, RoundButton } from '@/components';
-import Amikom from '@/public/Amikom.jpg';
+import Amikom from '@/public/education/amikom.png';
 
 export default function Education() {
 	const [hovered, setHovered] = useState(false);
