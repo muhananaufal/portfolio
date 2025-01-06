@@ -1,7 +1,3 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { certificationsItems } from '@/constants';
-
 export default function Hero() {
 
 	return (

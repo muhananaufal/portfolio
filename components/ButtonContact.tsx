@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Rounded from './Rounded';
 import { ArrowUpRight } from 'lucide-react';
 

@@ -1,5 +1,4 @@
 'use client';
-import { TlogoMarqueeProps } from '@/types';
 import { motion, useScroll, useSpring, useTransform, useMotionValue, useVelocity, useAnimationFrame, wrap } from 'framer-motion';
 import { useRef } from 'react';
 

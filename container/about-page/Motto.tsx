@@ -1,8 +1,5 @@
 'use client';
-import { useState } from 'react';
 import { Marquee } from '@/components';
-import { TextHover } from '@/animation';
-import { AnimatePresence, motion } from 'framer-motion';
 
 export default function Motto() {
 	return (

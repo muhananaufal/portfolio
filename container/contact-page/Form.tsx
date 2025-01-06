@@ -1,6 +1,6 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import ButtonContact from '@/components/ButtonContact';
-import { Toaster, toast } from 'sonner';
+import { toast } from 'sonner';
 
 const Form = () => {
 	const nameRef = useRef<HTMLInputElement>(null);
