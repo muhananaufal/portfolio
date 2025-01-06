@@ -31,7 +31,7 @@ export default function Publication() {
 					</Link>
 				</h2>
 			</div>
-			<div className="w-full border-b border-[#21212155] my-[50px] py-[20px]"></div>
+			<div className="w-full border-b border-[#21212155] md:my-[25px] md:py-[10px] lg:my-[50px] lg:py-[20px] xl:my-[50px] xl:py-[20px]"></div>
 			<motion.div
 				className="w-full padding-x py-[30px]"
 				layout
