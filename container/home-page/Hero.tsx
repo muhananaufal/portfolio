@@ -1,8 +1,6 @@
 'use client';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import naufalGif from '@/public/gif/naufal.gif';
-import fireflyGif2 from '@/public/gif/firefly2.gif';
 
 export default function Hero() {
 	return (
@@ -28,7 +26,7 @@ export default function Hero() {
 										<Image
 											width={120}
 											height={50}
-											src={fireflyGif2}
+											src="https://s7.gifyu.com/images/SXgCw.gif"
 											alt="img"
 											className="w-auto h-[95px] lg:w-auto lg:h-auto md:w-[100px] md:h-[63px] sm:w-[74px] sm:h-[45px] xm:w-[64px] xm:h-[40px] object-cover xl:mt-[15px] mt-[10px] rounded-[10px]"
 											unoptimized
@@ -40,7 +38,7 @@ export default function Hero() {
 							</h1>
 						</div>
 						<div>
-							<Image src={naufalGif} alt="awwwards" width={60} height={60} className="w-fit h-fit" unoptimized/>
+							<Image src="https://s7.gifyu.com/images/SXgFV.gif" alt="awwwards" width={60} height={60} className="w-fit h-fit" unoptimized />
 						</div>
 					</div>
 				</div>
