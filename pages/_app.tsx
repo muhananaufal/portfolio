@@ -3,7 +3,6 @@ import { Footer, Navbar } from '@/components';
 import { AnimatePresence } from 'framer-motion';
 import { Toaster } from 'sonner';
 import { useEffect } from 'react';
-import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export default function App({ Component, pageProps, router }: { Component: any; pageProps: any; router: any }) {
 	useEffect(() => {
@@ -43,7 +42,6 @@ export default function App({ Component, pageProps, router }: { Component: any; 
 			<Toaster richColors closeButton expand={true} />
 			<Navbar />
 			<AnimatePresence mode="wait">
-				<SpeedInsights />
 
 				<Component key={router.route} {...pageProps} />
 			</AnimatePresence>
