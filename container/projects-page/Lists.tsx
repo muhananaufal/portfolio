@@ -13,7 +13,7 @@ export default function Lists() {
 			</div>
 			<section className="w-full relative z-30 padding-y rounded-t-[20px] bg-[#DBE2EF]">
 				<div>
-					<h2 className="sub-heading font-normal padding-x font-NeueMontreal text-secondry">
+					<h2 className="sub-heading font-normal padding-x font-NeueMontreal text-secondry blend-target">
 						Showcasing Your Vision. Dive into the projects that reflect your strategic thinking and creative excellence. Each project is crafted with purpose, designed to inspire action, and make a lasting impression.
 					</h2>
 				</div>

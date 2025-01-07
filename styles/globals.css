@@ -132,3 +132,68 @@ body {
 .h {
 	height: calc(100vh + 600px);
 }
+
+.blend-target {
+	cursor: none;
+}
+
+.preserve-3d {
+	transform-style: preserve-3d;
+}
+
+.textContainer {
+	margin-left: 10vw;
+	position: relative;
+	cursor: pointer;
+	transition: transform 0.4s;
+	transform-style: preserve-3d;
+}
+
+.textContainer p {
+	font-size: 12vw;
+	padding-bottom: 5vb;
+	font-weight: 700;
+	margin: 0px;
+	transition: all 0.4s;
+	color: white;
+	line-height: 8vw;
+}
+
+.textContainer .secondary {
+	transform: rotateX(-90deg) translateY(3.5vw);
+	transform-origin: bottom center;
+	position: absolute;
+	top: 0;
+	color: black;
+	opacity: 0;
+}
+
+.textContainer:hover {
+	transform: rotateX(90deg);
+}
+
+.textContainer:hover .secondary {
+	opacity: 1;
+}
+
+.textContainer:hover .primary {
+	transform: translateY(-100%);
+	opacity: 0;
+}
+
+.imageGallery {
+	display: flex;
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+	z-index: 9999;
+}
+
+.imageGallery img {
+	width: 30vw;
+	position: absolute;
+	display: none;
+	z-index: 9999;
+	;
+	transform: translateX(-50%) translateY(-50%);
+}

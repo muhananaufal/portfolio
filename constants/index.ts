@@ -24,6 +24,11 @@ export const navbarItems = [
 	},
 	{
 		id: 5,
+		title: 'Rewinds',
+		href: '/rewinds',
+	},
+	{
+		id: 6,
 		title: 'Contact us',
 		href: '/contact',
 	},

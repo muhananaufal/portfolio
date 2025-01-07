@@ -11,3 +11,7 @@ export { default as Ready } from './Ready';
 export { default as RoundButton } from './RoundButton';
 export { default as Rounded } from './Rounded';
 export { default as Tags } from './Tags';
+export { default as MaskCursor } from './MaskCursor';
+export { default as Text3d } from './Text3d';
+export { default as MouseImageGallery } from './MouseImageGallery';
+export { default as ComingSoon } from './ComingSoon';

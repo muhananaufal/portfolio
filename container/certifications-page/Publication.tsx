@@ -25,7 +25,7 @@ export default function Publication() {
 			<div className="pl-[50px] sm:px-[20px] xm:px-[20px]">
 				<h2 className="sub-heading font-medium font-NeueMontreal text-white">
 					Get closer to my
-					<Link href="https://www.cloudskillsboost.google/public_profiles/3a633293-2b34-40d7-a7e0-cc2413ec4fad" className="sub-heading font-medium font-NeueMontreal dark link-flash cursor-pointer">
+					<Link href="https://www.cloudskillsboost.google/public_profiles/3a633293-2b34-40d7-a7e0-cc2413ec4fad" className="sub-heading font-medium font-NeueMontreal dark link-flash blend-target">
 						{' '}
 						Google Cloud Profile:{' '}
 					</Link>

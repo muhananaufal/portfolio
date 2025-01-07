@@ -10,6 +10,7 @@ const routes = {
 	'/articles': 'Articles',
 	'/projects': 'Projects',
 	'/certifications': 'Certifications',
+	'/rewinds': 'Rewinds',
 	'/contact': 'Contact Us',
 };
 
@@ -49,8 +50,8 @@ export default function Curve({ children, backgroundColor }) {
 
 	return (
 		<div style={{ backgroundColor }}>
-			<div style={{ opacity: dimensions.width == null ? 1 : 0 }} className="fixed h w-full pointer-events-none left-0 top-0 z-50 bg-black" />
-			<motion.p className="absolute left-1/2 top-[40%] text-white text-[50px] z-[60] -translate-x-1/2 text-center" {...anim(text(router.route === '/' ? totalGreetingDuration : 0))}>
+			<div style={{ opacity: dimensions.width == null ? 1 : 0 }} className="fixed h w-full pointer-events-none left-0 top-0 z-8999 bg-black" />
+			<motion.p className="absolute left-1/2 top-[40%] text-white text-[50px] z-[9989] -translate-x-1/2 text-center" {...anim(text(router.route === '/' ? totalGreetingDuration : 0))}>
 				{router.route === '/' ? greetings[currentGreeting] : routes[router.route]}
 			</motion.p>
 
@@ -78,7 +79,7 @@ const SVG = ({ height, width, route, totalGreetingDuration }) => {
 	`;
 
 	return (
-		<motion.svg className="fixed h w-full pointer-events-none left-0 top-0 z-50" {...anim(translate(route === '/' ? totalGreetingDuration : 0))}>
+		<motion.svg className="fixed h w-full pointer-events-none left-0 top-0 z-[8999]" {...anim(translate(route === '/' ? totalGreetingDuration : 0))}>
 			<motion.path {...anim(curve(initialPath, targetPath, route === '/' ? totalGreetingDuration : 0))} />
 		</motion.svg>
 	);

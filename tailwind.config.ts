@@ -10,6 +10,9 @@ const config: Config = {
 				marquee: '#112D4E',
 				about: '#3F72AF',
 			},
+			maskImage: {
+				svgMask: 'url("/svg/mask.svg")',
+			},
 		},
 		fontFamily: {
 			FoundersGrotesk: ['FoundersGrotesk', 'sans-serif'],

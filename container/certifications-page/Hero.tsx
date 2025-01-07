@@ -6,7 +6,7 @@ export default function Hero() {
 				<div className="w-full flex flex-col ">
 					<div className="w-full margin padding-x">
 						<div>
-							<h1 className="heading tracking-[-1.3px] text-[#212121] font-semibold font-FoundersGrotesk uppercase">CERTIFICATIONS</h1>
+							<h1 className="heading tracking-[-1.3px] text-[#212121] font-semibold font-FoundersGrotesk uppercase blend-target">CERTIFICATIONS</h1>
 						</div>
 					</div>
 				</div>

@@ -3,7 +3,7 @@ import { HeroAbout, MySkills, Motto, Education } from '@/container';
 import { useEffect } from 'react';
 import { Curve, Ready } from '@/components';
 
-export default function Services() {
+export default function About() {
 	useEffect(() => {
 		(async () => {
 			const LocomotiveScroll = (await import('locomotive-scroll')).default;

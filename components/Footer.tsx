@@ -11,7 +11,7 @@ export default function Footer() {
 		<footer className="w-full padding-x z-30 relative pt-[40px] bg-[#C9CED4] flex flex-col justify-between rounded-t-[20px] mt-[-20px]">
 			<div className="w-full flex justify-between sm:flex-col xm:flex-col">
 				<div className="flex flex-col justify-between sm:w-full xm:w-full w-1/2">
-					<h1 className="text-[150px] leading-[115px] lg:text-[130px] lg:leading-[98px] md:text-[100px] md:leading-[75px] sm:text-[74px] sm:leading-[68px] xm:text-[64px] xm:leading-[48px] font-semibold font-FoundersGrotesk text-secondry uppercase">
+					<h1 className="text-[150px] leading-[115px] lg:text-[130px] lg:leading-[98px] md:text-[100px] md:leading-[75px] sm:text-[74px] sm:leading-[68px] xm:text-[64px] xm:leading-[48px] font-semibold font-FoundersGrotesk text-secondry uppercase blend-target">
 						<TextMask>{phrase}</TextMask>
 					</h1>
 				</div>

@@ -23,3 +23,8 @@ export { default as HeroContact } from './contact-page/Hero';
 export { default as Form } from './contact-page/Form';
 export { default as Socials } from './contact-page/Socials';
 export { default as FAQ } from './contact-page/Faq';
+
+// rewinds page
+export { default as HeroRewinds } from './rewinds-page/Hero';
+export { default as Years } from './rewinds-page/Years';
+export { default as Gallery } from './rewinds-page/Gallery';

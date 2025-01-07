@@ -49,7 +49,7 @@ const Form = () => {
 				<div className="w-full flex gap-[15px] sm:flex-col xm:flex-col">
 					<div className="flex gap-[10px] w-[50%] sm:w-full xm:w-full sm:flex-col xm:flex-col">
 						<div className="xl:min-w-max lg:min-w-max md:min-w-max">
-							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry">Hi! My name is</h2>
+							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry blend-target">Hi! My name is</h2>
 						</div>
 						<div className="w-full">
 							<input
@@ -62,7 +62,7 @@ const Form = () => {
 					</div>
 					<div className="flex gap-[10px] w-[50%] sm:w-full xm:w-full sm:flex-col xm:flex-col">
 						<div className="xl:min-w-max lg:min-w-max md:min-w-max">
-							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry">, and I work with</h2>
+							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry blend-target">, and I work with</h2>
 						</div>
 						<div className="w-full">
 							<input
@@ -78,7 +78,7 @@ const Form = () => {
 				<div className="w-full flex gap-[10px]">
 					<div className="flex gap-[10px] w-full sm:flex-col xm:flex-col">
 						<div className="xl:min-w-max lg:min-w-max md:min-w-max">
-							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry">I&apos;m seeking a partner to assist me with</h2>
+							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry blend-target">I&apos;m seeking a partner to assist me with</h2>
 						</div>
 						<div className="w-full">
 							<input
@@ -93,7 +93,7 @@ const Form = () => {
 				<div className="w-full flex gap-[10px]">
 					<div className="flex gap-[10px] w-full sm:flex-col xm:flex-col">
 						<div className="xl:min-w-max lg:min-w-max md:min-w-max">
-							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry">Aiming to have it completed by</h2>
+							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry blend-target">Aiming to have it completed by</h2>
 						</div>
 						<div className="w-full">
 							<input
@@ -108,7 +108,7 @@ const Form = () => {
 				<div className="w-full flex gap-[10px]">
 					<div className="flex gap-[10px] w-full sm:flex-col xm:flex-col">
 						<div className="xl:min-w-max lg:min-w-max md:min-w-max">
-							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry">My budget for this project is approximately</h2>
+							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry blend-target">My budget for this project is approximately</h2>
 						</div>
 						<div className="w-full">
 							<input
@@ -123,7 +123,7 @@ const Form = () => {
 				<div className="w-full flex gap-[10px]">
 					<div className="flex gap-[10px] w-full sm:flex-col xm:flex-col">
 						<div className="xl:min-w-max lg:min-w-max md:min-w-max">
-							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry">Feel free to reach out to me at</h2>
+							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry blend-target">Feel free to reach out to me at</h2>
 						</div>
 						<div className="w-full">
 							<input
@@ -134,14 +134,14 @@ const Form = () => {
 							/>
 						</div>
 						<div className="xl:min-w-max lg:min-w-max md:min-w-max">
-							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry">to discuss further.</h2>
+							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry blend-target">to discuss further.</h2>
 						</div>
 					</div>
 				</div>
 				<div className="w-full flex gap-[10px]">
 					<div className="flex gap-[10px] w-full sm:flex-col xm:flex-col">
 						<div className="xl:min-w-max lg:min-w-max md:min-w-max">
-							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry">Optionally, I&apos;m sharing more:</h2>
+							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry blend-target">Optionally, I&apos;m sharing more:</h2>
 						</div>
 						<div className="w-full">
 							<input

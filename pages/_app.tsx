@@ -3,17 +3,29 @@ import { Footer, Navbar } from '@/components';
 import { AnimatePresence } from 'framer-motion';
 import { Toaster } from 'sonner';
 import { useDisableInteractions } from '@/hooks/useDisableInteractions';
+import MaskCursor from '@/components/MaskCursor';
 
 export default function App({ Component, pageProps, router }: { Component: any; pageProps: any; router: any }) {
-	useDisableInteractions();
+	// useDisableInteractions();
+
+	const routesWithDisabledCursor = ['/articles', '/rewinds/2023', '/rewinds/2024', '/rewinds/2025'];
+	const isActive = !routesWithDisabledCursor.includes(router.route);
+	const routesWithoutNavbarAndFooter = ['/articles', '/rewinds/2023', '/rewinds/2024', '/rewinds/2025'];
+
+	const shouldShowLayout = !routesWithoutNavbarAndFooter.includes(router.route);
+
 	return (
 		<div className="select-none">
 			<Toaster richColors closeButton expand={true} />
-			<Navbar />
+
+			{shouldShowLayout && <Navbar />}
+
 			<AnimatePresence mode="wait">
+				<MaskCursor isActive={isActive} />
 				<Component key={router.route} {...pageProps} />
 			</AnimatePresence>
-			<Footer />
+
+			{shouldShowLayout && <Footer />}
 		</div>
 	);
 }

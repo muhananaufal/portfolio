@@ -4,7 +4,7 @@ import { Marquee } from '@/components';
 export default function Motto() {
 	return (
 		<section className="w-full bg-marquee z-25 relative padding-y rounded-t-[20px] mt-[-20px]">
-			<div className="w-[30%] sm:w-full xm:w-full ps-[50px] pb-[20px]">
+			<div className="w-[30%] sm:w-full xm:w-full padding-x pb-[20px]">
 				<h3 className="paragraph font-medium text-white font-NeueMontreal">My Motto</h3>
 			</div>
 			<Marquee

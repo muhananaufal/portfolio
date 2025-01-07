@@ -11,7 +11,7 @@ export default function Faq() {
 
 	return (
 		<section className="w-full padding-y mt-[-10px] bg-background z-30 relative rounded-t-[20px]">
-			<h1 className="sub-heading padding-x font-medium font-NeueMontreal text-secondry pb-[50px]">
+			<h1 className="sub-heading padding-x font-medium font-NeueMontreal text-secondry pb-[50px] blend-target">
 				A few things you <br />
 				may want to ask us:
 			</h1>
@@ -19,15 +19,15 @@ export default function Faq() {
 				<div key={item.id} className={`w-full flex py-[10px] flex-col ${item.id == 1 ? 'border-y border-[#21212155]' : 'border-b border-[#21212155]'}`}>
 					<div className="w-full flex items-center justify-between sm:gap-[15px] xm:gap-[15px] py-[10px] padding-x">
 						<div className="w-[50%] sm:w-full xm:w-full">
-							<h1 className="paragraph font-normal font-NeueMontreal text-secondry">{item.question}</h1>
+							<h1 className="paragraph font-normal font-NeueMontreal text-secondry blend-target">{item.question}</h1>
 						</div>
 						<div className="w-[50%] sm:w-full xm:w-full flex items-center justify-between">
 							<div>
-								<h3 className="paragraph font-normal font-NeueMontreal text-secondry">{item.title}</h3>
+								<h3 className="paragraph font-normal font-NeueMontreal text-secondry blend-target">{item.title}</h3>
 							</div>
 							<div className="flex items-end justify-end">
 								<button
-									className={`paragraph font-normal font-NeueMontreal uppercase transition-all duration-200 ease-in-out ${activeAccordion === item.id ? 'text-gray-300' : 'text-secondry link-flash'}`}
+									className={`blend-target paragraph font-normal font-NeueMontreal uppercase transition-all duration-200 ease-in-out ${activeAccordion === item.id ? 'text-gray-300' : 'text-secondry link-flash'}`}
 									onClick={() => toggleAccordion(item.id)}
 								>
 									{activeAccordion === item.id ? 'read' : 'read'}
@@ -51,7 +51,7 @@ export default function Faq() {
 									>
 										<div className="flex flex-col gap-[20px] py-[30px]">
 											<div className="">
-												<p className="paragraph tracking-wider font-normal font-NeueMontreal text-secondry">{item.description}</p>
+												<p className="paragraph tracking-wider font-normal font-NeueMontreal text-secondry blend-target">{item.description}</p>
 											</div>
 										</div>
 									</motion.div>

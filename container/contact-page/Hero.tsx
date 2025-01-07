@@ -27,15 +27,18 @@ export default function Hero() {
 									unoptimized
 								/>
 							</motion.span>
-							<h1 className="heading tracking-[-1.3px] text-[#212121] font-semibold font-FoundersGrotesk uppercase">
+							<h1 className="heading tracking-[-1.3px] text-[#212121] font-semibold font-FoundersGrotesk uppercase blend-target">
 								LET’S START <br />
 							</h1>
 						</div>
+						<h1 className='blend-target'>
+
 						A PROJECT TOGETHER
+						</h1>
 					</h1>
 				</div>
-				<div className="w-full pb-[15px]">
-					<h3 className="paragraph font-medium text-secondry font-NeueMontreal">Fill the form below:</h3>
+				<div className="w-full">
+					<h3 className="paragraph font-medium text-secondry font-NeueMontreal blend-target">Fill the form below:</h3>
 				</div>
 			</div>
 		</section>

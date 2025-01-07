@@ -1,5 +1,7 @@
 {
 	"compilerOptions": {
+		"target": "ES2015",
+		"downlevelIteration": true,
 		"lib": ["dom", "dom.iterable", "esnext"],
 		"allowJs": true,
 		"skipLibCheck": true,
@@ -21,6 +23,6 @@
 			"@/*": ["./*"]
 		}
 	},
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/Curve.jsx"],
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/Curve.jsx", "components/MouseImageGallery.tsx", "components/MIG.jsx"],
 	"exclude": ["node_modules"]
 }

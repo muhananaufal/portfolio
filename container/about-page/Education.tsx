@@ -12,15 +12,15 @@ export default function Education() {
 			<div className="pl-[50px] sm:px-[20px] xm:px-[20px]">
 				<h2 className="sub-heading font-medium font-NeueMontreal text-secondry">
 					The fastest path to growth is through
-					<span className="sub-heading font-medium font-NeueMontreal link-flash cursor-pointer"> trying </span>
+					<span className="sub-heading font-medium font-NeueMontreal link-flash blend-target"> trying </span>
 					and
-					<span className="sub-heading font-medium font-NeueMontreal link-flash cursor-pointer"> failing.</span>
+					<span className="sub-heading font-medium font-NeueMontreal link-flash blend-target"> failing.</span>
 				</h2>
 			</div>
 			<div className="w-full border-b border-[#21212155] my-[50px] py-[20px]"></div>
 			<div className="w-full flex justify-between padding-x sm:flex-col xm:flex-col gap-[30px]">
 				<div className="flex flex-col gap-[30px]">
-					<Heading title="My Education" />
+					<Heading title="My Education" className='blend-target'/>
 					<div className="w-fit flex items-center justify-between bg-secondry cursor-pointer rounded-full group" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
 						<RoundButton href="https://home.amikom.ac.id/" title="UNIVERSITAS AMIKOM YOGYAKARTA" bgcolor="#000" className="bg-white text-black" style={{ color: '#fff' }} />
 					</div>
