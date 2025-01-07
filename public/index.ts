@@ -1,5 +1,8 @@
 // default
 export { default as eyes } from './eyes.svg';
+export {default as firefly1} from './gif/firefly1.gif'
+export {default as firefly2} from './gif/firefly2.gif'
+export {default as naufal} from './gif/naufal.gif'
 
 // services page
 export { default as gcp } from './skills/gcp.png';

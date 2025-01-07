@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { firefly2 } from '@/public';
 
 export default function Hero() {
 	return (
@@ -20,7 +21,7 @@ export default function Hero() {
 								<Image
 									width={120}
 									height={50}
-									src="https://s7.gifyu.com/images/SXgUc.gif"
+									src={firefly2}
 									alt="img"
 									className="w-auto h-[95px] lg:w-auto lg:h-auto md:w-[100px] md:h-[63px] sm:w-[74px] sm:h-[45px] xm:w-[64px] xm:h-[40px] object-cover xl:mt-[15px] mt-[10px] rounded-[10px]"
 									unoptimized
