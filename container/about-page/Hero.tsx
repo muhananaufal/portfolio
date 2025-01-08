@@ -14,7 +14,10 @@ export default function Hero() {
 								A <span className="font-bold blend-target">Web Developer</span> and <span className="font-bold blend-target">Cloud Computing</span> enthusiast passionate about designing APIs, ensuring seamless system integration, and
 								building scalable solutions.
 							</p>
-							<p className="tracking-wider">Outside of work, I enjoy immersing myself in anime, exploring diverse music genres, and discovering new places through traveling.</p>
+							<p className="tracking-wider">
+								Outside of work, I enjoy immersing myself in anime, exploring diverse music genres, and discovering new places through traveling. I have limited working proficiency in <span className="font-bold blend-target">English</span>{' '}
+								and native or bilingual proficiency in <span className="font-bold blend-target">Indonesian</span>.
+							</p>
 						</div>
 					</div>
 				</div>
