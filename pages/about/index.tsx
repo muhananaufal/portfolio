@@ -1,5 +1,5 @@
 'use client';
-import { HeroAbout, MySkills, Motto, Education } from '@/container';
+import { HeroAbout, MySkills, Motto, EducationAndExperience } from '@/container';
 import { useEffect } from 'react';
 import { Curve, Ready } from '@/components';
 
@@ -15,7 +15,7 @@ export default function About() {
 			<Curve backgroundColor={'#DBE2EF'}>
 				<HeroAbout />
 				<MySkills />
-				<Education />
+				<EducationAndExperience />
 				<Motto />
 				<Ready />
 			</Curve>

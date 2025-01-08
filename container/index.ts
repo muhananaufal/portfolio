@@ -4,7 +4,7 @@ export { default as Hero } from './home-page/Hero';
 // about page
 export { default as HeroAbout } from './about-page/Hero';
 export { default as MySkills } from './about-page/MySkills';
-export { default as Education } from './about-page/Education';
+export { default as EducationAndExperience } from './about-page/EducationAndExperience';
 export { default as Motto } from './about-page/Motto';
 
 // projects page

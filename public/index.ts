@@ -27,3 +27,8 @@ export { default as dasar_ux } from './dicoding/dasar_ux.jpg';
 export { default as dasar_javascript } from './dicoding/dasar_javascript.jpg';
 export { default as dasar_git } from './dicoding/dasar_git.jpg';
 export { default as dasar_sql } from './dicoding/dasar_sql.jpg';
+
+
+// education & experience
+export { default as amikom } from './education/amikom.jpg';
+export { default as megadata } from './experience/megadata.jpg';
