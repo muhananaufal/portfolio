@@ -1,7 +1,7 @@
 'use client';
 import { useEffect } from 'react';
 import { Curve } from '@/components';
-import { HeroRewinds, Years } from '@/container';
+import { HeroRewinds, Video, Years } from '@/container';
 
 export default function Rewinds() {
 	useEffect(() => {
@@ -14,7 +14,8 @@ export default function Rewinds() {
 		<>
 			<Curve backgroundColor={'#DBE2EF'}>
 				<HeroRewinds />
-				<Years/>
+				<Years />
+				<Video/>
 			</Curve>
 		</>
 	);

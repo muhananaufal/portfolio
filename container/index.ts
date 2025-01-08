@@ -28,3 +28,4 @@ export { default as FAQ } from './contact-page/Faq';
 export { default as HeroRewinds } from './rewinds-page/Hero';
 export { default as Years } from './rewinds-page/Years';
 export { default as Gallery } from './rewinds-page/Gallery';
+export { default as Video } from './rewinds-page/Video';

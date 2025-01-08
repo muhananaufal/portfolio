@@ -6,7 +6,7 @@ import { useDisableInteractions } from '@/hooks/useDisableInteractions';
 import MaskCursor from '@/components/MaskCursor';
 
 export default function App({ Component, pageProps, router }: { Component: any; pageProps: any; router: any }) {
-	// useDisableInteractions();
+	useDisableInteractions();
 
 	const routesWithDisabledCursor = ['/articles', '/rewinds/2023', '/rewinds/2024', '/rewinds/2025'];
 	const isActive = !routesWithDisabledCursor.includes(router.route);
