@@ -26,13 +26,7 @@ export default function App({ Component, pageProps, router }: { Component: any; 
 			{shouldShowLayout && <Navbar />}
 
 			<AnimatePresence mode="wait">
-				{/* Hanya render MaskCursor jika belum pernah dirender */}
-				{!maskCursorRendered && (
-					<MaskCursor
-						isActive={isActive}
-						onRendered={() => setMaskCursorRendered(true)} // Tambahkan callback ketika MaskCursor dirender
-					/>
-				)}
+				{!maskCursorRendered && <MaskCursor isActive={isActive} onRendered={() => setMaskCursorRendered(true)} />}
 				<Component key={router.route} {...pageProps} />
 				<SpeedInsights />
 				<Analytics />
