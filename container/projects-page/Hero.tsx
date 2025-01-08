@@ -1,4 +1,5 @@
 import { Eyes } from '@/components';
+import { projectsItem } from '@/constants';
 
 export default function Hero() {
 	return (
@@ -7,7 +8,7 @@ export default function Hero() {
 				<div className="w-fit relative">
 					<h1 className="heading tracking-[-1.3px] text-[#212121] font-semibold font-FoundersGrotesk uppercase blend-target">
 						Projects
-						<sup className="paragraph font-normal absolute top-[20px] ml-[10px] font-NeueMontreal">(3)</sup>
+						<sup className="paragraph font-normal absolute top-[20px] ml-[10px] font-NeueMontreal">({projectsItem.length})</sup>
 					</h1>
 				</div>
 			</div>

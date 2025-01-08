@@ -6,9 +6,12 @@ import { useDisableInteractions } from '@/hooks/useDisableInteractions';
 import MaskCursor from '@/components/MaskCursor';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
+import { useState } from 'react';
 
 export default function App({ Component, pageProps, router }: { Component: any; pageProps: any; router: any }) {
 	useDisableInteractions();
+
+	const [maskCursorRendered, setMaskCursorRendered] = useState(false);
 
 	const routesWithDisabledCursor = ['/articles', '/rewinds/2023', '/rewinds/2024', '/rewinds/2025'];
 	const isActive = !routesWithDisabledCursor.includes(router.route);
@@ -23,7 +26,13 @@ export default function App({ Component, pageProps, router }: { Component: any; 
 			{shouldShowLayout && <Navbar />}
 
 			<AnimatePresence mode="wait">
-				<MaskCursor isActive={isActive} />
+				{/* Hanya render MaskCursor jika belum pernah dirender */}
+				{!maskCursorRendered && (
+					<MaskCursor
+						isActive={isActive}
+						onRendered={() => setMaskCursorRendered(true)} // Tambahkan callback ketika MaskCursor dirender
+					/>
+				)}
 				<Component key={router.route} {...pageProps} />
 				<SpeedInsights />
 				<Analytics />

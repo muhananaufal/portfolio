@@ -1,13 +1,14 @@
 'use client';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useMousePosition } from '@/hooks/useMousePosition';
 import gsap from 'gsap';
 
 interface MaskCursorProps {
 	isActive: boolean;
+	onRendered?: () => void;
 }
 
-const MaskCursor: React.FC<MaskCursorProps> = ({ isActive }) => {
+const MaskCursor: React.FC<MaskCursorProps> = ({ isActive, onRendered }) => {
 	const circle = useRef<HTMLDivElement>(null);
 	const [isBlended, setIsBlended] = useState(false);
 
@@ -25,12 +26,18 @@ const MaskCursor: React.FC<MaskCursorProps> = ({ isActive }) => {
 	};
 
 	useMousePosition(moveCircle);
+	const cursorSize = isBlended ? 120 : 50;
+	useLayoutEffect(() => {
+		if (onRendered) {
+			onRendered();
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	if (!isActive) {
 		return null;
 	}
 
-	const cursorSize = isBlended ? 120 : 50;
 	return (
 		<div
 			style={{
