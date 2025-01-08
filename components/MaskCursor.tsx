@@ -1,51 +1,50 @@
 'use client';
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useMousePosition } from '@/hooks/useMousePosition';
 import gsap from 'gsap';
 
-interface MaskCursorProps {
-	isActive: boolean;
-	onRendered?: () => void;
-}
-
-const MaskCursor: React.FC<MaskCursorProps> = ({ isActive, onRendered }) => {
+const MaskCursor: React.FC = () => {
 	const circle = useRef<HTMLDivElement>(null);
-	const [isBlended, setIsBlended] = useState(false);
 
 	const moveCircle = (x: number, y: number) => {
-		if (!isActive) return;
+		if (!circle.current) return;
 
 		gsap.set(circle.current, { x, y, xPercent: -50, yPercent: -50 });
 
 		const elementUnderCursor = document.elementFromPoint(x, y) as HTMLElement;
 		if (elementUnderCursor && elementUnderCursor.classList.contains('blend-target')) {
-			setIsBlended(true);
+			gsap.to(circle.current, {
+				width: 120,
+				height: 120,
+				duration: 0.3,
+				ease: 'power3.out',
+			});
 		} else {
-			setIsBlended(false);
+			gsap.to(circle.current, {
+				width: 50,
+				height: 50,
+				duration: 0.3,
+				ease: 'power3.out',
+			});
 		}
 	};
 
 	useMousePosition(moveCircle);
-	const cursorSize = isBlended ? 120 : 50;
-	useLayoutEffect(() => {
-		if (onRendered) {
-			onRendered();
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
 
-	if (!isActive) {
-		return null;
-	}
+	useEffect(() => {
+		return () => {
+			// eslint-disable-next-line react-hooks/exhaustive-deps
+			gsap.killTweensOf(circle.current);
+		};
+	}, []);
 
 	return (
 		<div
 			style={{
 				zIndex: 7000,
 				backgroundColor: '#BCE4F2',
-				width: cursorSize,
-				height: cursorSize,
-				transition: `height 0.3s ease-out, width 0.3s ease-out, filter 0.3s ease-out`,
+				width: 50,
+				height: 50,
 			}}
 			className="top-0 left-0 fixed rounded-full mix-blend-difference pointer-events-none"
 			ref={circle}

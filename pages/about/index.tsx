@@ -1,7 +1,7 @@
 'use client';
 import { HeroAbout, MySkills, Motto, EducationAndExperience } from '@/container';
 import { useEffect } from 'react';
-import { Curve, Ready } from '@/components';
+import { Curve, MaskCursor, Ready } from '@/components';
 
 export default function About() {
 	useEffect(() => {
@@ -13,6 +13,7 @@ export default function About() {
 	return (
 		<>
 			<Curve backgroundColor={'#DBE2EF'}>
+				<MaskCursor />
 				<HeroAbout />
 				<MySkills />
 				<EducationAndExperience />

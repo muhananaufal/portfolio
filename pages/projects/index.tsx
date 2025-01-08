@@ -1,6 +1,6 @@
 'use client';
 import { useEffect } from 'react';
-import { Curve, Ready } from '@/components';
+import { Curve, MaskCursor, Ready } from '@/components';
 import { HeroProjects, ListsProjects } from '@/container';
 
 export default function Projects() {
@@ -13,6 +13,7 @@ export default function Projects() {
 	return (
 		<>
 			<Curve backgroundColor={'#DBE2EF'}>
+				<MaskCursor />
 				<HeroProjects />
 				<ListsProjects />
 				<Ready />

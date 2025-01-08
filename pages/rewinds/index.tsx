@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { Curve } from '@/components';
+import { Curve, MaskCursor } from '@/components';
 import { HeroRewinds, Video, Years } from '@/container';
 
 export default function Rewinds() {
@@ -25,6 +25,7 @@ export default function Rewinds() {
 	return (
 		<>
 			<Curve backgroundColor={'#DBE2EF'}>
+			<MaskCursor />
 				<HeroRewinds />
 				{isTabletOrBelow ? (
 					<>

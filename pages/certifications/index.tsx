@@ -1,6 +1,6 @@
 'use client';
 import { useEffect } from 'react';
-import { Curve, Ready } from '@/components';
+import { Curve, MaskCursor, Ready } from '@/components';
 import { HeroCertification, PublicationCertification } from '@/container';
 
 export default function Certification() {
@@ -13,6 +13,7 @@ export default function Certification() {
 	return (
 		<>
 			<Curve backgroundColor={'#DBE2EF'}>
+				<MaskCursor />
 				<HeroCertification />
 				<PublicationCertification />
 				<Ready />

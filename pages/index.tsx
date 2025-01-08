@@ -1,6 +1,6 @@
 'use client';
 import { useEffect } from 'react';
-import { Curve, Marquee, Ready } from '@/components';
+import { Curve, Marquee, MaskCursor, Ready } from '@/components';
 import { Hero } from '@/container';
 
 export default function Home() {
@@ -14,6 +14,7 @@ export default function Home() {
 	return (
 		<>
 			<Curve backgroundColor={'#DBE2EF'}>
+				<MaskCursor />
 				<Hero />
 				<div className="w-full bg-marquee z-10 relative rounded-t-[20px] padding-y">
 					<Marquee
