@@ -4,6 +4,8 @@ import { AnimatePresence } from 'framer-motion';
 import { Toaster } from 'sonner';
 import { useDisableInteractions } from '@/hooks/useDisableInteractions';
 import MaskCursor from '@/components/MaskCursor';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/next';
 
 export default function App({ Component, pageProps, router }: { Component: any; pageProps: any; router: any }) {
 	useDisableInteractions();
@@ -23,6 +25,8 @@ export default function App({ Component, pageProps, router }: { Component: any; 
 			<AnimatePresence mode="wait">
 				<MaskCursor isActive={isActive} />
 				<Component key={router.route} {...pageProps} />
+				<SpeedInsights />
+				<Analytics />
 			</AnimatePresence>
 
 			{shouldShowLayout && <Footer />}
