@@ -74,7 +74,7 @@ const Form = () => {
 								type="text"
 								placeholder="Enter your name*"
 								ref={nameRef}
-								className="paragraph bg-transparent w-full font-NeueMontreal font-normal text-secondry bg-background border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out sm:w-full xm:w-full"
+								className="paragraph bg-transparent w-full font-NeueMontreal font-normal text-secondry border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out sm:w-full xm:w-full"
 							/>
 						</div>
 					</div>
@@ -87,7 +87,7 @@ const Form = () => {
 								type="text"
 								placeholder="Company name type here*"
 								ref={companyRef}
-								className="paragraph bg-transparent w-full font-NeueMontreal font-normal text-secondry bg-background border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out sm:w-full xm:w-full"
+								className="paragraph bg-transparent w-full font-NeueMontreal font-normal text-secondry border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out sm:w-full xm:w-full"
 							/>
 						</div>
 					</div>
@@ -103,7 +103,7 @@ const Form = () => {
 								type="text"
 								placeholder="Your goal type here*"
 								ref={goalRef}
-								className="paragraph bg-transparent font-NeueMontreal font-normal text-secondry bg-background border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out w-full sm:w-full xm:w-full"
+								className="paragraph bg-transparent font-NeueMontreal font-normal text-secondry border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out w-full sm:w-full xm:w-full"
 							/>
 						</div>
 					</div>
@@ -118,7 +118,7 @@ const Form = () => {
 								type="text"
 								placeholder="YYYY-MM-DD*"
 								ref={dateRef}
-								className="paragraph bg-transparent font-NeueMontreal font-normal text-secondry bg-background border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out w-full sm:w-full xm:w-full"
+								className="paragraph bg-transparent font-NeueMontreal font-normal text-secondry border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out w-full sm:w-full xm:w-full"
 							/>
 						</div>
 					</div>
@@ -133,7 +133,7 @@ const Form = () => {
 								type="text"
 								placeholder="$123.45*"
 								ref={budgetRef}
-								className="paragraph bg-transparent font-NeueMontreal font-normal text-secondry bg-background border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out w-full sm:w-full xm:w-full"
+								className="paragraph bg-transparent font-NeueMontreal font-normal text-secondry border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out w-full sm:w-full xm:w-full"
 							/>
 						</div>
 					</div>
@@ -148,7 +148,7 @@ const Form = () => {
 								type="email"
 								placeholder="muhananaufal@example.com*"
 								ref={emailRef}
-								className="paragraph bg-transparent font-NeueMontreal font-normal text-secondry bg-background border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out w-full sm:w-full xm:w-full"
+								className="paragraph bg-transparent font-NeueMontreal font-normal text-secondry border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out w-full sm:w-full xm:w-full"
 							/>
 						</div>
 						<div className="xl:min-w-max lg:min-w-max md:min-w-max">
@@ -166,7 +166,7 @@ const Form = () => {
 								type="text"
 								placeholder="Product details type here..."
 								ref={detailsRef}
-								className="paragraph bg-transparent font-NeueMontreal font-normal text-secondry bg-background border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out w-full sm:w-full xm:w-full"
+								className="paragraph bg-transparent font-NeueMontreal font-normal text-secondry border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out w-full sm:w-full xm:w-full"
 							/>
 						</div>
 					</div>

@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { certificationsItems } from '@/constants';
 import { RoundButton } from '@/components';
 import Link from 'next/link';
-
+import { LinkView } from '@/components/ui/link-preview';
 export default function Publication() {
 	const ITEMS_PER_ROW = 3;
 	const MAX_VISIBLE_ROWS = 2;
@@ -24,11 +24,10 @@ export default function Publication() {
 		<section className="w-full bg-marquee padding-y rounded-t-[20px]">
 			<div className="pl-[50px] sm:px-[20px] xm:px-[20px]">
 				<h2 className="sub-heading font-medium font-NeueMontreal text-white">
-					Get closer to my
-					<Link href="https://www.cloudskillsboost.google/public_profiles/3a633293-2b34-40d7-a7e0-cc2413ec4fad" className="sub-heading font-medium font-NeueMontreal dark link-flash blend-target">
-						{' '}
-						Google Cloud Profile:{' '}
-					</Link>
+					Get closer to my{' '}
+					<LinkView url="https://www.cloudskillsboost.google/public_profiles/3a633293-2b34-40d7-a7e0-cc2413ec4fad" className="sub-heading font-medium font-NeueMontreal dark link-flash blend-target text-white">
+						Google Cloud Profile:
+					</LinkView>
 				</h2>
 			</div>
 			<div className="w-full border-b border-[#21212155] md:my-[25px] md:py-[10px] lg:my-[50px] lg:py-[20px] xl:my-[50px] xl:py-[20px]"></div>

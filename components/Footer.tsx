@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import logo from '@/public/logo.png';
-import { LinkHover, TextMask } from '@/animation';
+import { LinkHover, TextMask, LinkPreview } from '@/animation';
 import { footerItems } from '@/constants';
 
 export default function Footer() {
@@ -23,7 +23,13 @@ export default function Footer() {
 						<div className="pt-[50px]">
 							<h1 className="paragraph font-medium font-NeueMontreal text-secondry pb-[20px]">Social Media:</h1>
 							{footerItems.map((item) => (
-								<LinkHover title={item.title} href={item.href} key={item.id} className="before:h-[1px] after:h-[1px] w-fit paragraph font-medium text-secondry capitalize flex flex-col before:bottom-[1px] after:bottom-[1px]" />
+								<LinkPreview
+									title={item.title}
+									url={item.url}
+									key={item.id}
+									imageSrc={item.imageSrc as unknown as string}
+									className="before:h-[1px] after:h-[1px] w-fit paragraph font-medium text-secondry capitalize flex flex-col before:bottom-[1px] after:bottom-[1px]"
+								/>
 							))}
 						</div>
 

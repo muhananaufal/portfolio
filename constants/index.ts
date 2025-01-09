@@ -39,22 +39,26 @@ export const footerItems = [
 	{
 		id: 1,
 		title: 'Github',
-		href: 'https://github.com/muhananaufal/',
+		url: 'https://github.com/muhananaufal/',
+		imageSrc: '/social/github.png',
 	},
 	{
 		id: 2,
 		title: 'Instagram',
-		href: 'https://www.instagram.com/_muhananaufal_/',
+		url: 'https://www.instagram.com/_muhananaufal_/',
+		imageSrc: '/social/instagram.png',
 	},
 	{
 		id: 3,
 		title: 'Medium',
-		href: 'https://medium.com/@muhananaufal/',
+		url: 'https://medium.com/@muhananaufal/',
+		imageSrc: '/social/medium.png',
 	},
 	{
 		id: 4,
 		title: 'LinkedIn',
-		href: 'https://www.linkedin.com/in/muhana-naufal-al-atsari/',
+		url: 'https://www.linkedin.com/in/muhana-naufal-al-atsari/',
+		imageSrc: '/social/linkedin.png',
 	},
 ];
 

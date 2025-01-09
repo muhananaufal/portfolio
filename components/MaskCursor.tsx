@@ -27,6 +27,22 @@ const MaskCursor: React.FC = () => {
 				ease: 'power3.out',
 			});
 		}
+
+		if (elementUnderCursor && elementUnderCursor.classList.contains('remove-target')) {
+			gsap.to(circle.current, {
+				width: -10,
+				height: -10,
+				duration: 0.3,
+				ease: 'power3.out',
+			});
+		} else {
+			gsap.to(circle.current, {
+				width: 50,
+				height: 50,
+				duration: 0.3,
+				ease: 'power3.out',
+			});
+		}
 	};
 
 	useMousePosition(moveCircle);
