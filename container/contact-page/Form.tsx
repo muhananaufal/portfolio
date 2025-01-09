@@ -25,6 +25,24 @@ const Form = () => {
 			return;
 		}
 
+		const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+		if (!emailPattern.test(email)) {
+			toast.error('Please enter a valid email address.');
+			return;
+		}
+	
+		const datePattern = /^\d{4}-\d{2}-\d{2}$/;
+		if (!datePattern.test(date) || isNaN(Date.parse(date))) {
+			toast.error('Please enter a valid date in the format YYYY-MM-DD.');
+			return;
+		}
+	
+		const budgetPattern = /^\$\d+(\.\d{2})?$/;
+		if (!budgetPattern.test(budget)) {
+			toast.error('Please enter a valid budget in the format $123.45.');
+			return;
+		}
+
 		const details = detailsRef.current?.value.trim() || '';
 
 		const subject = `Inquiry from ${name}`;
@@ -98,7 +116,7 @@ const Form = () => {
 						<div className="w-full">
 							<input
 								type="text"
-								placeholder="Date*"
+								placeholder="Date* (YYYY-MM-DD)"
 								ref={dateRef}
 								className="paragraph bg-transparent font-NeueMontreal font-normal text-secondry bg-background border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out w-full sm:w-full xm:w-full"
 							/>
@@ -113,7 +131,7 @@ const Form = () => {
 						<div className="w-full">
 							<input
 								type="text"
-								placeholder="Select*"
+								placeholder="Select* ($123.45)"
 								ref={budgetRef}
 								className="paragraph bg-transparent font-NeueMontreal font-normal text-secondry bg-background border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out w-full sm:w-full xm:w-full"
 							/>
