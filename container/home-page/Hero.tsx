@@ -33,7 +33,7 @@ export default function Hero() {
 											unoptimized
 										/>
 									</motion.span>
-									<h1 className="heading tracking-[-1.3px] text-[#212121] font-semibold font-FoundersGrotesk uppercase">Experiences</h1>
+									<h1 className="heading tracking-[-1.3px] text-[#212121] font-semibold font-FoundersGrotesk uppercase blend-target">Experiences</h1>
 								</div>
 								via Fullstack
 							</h1>
