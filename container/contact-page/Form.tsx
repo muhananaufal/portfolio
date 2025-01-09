@@ -85,7 +85,7 @@ const Form = () => {
 						<div className="w-full">
 							<input
 								type="text"
-								placeholder="Compny name type here*"
+								placeholder="Company name type here*"
 								ref={companyRef}
 								className="paragraph bg-transparent w-full font-NeueMontreal font-normal text-secondry bg-background border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out sm:w-full xm:w-full"
 							/>
@@ -116,7 +116,7 @@ const Form = () => {
 						<div className="w-full">
 							<input
 								type="text"
-								placeholder="Date* (YYYY-MM-DD)"
+								placeholder="YYYY-MM-DD*"
 								ref={dateRef}
 								className="paragraph bg-transparent font-NeueMontreal font-normal text-secondry bg-background border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out w-full sm:w-full xm:w-full"
 							/>
@@ -131,7 +131,7 @@ const Form = () => {
 						<div className="w-full">
 							<input
 								type="text"
-								placeholder="Select* ($123.45)"
+								placeholder="$123.45*"
 								ref={budgetRef}
 								className="paragraph bg-transparent font-NeueMontreal font-normal text-secondry bg-background border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out w-full sm:w-full xm:w-full"
 							/>
@@ -146,7 +146,7 @@ const Form = () => {
 						<div className="w-full">
 							<input
 								type="email"
-								placeholder="name@example.com"
+								placeholder="muhananaufal@example.com*"
 								ref={emailRef}
 								className="paragraph bg-transparent font-NeueMontreal font-normal text-secondry bg-background border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out w-full sm:w-full xm:w-full"
 							/>
