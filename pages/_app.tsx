@@ -5,6 +5,7 @@ import { Toaster } from 'sonner';
 import { useDisableInteractions } from '@/hooks/useDisableInteractions';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
+import Head from 'next/head';
 
 export default function App({ Component, pageProps, router }: { Component: any; pageProps: any; router: any }) {
 	useDisableInteractions();
@@ -14,6 +15,10 @@ export default function App({ Component, pageProps, router }: { Component: any; 
 
 	return (
 		<div className="select-none">
+			<Head>
+				<title>Muhana Naufal Al-Atsari</title>
+				<meta name="google-site-verification" content="m2sljs2hmb6YARyu67zlv2RU0yFhMcVDsQg4Y-nX5xo" />
+			</Head>
 			<Toaster richColors closeButton expand={true} />
 			{shouldShowLayout && <Navbar />}
 			<AnimatePresence mode="wait">
