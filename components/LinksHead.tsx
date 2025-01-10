@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 
 import { motion } from 'framer-motion';
@@ -32,7 +33,7 @@ export default function LinksHead() {
 	return (
 		<>
 			<div>
-				<div className="absolute	 top-20 z-[7777] ">
+				<div className="absolute top-10 z-[7777] ">
 					<motion.button
 						onClick={handleCopy}
 						className={`flex items-center justify-center w-12 h-12 rounded-full transition-all duration-500 ${copied ? 'bg-white text-black' : 'bg-black text-white'}`}
