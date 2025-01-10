@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 export default function LinksButton() {
 	return (
-		<div className="w-full max-w-md space-y-4">
+		<div className="w-full max-w-md space-y-4 mb-14">
 			{linksTree.map((link, index) => (
 				<motion.a
 					key={link.name}

@@ -77,7 +77,7 @@ export default function LinksHead() {
 							damping: 10,
 						},
 					}}
-					className="relative w-32 h-32 mb-6"
+					className="relative w-56 h-56 mb-14"
 				>
 					<img src="/gif/profile.gif" alt="Profile" className="object-cover scale-150" />
 				</motion.div>
