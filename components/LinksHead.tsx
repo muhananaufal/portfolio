@@ -101,7 +101,7 @@ export default function LinksHead() {
 							damping: 10,
 						},
 					}}
-					className="text-2xl font-bold text-black mb-2"
+					className="text-3xl font-bold text-black mb-2 font-NeueMontreal "
 				>
 					Muhana Naufal Al-Atsari
 				</motion.h1>
@@ -123,7 +123,7 @@ export default function LinksHead() {
 							damping: 10,
 						},
 					}}
-					className="text-sm text-black/80"
+					className=" text-black/80 font-NeueMontreal "
 				>
 					Web Developer | Cloud Computing
 				</motion.p>

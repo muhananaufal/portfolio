@@ -12,7 +12,7 @@ export default function LinksButton() {
 					href={link.url}
 					target="_blank"
 					rel="noopener noreferrer"
-					className="relative flex items-center justify-between px-6 py-4 text-white border-2 border-black rounded-lg transition-all duration-700 ease-out group overflow-hidden hover:shadow-lg"
+					className="font-NeueMontreal relative flex items-center justify-between px-6 py-4 text-white border-2 border-black rounded-lg transition-all duration-700 ease-out group overflow-hidden hover:shadow-lg"
 					initial={{ opacity: 0, x: -50 }}
 					animate={{ opacity: 1, x: 0 }}
 					transition={{
@@ -30,7 +30,7 @@ export default function LinksButton() {
 					<div className="w-8 h-8 rounded-full bg-white group-hover:bg-black flex items-center justify-center transition-all duration-700 ease-in-out relative z-10 shadow-md">
 						<link.icon className="w-5 h-5 text-black group-hover:text-white transition-colors duration-700" />
 					</div>
-					<span className="flex-1 text-center font-medium relative z-10 group-hover:text-black transition-all duration-700 ease-in-out">{link.name}</span>
+					<span className="flex-1 text-center text-lg font-medium relative z-10 group-hover:text-black transition-all duration-700 ease-in-out ">{link.name}</span>
 				</motion.a>
 			))}
 		</div>
