@@ -14,33 +14,33 @@ const MaskCursor: React.FC = () => {
 		const elementUnderCursor = document.elementFromPoint(x, y) as HTMLElement;
 		if (elementUnderCursor && elementUnderCursor.classList.contains('blend-target')) {
 			gsap.to(circle.current, {
-				width: 120,
-				height: 120,
+				width: 300,
+				height: 300,
 				duration: 0.3,
-				ease: 'power3.out',
+				ease: 'sine',
 			});
 		} else {
 			gsap.to(circle.current, {
-				width: 50,
-				height: 50,
+				width: 30,
+				height: 30,
 				duration: 0.3,
-				ease: 'power3.out',
+				ease: 'sine',
 			});
 		}
 
-		if (elementUnderCursor && elementUnderCursor.classList.contains('remove-target')) {
+		if (elementUnderCursor && elementUnderCursor.classList.contains('hover-target')) {
 			gsap.to(circle.current, {
 				width: -10,
 				height: -10,
 				duration: 0.3,
-				ease: 'power3.out',
+				ease: 'sine',
 			});
 		} else {
 			gsap.to(circle.current, {
-				width: 50,
-				height: 50,
+				width: 30,
+				height: 30,
 				duration: 0.3,
-				ease: 'power3.out',
+				ease: 'sine',
 			});
 		}
 	};
@@ -59,8 +59,8 @@ const MaskCursor: React.FC = () => {
 			style={{
 				zIndex: 7000,
 				backgroundColor: '#BCE4F2',
-				width: 50,
-				height: 50,
+				width: 30,
+				height: 30,
 			}}
 			className="top-0 left-0 fixed rounded-full mix-blend-difference pointer-events-none"
 			ref={circle}
