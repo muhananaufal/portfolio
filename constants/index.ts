@@ -289,14 +289,19 @@ export const FaqItems = [
 
 export const linksTree = [
 	{
-		name: 'GitHub',
-		url: 'https://github.com/muhananaufal/',
-		icon: Github,
+		name: 'Back to Website',
+		url: 'https://muhananaufal.my.id/',
+		icon: Globe,
 	},
 	{
 		name: 'LinkedIn',
 		url: 'https://www.linkedin.com/in/muhana-naufal/',
 		icon: Linkedin,
+	},
+	{
+		name: 'GitHub',
+		url: 'https://github.com/muhananaufal/',
+		icon: Github,
 	},
 	{
 		name: 'Instagram',
@@ -312,10 +317,5 @@ export const linksTree = [
 		name: 'Facebook',
 		url: 'https://www.facebook.com/profile.php?id=100022179201787/',
 		icon: Facebook,
-	},
-	{
-		name: 'Website',
-		url: 'https://muhananaufal.my.id/',
-		icon: Globe,
 	},
 ];

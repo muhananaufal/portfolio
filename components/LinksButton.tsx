@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 export default function LinksButton() {
 	return (
-		<div className="w-full max-w-md space-y-4 mb-14">
+		<div className="w-full max-w-md space-y-4 mb-14 mt-4">
 			{linksTree.map((link, index) => (
 				<motion.a
 					key={link.name}
@@ -22,11 +22,9 @@ export default function LinksButton() {
 					}}
 					whileHover={{ scale: 1.02 }}
 				>
-					{/* Background */}
 					<div className="absolute inset-0 bg-black transition-transform duration-700 ease-in-out transform origin-left group-hover:origin-right" />
 					<div className="absolute inset-0 bg-white transform scale-x-0 transition-transform duration-700 ease-in-out origin-left group-hover:scale-x-100" />
 
-					{/* Icon */}
 					<div className="w-8 h-8 rounded-full bg-white group-hover:bg-black flex items-center justify-center transition-all duration-700 ease-in-out relative z-10 shadow-md">
 						<link.icon className="w-5 h-5 text-black group-hover:text-white transition-colors duration-700" />
 					</div>

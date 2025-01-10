@@ -45,10 +45,12 @@ export default function EducationAndExperience() {
 								</div>
 								<div className="sub-paragraph font-medium font-NeueMontreal text-secondry pt-[30px] tracking-wide mt-5">
 									<span className="font-semibold block">AMCC (Amikom Computer Club)</span>
-									<p className="ms-2">• Chairperson of EXPO AMCC 2024</p>
-									<p className="ms-2">• Vice Chairperson of FIRSTMEET AMCC 2024</p>
 									<p className="ms-2">• Computer Network Coordinator AMCC 2024</p>
 									<p className="ms-2">• KSK Coordinator of AGS 2025</p>
+									<p className="ms-2">• Vice Chairperson of FirstMeet AMCC 2024</p>
+									<p className="ms-2">• Chairperson of EXPO AMCC 2024</p>
+									<p className="ms-2">• Moderator Competitive Programming of CODE AMCC 2024</p>
+									<p className="ms-2">• Liaison Officer of CODE AMCC 2024</p>
 								</div>
 							</div>
 						</div>

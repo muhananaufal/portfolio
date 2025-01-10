@@ -25,6 +25,8 @@ body {
 	font-family: NeueMontreal;
 }
 
+
+
 @layer utilities {
 	.padding-x {
 		@apply px-[50px] md:px-[30px] sm:px-[20px] xm:px-[20px];

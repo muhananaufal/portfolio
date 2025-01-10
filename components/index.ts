@@ -18,3 +18,4 @@ export { default as ComingSoon } from './ComingSoon';
 export { default as PlayVideo } from './PlayVideo';
 export { default as LinksHead } from './LinksHead';
 export { default as LinksButton } from './LinksButton';
+export { default as CvButton } from './CvButton';
