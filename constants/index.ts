@@ -51,7 +51,7 @@ export const footerItems = [
 	{
 		id: 2,
 		title: 'LinkedIn',
-		url: 'https://www.linkedin.com/in/muhana-naufal-al-atsari/',
+		url: 'https://www.linkedin.com/in/muhana-naufal/',
 		imageSrc: '/social/linkedin.png',
 	},
 	{
@@ -295,7 +295,7 @@ export const linksTree = [
 	},
 	{
 		name: 'LinkedIn',
-		url: 'https://www.linkedin.com/in/muhana-naufal-al-atsari/',
+		url: 'https://www.linkedin.com/in/muhana-naufal/',
 		icon: Linkedin,
 	},
 	{

@@ -103,7 +103,7 @@ export default function LinksHead() {
 					}}
 					className="text-3xl font-bold text-black mb-2 font-NeueMontreal "
 				>
-					Muhana Naufal Al-Atsari
+					Muhana Naufal
 				</motion.h1>
 
 				<motion.p
