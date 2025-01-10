@@ -4,6 +4,7 @@ export { default as mask } from './svg/mask.svg';
 export { default as firefly1 } from './gif/firefly1.gif';
 export { default as firefly2 } from './gif/firefly2.gif';
 export { default as naufal } from './gif/naufal.gif';
+export { default as profile } from './gif/profile.gif';
 
 // services page
 export { default as gcp } from './skills/gcp.png';

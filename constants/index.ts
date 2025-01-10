@@ -1,4 +1,5 @@
 import { gcp, nextjs, laravel, databases, react, thriftify, portfolio_v1, haskell, dasar_programming, dasar_aws, backend_pemula, jaringan_pemula, dasar_devops, dasar_ux, dasar_javascript, dasar_git, dasar_sql } from '@/public';
+import { Facebook, Github, Instagram, Linkedin, Newspaper } from 'lucide-react';
 
 // Navbar
 export const navbarItems = [
@@ -29,6 +30,11 @@ export const navbarItems = [
 	},
 	{
 		id: 6,
+		title: 'LinkTree',
+		href: '/me',
+	},
+	{
+		id: 7,
 		title: 'Contact us',
 		href: '/contact',
 	},
@@ -44,21 +50,27 @@ export const footerItems = [
 	},
 	{
 		id: 2,
+		title: 'LinkedIn',
+		url: 'https://www.linkedin.com/in/muhana-naufal-al-atsari/',
+		imageSrc: '/social/linkedin.png',
+	},
+	{
+		id: 3,
 		title: 'Instagram',
 		url: 'https://www.instagram.com/_muhananaufal_/',
 		imageSrc: '/social/instagram.png',
 	},
 	{
-		id: 3,
+		id: 4,
 		title: 'Medium',
 		url: 'https://medium.com/@muhananaufal/',
 		imageSrc: '/social/medium.png',
 	},
 	{
-		id: 4,
-		title: 'LinkedIn',
-		url: 'https://www.linkedin.com/in/muhana-naufal-al-atsari/',
-		imageSrc: '/social/linkedin.png',
+		id: 5,
+		title: 'Facebook',
+		url: 'https://www.facebook.com/profile.php?id=100022179201787/',
+		imageSrc: '/social/facebook.png',
 	},
 ];
 
@@ -272,5 +284,33 @@ export const FaqItems = [
 		description: 'We use both automated and manual testing methods, including unit testing, integration testing, and load testing, to ensure your application performs flawlessly.',
 
 		button: 'more',
+	},
+];
+
+export const socialLinks = [
+	{
+		name: 'GitHub',
+		url: 'https://github.com/muhananaufal/',
+		icon: Github,
+	},
+	{
+		name: 'LinkedIn',
+		url: 'https://www.linkedin.com/in/muhana-naufal-al-atsari/',
+		icon: Linkedin,
+	},
+	{
+		name: 'Instagram',
+		url: 'https://www.instagram.com/_muhananaufal_/',
+		icon: Instagram,
+	},
+	{
+		name: 'Medium',
+		url: 'https://medium.com/@muhananaufal/',
+		icon: Newspaper,
+	},
+	{
+		name: 'Facebook',
+		url: 'https://www.facebook.com/profile.php?id=100022179201787/',
+		icon: Facebook,
 	},
 ];

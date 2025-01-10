@@ -12,6 +12,7 @@ const routes = {
 	'/certifications': 'Certifications',
 	'/rewinds': 'Rewinds',
 	'/contact': 'Contact Us',
+	'/me': 'LinkTree',
 };
 
 const greetings = ['Welcome', 'Selamat datang', 'Bienvenido', 'Bienvenue', 'Willkommen', 'Benvenuto', 'ようこそ', '환영합니다', '欢迎', 'أهلاً وسهلاً', 'Добро пожаловать', 'Bem-vindo', 'स्वागत है', 'Hoş geldiniz', 'ยินดีต้อนรับ'];

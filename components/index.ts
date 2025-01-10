@@ -16,4 +16,5 @@ export { default as Text3d } from './Text3d';
 export { default as MouseImageGallery } from './MouseImageGallery';
 export { default as ComingSoon } from './ComingSoon';
 export { default as PlayVideo } from './PlayVideo';
-
+export { default as LinksHead } from './LinksHead';
+export { default as LinksButton } from './LinksButton';
