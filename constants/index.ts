@@ -1,5 +1,5 @@
 import { gcp, nextjs, laravel, databases, react, thriftify, portfolio_v1, haskell, dasar_programming, dasar_aws, backend_pemula, jaringan_pemula, dasar_devops, dasar_ux, dasar_javascript, dasar_git, dasar_sql } from '@/public';
-import { Facebook, Github, Instagram, Linkedin, Newspaper } from 'lucide-react';
+import { Facebook, Github, Globe, Instagram, Linkedin, Newspaper } from 'lucide-react';
 
 // Navbar
 export const navbarItems = [
@@ -287,7 +287,7 @@ export const FaqItems = [
 	},
 ];
 
-export const socialLinks = [
+export const linksTree = [
 	{
 		name: 'GitHub',
 		url: 'https://github.com/muhananaufal/',
@@ -312,5 +312,10 @@ export const socialLinks = [
 		name: 'Facebook',
 		url: 'https://www.facebook.com/profile.php?id=100022179201787/',
 		icon: Facebook,
+	},
+	{
+		name: 'Website',
+		url: 'https://muhananaufal.my.id/',
+		icon: Globe,
 	},
 ];

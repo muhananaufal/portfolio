@@ -1,12 +1,12 @@
 'use client';
 
-import { socialLinks } from '@/constants';
+import { linksTree } from '@/constants';
 import { motion } from 'framer-motion';
 
 export default function LinksButton() {
 	return (
 		<div className="w-full max-w-md space-y-4">
-			{socialLinks.map((link, index) => (
+			{linksTree.map((link, index) => (
 				<motion.a
 					key={link.name}
 					href={link.url}
