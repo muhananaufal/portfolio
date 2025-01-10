@@ -1,5 +1,5 @@
 'use client';
-import { MouseImageGallery } from '@/components';
+import { Curve, MouseImageGallery } from '@/components';
 import { listImage2023 } from '@/constants/images';
 import { Gallery } from '@/container';
 import { useEffect } from 'react';
@@ -16,8 +16,10 @@ export default function Rewinds2023() {
 
 	return (
 		<>
-			<MouseImageGallery images={images} />
-			<Gallery />
+			<Curve backgroundColor={'#DBE2EF'}>
+				<MouseImageGallery images={images} />
+				<Gallery />
+			</Curve>
 		</>
 	);
 }

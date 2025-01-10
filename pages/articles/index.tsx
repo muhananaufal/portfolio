@@ -1,4 +1,5 @@
 'use client';
+import { Curve } from '@/components';
 import { HeroArticles } from '@/container';
 import { useEffect } from 'react';
 
@@ -11,7 +12,9 @@ export default function Articles() {
 	}, []);
 	return (
 		<>
-			<HeroArticles />
+			<Curve backgroundColor={'#DBE2EF'}>
+				<HeroArticles />
+			</Curve>
 		</>
 	);
 }

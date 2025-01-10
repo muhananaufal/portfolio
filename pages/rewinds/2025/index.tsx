@@ -1,10 +1,12 @@
 'use client';
-import { ComingSoon } from '@/components';
+import { ComingSoon, Curve } from '@/components';
 
 export default function Rewinds2025() {
 	return (
 		<>
-			<ComingSoon />
+			<Curve backgroundColor={'#DBE2EF'}>
+				<ComingSoon />
+			</Curve>
 		</>
 	);
 }
