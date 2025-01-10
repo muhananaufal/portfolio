@@ -14,7 +14,7 @@ export default function CvButton() {
 	};
 
 	return (
-		<div className="w-full max-w-md">
+		<div className="w-full max-w-md ">
 			<motion.button
 				onClick={handleDownload}
 				rel="noopener noreferrer"
@@ -22,7 +22,7 @@ export default function CvButton() {
 				initial={{ opacity: 0, x: -50 }}
 				animate={{ opacity: 1, x: 0 }}
 				transition={{
-					delay: 2 * 0.15,
+					delay: -1 * 0.15,
 					duration: 0.8,
 					ease: 'easeOut',
 				}}

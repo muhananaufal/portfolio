@@ -71,7 +71,7 @@ export const text = (addMoreDelay: number = 0) => {
 			opacity: 0,
 			top: -100,
 			transition: { duration: 0.75, delay: 0.35 + addMoreDelay, ease: [0.76, 0, 0.24, 1] },
-			transitionEnd: { top: '47.5%' },
+			transitionEnd: { top: '47.5%', zIndex: -2 },
 		},
 		exit: {
 			opacity: 1,

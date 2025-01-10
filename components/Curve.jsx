@@ -11,6 +11,10 @@ const routes = {
 	'/projects': 'Projects',
 	'/certifications': 'Certifications',
 	'/rewinds': 'Rewinds',
+	'/rewinds/2023': 'Rewinds 2023',
+	'/rewinds/2024': 'Rewinds 2024',
+	'/rewinds/2025': 'Rewinds 2025',
+	'/rewinds': 'Rewinds',
 	'/contact': 'Contact Us',
 	'/me': 'LinkTree',
 };

@@ -17,7 +17,6 @@ export const listImage2023 = [
 	'/rewinds/2023/images2023_16.jpg',
 	'/rewinds/2023/images2023_17.jpg',
 	'/rewinds/2023/images2023_18.jpg',
-	'/rewinds/2023/images2023_19.jpg',
 ];
 
 export const listImage2024 = [
