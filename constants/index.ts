@@ -1,5 +1,5 @@
 import { gcp, nextjs, laravel, databases, react, thriftify, portfolio_v1, haskell, dasar_programming, dasar_aws, backend_pemula, jaringan_pemula, dasar_devops, dasar_ux, dasar_javascript, dasar_git, dasar_sql } from '@/public';
-import { Facebook, Github, Globe, Instagram, Linkedin, Newspaper } from 'lucide-react';
+import { Facebook, Github, Globe, Instagram, Linkedin, Mail, MessageCircleMore, Newspaper } from 'lucide-react';
 
 // Navbar
 export const navbarItems = [
@@ -304,18 +304,29 @@ export const linksTree = [
 		icon: Github,
 	},
 	{
-		name: 'Instagram',
-		url: 'https://www.instagram.com/_muhananaufal_/',
-		icon: Instagram,
-	},
-	{
 		name: 'Medium',
 		url: 'https://medium.com/@muhananaufal/',
 		icon: Newspaper,
 	},
 	{
+		name: 'Instagram',
+		url: 'https://www.instagram.com/_muhananaufal_/',
+		icon: Instagram,
+	},
+
+	{
 		name: 'Facebook',
 		url: 'https://www.facebook.com/profile.php?id=100022179201787/',
 		icon: Facebook,
+	},
+	{
+		name: 'Gmail',
+		url: 'https://mail.google.com/mail/?view=cm&to=muhananaufal8@gmail.com',
+		icon: Mail,
+	},
+	{
+		name: 'Whatsapp',
+		url: 'https://wa.me/6285799570985',
+		icon: MessageCircleMore,
 	},
 ];

@@ -35,11 +35,7 @@ export default function Footer() {
 
 						<div className="pt-[50px] flex gap-x-[20px]">
 							<h1 className="paragraph font-medium font-NeueMontreal text-secondry">Email:</h1>
-							<LinkHover
-								title="muhananaufal8@gmail.com"
-								href="https://mail.google.com/mail/u/0/?fs=1&to=muhananaufal8@gmail.com#inbox?compose=new"
-								className="before:h-[1px] after:h-[1px] paragraph font-medium before:bottom-[-3px] after:bottom-[-3px]"
-							/>
+							<LinkHover title="muhananaufal8@gmail.com" href="https://mail.google.com/mail/?view=cm&to=muhananaufal8@gmail.com" className="before:h-[1px] after:h-[1px] paragraph font-medium before:bottom-[-3px] after:bottom-[-3px]" />
 						</div>
 					</div>
 				</div>
