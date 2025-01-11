@@ -18,7 +18,7 @@ export default function CvButton() {
 			<motion.button
 				onClick={handleDownload}
 				rel="noopener noreferrer"
-				className="w-full font-NeueMontreal relative flex items-center justify-between px-6 py-4 text-white border-2 border-black rounded-lg transition-all duration-700 ease-out group overflow-hidden hover:shadow-lg "
+				className="custom-hover w-full font-NeueMontreal relative flex items-center justify-between px-6 py-4 text-white border-2 border-black rounded-lg transition-all duration-700 ease-out group overflow-hidden hover:shadow-lg cursor-none"
 				initial={{ opacity: 0, x: -50 }}
 				animate={{ opacity: 1, x: 0 }}
 				transition={{
