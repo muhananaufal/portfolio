@@ -4,7 +4,7 @@
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-import { Check, Clipboard } from 'lucide-react';
+import { Check, Clipboard, QrCode } from 'lucide-react';
 import { toast } from 'sonner';
 
 export default function LinksHead() {
@@ -30,10 +30,18 @@ export default function LinksHead() {
 		});
 	};
 
+	const handleQr = () => {
+		const link = document.createElement('a');
+		link.href = '/cv/Muhana_Naufal.png';
+		link.download = 'Muhana_Naufal.png';
+		link.click();
+		toast.success('QR Code downloaded successfully!');
+	};
+
 	return (
 		<>
 			<div>
-				<div className="absolute top-10 z-10 custom-hover cursor-none">
+				<div className="absolute top-[3.5rem] z-10 custom-hover cursor-none">
 					<motion.button
 						onClick={handleCopy}
 						className={`custom-hover cursor-none flex items-center justify-center w-12 h-12 rounded-full transition-all duration-500 ${copied ? 'bg-white text-black' : 'bg-black text-white'}`}
@@ -60,6 +68,33 @@ export default function LinksHead() {
 						{copied ? <Check className="w-6 h-6" /> : <Clipboard className="w-6 h-6" />}
 					</motion.button>
 				</div>
+				<div className="ms-44 absolute top-[20.7rem] z-10 custom-hover cursor-none">
+					<motion.button
+						onClick={handleQr}
+						className={`custom-hover cursor-none flex items-center justify-center w-12 h-12 rounded-full transition-all duration-500 ${copied ? 'bg-white text-black' : 'bg-black text-white'}`}
+						initial={{ scale: 0, rotate: -180 }}
+						animate={{ scale: 1, rotate: 0 }}
+						whileTap={{ scale: 0.9 }}
+						transition={{
+							type: 'ease',
+							stiffness: 200,
+							damping: 20,
+							duration: 0.5,
+						}}
+						whileHover={{
+							scale: 1.3,
+							color: '#000000',
+							backgroundColor: '#ffffff',
+							transition: {
+								type: 'ease',
+								stiffness: 500,
+								damping: 10,
+							},
+						}}
+					>
+						{copied ? <Check className="w-6 h-6" /> : <QrCode className="w-6 h-6" />}
+					</motion.button>
+				</div>
 				<motion.div
 					initial={{ scale: 0, rotate: -180 }}
 					animate={{ scale: 1, rotate: 0 }}
@@ -70,14 +105,14 @@ export default function LinksHead() {
 						duration: 1.5,
 					}}
 					whileHover={{
-						scale: 1.1,
+						scale: 1.12,
 						transition: {
 							type: 'spring',
 							stiffness: 400,
 							damping: 10,
 						},
 					}}
-					className="relative w-56 h-56 mb-14"
+					className="relative w-56 h-56 mb-14 mt-10"
 				>
 					<img src="/gif/profile.gif" alt="Profile" className="object-cover scale-150" />
 				</motion.div>
