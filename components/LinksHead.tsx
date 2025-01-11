@@ -10,6 +10,7 @@ import { toast } from 'sonner';
 export default function LinksHead() {
 	const profileRef = useRef(null);
 	const [copied, setCopied] = useState(false);
+	const [downloaded, setDownloaded] = useState(false);
 
 	useEffect(() => {
 		const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
@@ -35,7 +36,9 @@ export default function LinksHead() {
 		link.href = '/cv/Muhana_Naufal.png';
 		link.download = 'Muhana_Naufal.png';
 		link.click();
+		setDownloaded(true);
 		toast.success('QR Code downloaded successfully!');
+		setTimeout(() => setDownloaded(false), 2000);
 	};
 
 	return (
@@ -92,7 +95,7 @@ export default function LinksHead() {
 							},
 						}}
 					>
-						{copied ? <Check className="w-6 h-6" /> : <QrCode className="w-6 h-6" />}
+						{downloaded ? <Check className="w-6 h-6" /> : <QrCode className="w-6 h-6" />}
 					</motion.button>
 				</div>
 				<motion.div
