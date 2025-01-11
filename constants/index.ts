@@ -326,7 +326,7 @@ export const linksTree = [
 	},
 	{
 		name: 'Whatsapp',
-		url: 'https://wa.me/6285799570985',
+		url: 'https://wa.me/6285799470985',
 		icon: MessageCircleMore,
 	},
 ];
