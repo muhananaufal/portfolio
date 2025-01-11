@@ -33,10 +33,10 @@ export default function LinksHead() {
 	return (
 		<>
 			<div>
-				<div className="absolute top-10 ">
+				<div className="absolute top-10 z-10 custom-hover cursor-none">
 					<motion.button
 						onClick={handleCopy}
-						className={`flex items-center justify-center w-12 h-12 rounded-full transition-all duration-500 ${copied ? 'bg-white text-black' : 'bg-black text-white'}`}
+						className={`custom-hover cursor-none flex items-center justify-center w-12 h-12 rounded-full transition-all duration-500 ${copied ? 'bg-white text-black' : 'bg-black text-white'}`}
 						initial={{ scale: 0, rotate: -180 }}
 						animate={{ scale: 1, rotate: 0 }}
 						whileTap={{ scale: 0.9 }}
