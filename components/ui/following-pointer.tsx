@@ -6,15 +6,10 @@ export const FollowerPointerCard = ({ children, className, title }: { children: 
 	const x = useMotionValue(0);
 	const y = useMotionValue(0);
 	const ref = React.useRef<HTMLDivElement>(null);
-	const [rect, setRect] = useState<DOMRect | null>(null);
 	const [isInside, setIsInside] = useState<boolean>(false);
 	const [isCustomHover, setIsCustomHover] = useState<boolean>(false); // New state
 
 	useEffect(() => {
-		if (ref.current) {
-			setRect(ref.current.getBoundingClientRect());
-		}
-
 		const customHoverElements = document.querySelectorAll('.custom-hover');
 		const handleMouseEnter = () => setIsCustomHover(true);
 		const handleMouseLeave = () => setIsCustomHover(false);
@@ -33,13 +28,10 @@ export const FollowerPointerCard = ({ children, className, title }: { children: 
 	}, []);
 
 	const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-		if (rect) {
-			const scrollX = window.scrollX;
-			const scrollY = window.scrollY;
-			x.set(e.clientX - rect.left + scrollX);
-			y.set(e.clientY - rect.top + scrollY);
-		}
+		x.set(e.clientX); // Posisi kursor relatif ke viewport
+		y.set(e.clientY);
 	};
+
 	const handleMouseLeave = () => {
 		setIsInside(false);
 	};
@@ -69,7 +61,7 @@ export const FollowPointer = ({ x, y, title, isCustomHover }: { x: any; y: any; 
 	const colors = ['var(--sky-500)', 'var(--neutral-500)', 'var(--teal-500)', 'var(--green-500)', 'var(--blue-500)', 'var(--red-500)', 'var(--yellow-500)'];
 	return (
 		<motion.div
-			className="h-4 w-4 rounded-full z-50 fixed"
+			className="h-4 w-4 rounded-full z-50 fixed" // Tetap gunakan posisi fixed
 			style={{
 				top: y,
 				left: x,
