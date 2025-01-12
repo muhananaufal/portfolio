@@ -6,12 +6,15 @@ import { useDisableInteractions } from '@/hooks/useDisableInteractions';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
 import Head from 'next/head';
+import { Chat } from '@/components/Chat';
 
 export default function App({ Component, pageProps, router }: { Component: any; pageProps: any; router: any }) {
 	useDisableInteractions();
 
 	const routesWithoutNavbarAndFooter = ['/articles', '/rewinds/2023', '/rewinds/2024', '/rewinds/2025', '/me'];
 	const shouldShowLayout = !routesWithoutNavbarAndFooter.includes(router.route);
+	const routesWithoutChat = ['/articles', '/rewinds/2023', '/rewinds/2024', '/rewinds/2025'];
+	const shouldShowChat = !routesWithoutChat.includes(router.route);
 
 	return (
 		<div className="select-none">
@@ -23,6 +26,7 @@ export default function App({ Component, pageProps, router }: { Component: any; 
 			{shouldShowLayout && <Navbar />}
 			<AnimatePresence mode="wait">
 				<Component key={router.route} {...pageProps} />
+				{shouldShowChat && <Chat />}
 				<SpeedInsights />
 				<Analytics />
 			</AnimatePresence>
