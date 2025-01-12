@@ -14,15 +14,15 @@ const MaskCursor: React.FC = () => {
 		const elementUnderCursor = document.elementFromPoint(x, y) as HTMLElement;
 		if (elementUnderCursor && elementUnderCursor.classList.contains('blend-target')) {
 			gsap.to(circle.current, {
-				width: 300,
-				height: 300,
+				width: 150,
+				height: 150,
 				duration: 0.3,
 				ease: 'sine',
 			});
 		} else {
 			gsap.to(circle.current, {
-				width: 30,
-				height: 30,
+				width: 15,
+				height: 15,
 				duration: 0.3,
 				ease: 'sine',
 			});
