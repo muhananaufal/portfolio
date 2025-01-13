@@ -9,7 +9,7 @@ import Head from 'next/head';
 import { Chat } from '@/components/Chat';
 
 export default function App({ Component, pageProps, router }: { Component: any; pageProps: any; router: any }) {
-	// useDisableInteractions();
+	useDisableInteractions();
 
 	const routesWithoutNavbarAndFooter = ['/articles', '/rewinds/2023', '/rewinds/2024', '/rewinds/2025', '/me'];
 	const shouldShowLayout = !routesWithoutNavbarAndFooter.includes(router.route);
