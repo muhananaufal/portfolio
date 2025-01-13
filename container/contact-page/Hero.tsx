@@ -27,11 +27,11 @@ export default function Hero() {
 									unoptimized
 								/>
 							</motion.span>
-							<h1 className="heading tracking-[-1.3px] text-black font-semibold font-FoundersGrotesk uppercase blend-target">
+							<span className="heading tracking-[-1.3px] text-black font-semibold font-FoundersGrotesk uppercase blend-target">
 								LET’S START <br />
-							</h1>
+							</span>
 						</div>
-						<h1 className="blend-target">A PROJECT TOGETHER</h1>
+						<span className="blend-target">A PROJECT TOGETHER</span>
 					</h1>
 				</div>
 				<div className="w-full">

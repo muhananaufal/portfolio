@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { text, curve, translate } from '@/motion';
+import { usePathname } from 'next/navigation';
 
 const routes = {
 	'/': 'Home',
@@ -29,7 +30,7 @@ const anim = (variants) => ({
 });
 
 export default function Curve({ children, backgroundColor }) {
-	const router = useRouter();
+	const router = usePathname();
 	const [dimensions, setDimensions] = useState({ width: null, height: null });
 	const [currentGreeting, setCurrentGreeting] = useState(0);
 

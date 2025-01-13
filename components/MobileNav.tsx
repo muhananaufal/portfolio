@@ -19,7 +19,7 @@ export default function MobileNav() {
 				</Link>
 				<HiOutlineMenuAlt4 onClick={() => setToggle(true)} className="text-3xl cursor-pointer text-black" />
 			</div>
-			<AnimatePresence mode="wait">
+			<AnimatePresence>
 				{toggle && (
 					<motion.div
 						initial={{ y: '-100%' }}
@@ -37,7 +37,7 @@ export default function MobileNav() {
 						<ul className="h-full w-full flex justify-center text-left flex-col gap-[10px] padding-x">
 							{navbarItems.map((item) => (
 								<Link
-								href={item.href}
+									href={item.href}
 									key={item.id}
 									onClick={(toggle) => setToggle(!toggle)}
 									className="text-[80px] leading-[67px] font-FoundersGrotesk uppercase font-bold tracking-[-.9] hover:text-about active:text-about transition-all duration-500 text-white"
