@@ -175,7 +175,7 @@ const Form = () => {
 			<div className="w-full flex items-center justify-end sm:justify-start xm:justify-start pt-[50px]">
 				<div className="flex sm:flex-col xm:flex-col gap-[25px]">
 					<div className="w-fit flex items-center justify-between bg-secondry cursor-pointer rounded-full group">
-						<ButtonContact bgcolor="#1D1815" title="send inquiry" className="bg-white" onClick={handleSendInquiry} />
+						<ButtonContact bgcolor="#35292E" title="send inquiry" className="bg-white" onClick={handleSendInquiry} />
 					</div>
 				</div>
 			</div>

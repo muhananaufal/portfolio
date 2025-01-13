@@ -19,7 +19,7 @@ export const ChatButton = ({ onClick }: ChatButtonProps) => {
 				opacity: isHovered ? 0 : 1,
 				duration: 0.3,
 				ease: 'power2.inOut',
-				color: '#49B4CA',
+				color: '#4497AD',
 			});
 		}
 	}, [isHovered]);

@@ -35,7 +35,6 @@ export default function Socials() {
 						<TextMask>{phrase}</TextMask>
 					</h1>
 				</div>
-				<div className="w-full border-t border-black pt-[20px]"></div>
 			</div>
 			<motion.div className="w-full absolute top-[50%] transform translate-y-[-50%] gap-[30px] flex items-center justify-center" style={{ y: mq }}>
 				<Eyes className="w-[230px] h-[230px] md:w-[200px] md:h-[200px] sm:w-[150px] sm:h-[150px] xm:w-[150px] xm:h-[150px] sm:flex-col xm:flex-col" />

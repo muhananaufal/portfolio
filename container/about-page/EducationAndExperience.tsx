@@ -34,7 +34,7 @@ export default function EducationAndExperience() {
 				<div className="flex flex-col gap-[30px]">
 					<Heading title="My Education" className="blend-target" />
 					<div className="w-fit flex items-center justify-between bg-secondry cursor-pointer rounded-full group" onMouseEnter={() => setHovered('amikom')} onMouseLeave={() => setHovered(null)}>
-						<RoundButton href="https://home.amikom.ac.id/" title="UNIVERSITAS AMIKOM YOGYAKARTA" bgcolor="#1D1815" className="bg-white text-black" style={{ color: '#F4F4F2' }} />
+						<RoundButton href="https://home.amikom.ac.id/" title="UNIVERSITAS AMIKOM YOGYAKARTA" bgcolor="#35292E" className="bg-white text-black" style={{ color: '#E1E1E1' }} />
 					</div>
 					<div className="w-full">
 						<div className="w-full flex gap-[30px] h-full items-end sm:items-start sm:flex-col xm:items-start xm:flex-col">
@@ -67,7 +67,7 @@ export default function EducationAndExperience() {
 						<div className="flex flex-col gap-[30px]">
 							<Heading title="My Experience" className="blend-target" />
 							<div className="w-fit flex items-center justify-between bg-secondry cursor-pointer rounded-full group" onMouseEnter={() => setHovered('megadata')} onMouseLeave={() => setHovered(null)}>
-								<RoundButton href="https://megadata.net.id/" title="MEGA ARTHA LINTAS DATA" bgcolor="#1D1815" className="bg-white text-black" style={{ color: '#F4F4F2' }} />
+								<RoundButton href="https://megadata.net.id/" title="MEGA ARTHA LINTAS DATA" bgcolor="#35292E" className="bg-white text-black" style={{ color: '#E1E1E1' }} />
 							</div>
 							<div className="w-full">
 								<div className="w-full flex gap-[30px] h-full items-end sm:items-start sm:flex-col xm:items-start xm:flex-col">
@@ -102,7 +102,7 @@ export default function EducationAndExperience() {
 						<div className="flex flex-col gap-[30px] w-[50%]">
 							<Heading title="My Experience" className="blend-target" />
 							<div className="w-fit flex items-center justify-between bg-secondry cursor-pointer rounded-full group" onMouseEnter={() => setHovered('megadata')} onMouseLeave={() => setHovered(null)}>
-								<RoundButton href="https://megadata.net.id/" title="MEGA ARTHA LINTAS DATA" bgcolor="#1D1815" className="bg-white text-black" style={{ color: '#F4F4F2' }} />
+								<RoundButton href="https://megadata.net.id/" title="MEGA ARTHA LINTAS DATA" bgcolor="#35292E" className="bg-white text-black" style={{ color: '#E1E1E1' }} />
 							</div>
 							<div className="w-full">
 								<div className="w-full flex gap-[30px] h-full items-end sm:items-start sm:flex-col xm:items-start xm:flex-col">

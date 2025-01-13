@@ -19,7 +19,7 @@ export default function Links() {
 	};
 
 	return (
-		<Curve backgroundColor="#F4F4F2">
+		<Curve backgroundColor="#E1E1E1">
 			<FollowerPointerCard title={<TitleComponent name={author.authorName} avatar={author.authorAvatar} />}>
 				<div className="min-h-screen flex flex-col items-center justify-start pt-16 px-4 bg-white">
 					<LinksHead />

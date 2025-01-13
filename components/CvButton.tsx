@@ -29,10 +29,10 @@ export default function CvButton() {
 				}}
 				whileHover={{ scale: 1.02 }}
 			>
-				<div className="absolute inset-0 bg-[#fefcebc9] transition-transform duration-700 ease-in-out transform origin-left group-hover:origin-right" />
+				<div className="absolute inset-0 bg-[#E1E1E1c9] transition-transform duration-700 ease-in-out transform origin-left group-hover:origin-right" />
 				<div className="absolute inset-0 bg-black transform scale-x-0 transition-transform duration-700 ease-in-out origin-left group-hover:scale-x-100" />
 
-				<div className="w-8 h-8 rounded-full bg-black group-hover:bg-[#fefcebc9] flex items-center justify-center transition-all duration-700 ease-in-out relative z-10 shadow-md">
+				<div className="w-8 h-8 rounded-full bg-black group-hover:bg-[#E1E1E1] flex items-center justify-center transition-all duration-700 ease-in-out relative z-10 shadow-md">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="24"

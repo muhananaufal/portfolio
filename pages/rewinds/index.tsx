@@ -24,7 +24,7 @@ export default function Rewinds() {
 
 	return (
 		<>
-			<Curve backgroundColor={'#F4F4F2'}>
+			<Curve backgroundColor={'#E1E1E1'}>
 				<MaskCursor />
 				<HeroRewinds />
 				{isTabletOrBelow ? (

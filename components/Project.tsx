@@ -42,7 +42,7 @@ export default function Project({ item }: { item: any }) {
 						{item.links.map((link: any) => (
 							<div className="w-fit rounded-[50px] border border-[#ffffff77] cursor-pointer" key={link.id}>
 								<Link className="text-[18px] leading-[18px] font-NeueMontreal text-white uppercase group-hover:text-secondry transition-all duration-300 ease-in-out hover:text-secondry" href={link.href}>
-									<Rounded className="py-[10px]" backgroundColor="#F4F4F2">
+									<Rounded className="py-[10px]" backgroundColor="#E1E1E1">
 										<p className="z-10 px-[15px]">{link.title}</p>
 									</Rounded>
 								</Link>
@@ -54,7 +54,7 @@ export default function Project({ item }: { item: any }) {
 			<div className="w-full flex pt-[50px] pb-[200px] justify-center">
 				<div className="flex items-center justify-between bg-white cursor-pointer rounded-full group">
 					<Link className="text-[19px] text-secondry uppercase font-normal font-NeueMontreal" href={'/presentation'}>
-						<Rounded className="py-[10px]" backgroundColor="#1D1815">
+						<Rounded className="py-[10px]" backgroundColor="#35292E">
 							<p className="text-secondry z-10 px-[15px] ml-[30px] py-[10px] group-hover:text-white">view all case studies</p>
 							<div className="bg-secondry p-[15px] rounded-full scale-[0.3] mr-[17px] group-hover:scale-[1] transition-all z-10 text-secondry group-hover:bg-white  duration-300 ease-in-out">
 								<ArrowUpRight strokeWidth={1.5} size={25} />
