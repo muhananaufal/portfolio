@@ -6,7 +6,7 @@ export default function Hero() {
 		<section className="w-full padding-x bg-about sticky top-0 h-[65vh]">
 			<div className="w-full pt-[170px] pb-[20px]">
 				<div className="w-fit relative">
-					<h1 className="heading tracking-[-1.3px] text-[#212121] font-semibold font-FoundersGrotesk uppercase blend-target">
+					<h1 className="heading tracking-[-1.3px] text-black font-semibold font-FoundersGrotesk uppercase blend-target">
 						Projects
 						<sup className="paragraph font-normal absolute top-[20px] ml-[10px] font-NeueMontreal">({projectsItem.length})</sup>
 					</h1>

@@ -13,7 +13,7 @@ export default function MobileNav() {
 	const [toggle, setToggle] = useState(false);
 	return (
 		<>
-			<div className="w-full hidden justify-between items-center h-[8vh] padding-x sm:flex xm:flex md:flex bg-[#DBE2EF] " >
+			<div className="w-full hidden justify-between items-center h-[8vh] padding-x sm:flex xm:flex md:flex bg-white ">
 				<Link href={'/'}>
 					<Image src={logo} alt="ochi logo" width={200} height={200} />
 				</Link>
@@ -32,15 +32,15 @@ export default function MobileNav() {
 							<Link href={'/'}>
 								<Image src={logo} alt="logo" width={200} height={200} className="invert" />
 							</Link>
-							<IoMdClose onClick={() => setToggle(false)} className="text-3xl cursor-pointer text-background" />
+							<IoMdClose onClick={() => setToggle(false)} className="text-3xl cursor-pointer text-white hover:text-about active:text-about" />
 						</div>
 						<ul className="h-full w-full flex justify-center text-left flex-col gap-[10px] padding-x">
 							{navbarItems.map((item) => (
 								<Link
-									href={item.href}
+								href={item.href}
 									key={item.id}
 									onClick={(toggle) => setToggle(!toggle)}
-									className="text-[80px] leading-[67px] font-FoundersGrotesk uppercase font-bold tracking-[-.9] hover:text-white active:text-white transition-all duration-500"
+									className="text-[80px] leading-[67px] font-FoundersGrotesk uppercase font-bold tracking-[-.9] hover:text-about active:text-about transition-all duration-500 text-white"
 								>
 									{item.title}
 								</Link>

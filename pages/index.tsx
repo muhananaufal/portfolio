@@ -13,7 +13,7 @@ export default function Home() {
 
 	return (
 		<>
-			<Curve backgroundColor={'#DBE2EF'}>
+			<Curve backgroundColor={'#F4F4F2'}>
 				<MaskCursor />
 				<Hero />
 				<div className="w-full bg-marquee z-10 relative rounded-t-[20px] padding-y">

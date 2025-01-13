@@ -7,7 +7,7 @@ export default function Hero() {
 		<section className="w-full padding-x">
 			<div className="w-full flex flex-col">
 				<div className="w-full margin">
-					<h1 className="heading tracking-[-1.3px] text-[#212121] font-semibold font-FoundersGrotesk uppercase">
+					<h1 className="heading tracking-[-1.3px] text-black font-semibold font-FoundersGrotesk uppercase">
 						<div className="flex items-center gap-[5px]">
 							<motion.span
 								initial={{ width: 0 }}
@@ -27,14 +27,11 @@ export default function Hero() {
 									unoptimized
 								/>
 							</motion.span>
-							<h1 className="heading tracking-[-1.3px] text-[#212121] font-semibold font-FoundersGrotesk uppercase blend-target">
+							<h1 className="heading tracking-[-1.3px] text-black font-semibold font-FoundersGrotesk uppercase blend-target">
 								LET’S START <br />
 							</h1>
 						</div>
-						<h1 className='blend-target'>
-
-						A PROJECT TOGETHER
-						</h1>
+						<h1 className="blend-target">A PROJECT TOGETHER</h1>
 					</h1>
 				</div>
 				<div className="w-full">

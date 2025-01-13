@@ -12,8 +12,8 @@ export default function Contact() {
 	}, []);
 	return (
 		<>
-			<Curve backgroundColor={'#DBE2EF'}>
-			<MaskCursor />
+			<Curve backgroundColor={'#F4F4F2'}>
+				<MaskCursor />
 				<HeroContact />
 				<Form />
 				<Socials />

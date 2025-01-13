@@ -1,12 +1,12 @@
-"use client";
-import Image from "next/image";
-import { eyes } from "@/public";
-import React, { useEffect, useState } from "react";
+'use client';
+import Image from 'next/image';
+import { eyes } from '@/public';
+import React, { useEffect, useState } from 'react';
 
 export default function Eyes({ className }: { className: string }) {
 	const [rotate, setRotate] = useState(0);
 	useEffect(() => {
-		window.addEventListener("mousemove", (e) => {
+		window.addEventListener('mousemove', (e) => {
 			let mouseX = e.clientX;
 			let mouseY = e.clientY;
 
@@ -20,8 +20,7 @@ export default function Eyes({ className }: { className: string }) {
 
 	return (
 		<div className="w-full gap-[30px] flex items-center justify-center">
-			<div
-				className={`bg-white border-[2px] border-[#21212188] rounded-full flex items-center justify-center ${className}`}>
+			<div className={`bg-white border-[2px] border-black rounded-full flex items-center justify-center ${className}`}>
 				<Image
 					style={{
 						transform: `rotate(${rotate}deg)`,
@@ -31,8 +30,7 @@ export default function Eyes({ className }: { className: string }) {
 					className="w-full h-full object-cover"
 				/>
 			</div>
-			<div
-				className={`bg-white border-[2px] border-[#21212188] rounded-full flex items-center justify-center ${className}`}>
+			<div className={`bg-white border-[2px] border-black rounded-full flex items-center justify-center ${className}`}>
 				<Image
 					style={{
 						transform: `rotate(${rotate}deg)`,

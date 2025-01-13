@@ -47,7 +47,7 @@ export default function LinksHead() {
 				<div className="absolute top-[3.5rem] z-10 custom-hover cursor-none">
 					<motion.button
 						onClick={handleCopy}
-						className={`custom-hover cursor-none flex items-center justify-center w-12 h-12 rounded-full transition-all duration-500 ${copied ? 'bg-white text-black' : 'bg-black text-white'}`}
+						className={`custom-hover cursor-none flex items-center justify-center w-12 h-12 rounded-full transition-all duration-500 border-2 border-black ${copied ? 'bg-black text-[#FEFCEB]' : 'bg-[#FEFCEB] text-black'}`}
 						initial={{ scale: 0, rotate: -180 }}
 						animate={{ scale: 1, rotate: 0 }}
 						whileTap={{ scale: 0.9 }}
@@ -59,8 +59,8 @@ export default function LinksHead() {
 						}}
 						whileHover={{
 							scale: 1.3,
-							color: '#000000',
-							backgroundColor: '#ffffff',
+							backgroundColor: '#1D1815',
+							color: '#FEFCEB',
 							transition: {
 								type: 'ease',
 								stiffness: 500,
@@ -74,7 +74,7 @@ export default function LinksHead() {
 				<div className="ms-44 absolute top-[20.7rem] z-10 custom-hover cursor-none">
 					<motion.button
 						onClick={handleQr}
-						className={`custom-hover cursor-none flex items-center justify-center w-12 h-12 rounded-full transition-all duration-500 ${copied ? 'bg-white text-black' : 'bg-black text-white'}`}
+						className={`custom-hover cursor-none flex items-center justify-center w-12 h-12 rounded-full transition-all duration-500 border-2 border-black ${copied ? 'bg-black text-[#FEFCEB]' : 'bg-[#FEFCEB] text-black'}`}
 						initial={{ scale: 0, rotate: -180 }}
 						animate={{ scale: 1, rotate: 0 }}
 						whileTap={{ scale: 0.9 }}
@@ -86,8 +86,8 @@ export default function LinksHead() {
 						}}
 						whileHover={{
 							scale: 1.3,
-							color: '#000000',
-							backgroundColor: '#ffffff',
+							backgroundColor: '#1D1815',
+							color: '#FEFCEB',
 							transition: {
 								type: 'ease',
 								stiffness: 500,
@@ -117,7 +117,7 @@ export default function LinksHead() {
 					}}
 					className="relative w-56 h-56 mb-14 mt-10"
 				>
-					<img src="/gif/profile.gif" alt="Profile" className="object-cover scale-150" />
+					<img src="/gif/profile.gif" alt="Profile" className="object-cover scale-150 " />
 				</motion.div>
 			</div>
 

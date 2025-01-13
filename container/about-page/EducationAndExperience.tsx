@@ -29,12 +29,12 @@ export default function EducationAndExperience() {
 					<span className="sub-heading font-medium font-NeueMontreal link-flash blend-target"> failing.</span>
 				</h2>
 			</div>
-			<div className="w-full border-b border-[#21212155] my-[50px] py-[20px]"></div>
+			<div className="w-full border-b border-black my-[50px] py-[20px]"></div>
 			<div className="w-full flex justify-between padding-x sm:flex-col xm:flex-col gap-[30px]">
 				<div className="flex flex-col gap-[30px]">
 					<Heading title="My Education" className="blend-target" />
 					<div className="w-fit flex items-center justify-between bg-secondry cursor-pointer rounded-full group" onMouseEnter={() => setHovered('amikom')} onMouseLeave={() => setHovered(null)}>
-						<RoundButton href="https://home.amikom.ac.id/" title="UNIVERSITAS AMIKOM YOGYAKARTA" bgcolor="#000" className="bg-white text-black" style={{ color: '#fff' }} />
+						<RoundButton href="https://home.amikom.ac.id/" title="UNIVERSITAS AMIKOM YOGYAKARTA" bgcolor="#1D1815" className="bg-white text-black" style={{ color: '#F4F4F2' }} />
 					</div>
 					<div className="w-full">
 						<div className="w-full flex gap-[30px] h-full items-end sm:items-start sm:flex-col xm:items-start xm:flex-col">
@@ -60,14 +60,14 @@ export default function EducationAndExperience() {
 					<Image src={amikom} alt="universitas amikom yogyakarta" className={`w-full h-full transition transform duration-[2s] ease-[.215,.61,.355,1] ${hovered === 'amikom' && 'scale-[1.09]'}`} />
 				</div>
 			</div>
-			<div className="w-full border-b border-[#21212155] my-[50px] py-[20px]"></div>
+			<div className="w-full border-b border-black my-[50px] py-[20px]"></div>
 			<div className="w-full flex justify-between padding-x sm:flex-col xm:flex-col gap-[30px]">
 				{isTabletOrBelow ? (
 					<>
 						<div className="flex flex-col gap-[30px]">
 							<Heading title="My Experience" className="blend-target" />
 							<div className="w-fit flex items-center justify-between bg-secondry cursor-pointer rounded-full group" onMouseEnter={() => setHovered('megadata')} onMouseLeave={() => setHovered(null)}>
-								<RoundButton href="https://megadata.net.id/" title="MEGA ARTHA LINTAS DATA" bgcolor="#000" className="bg-white text-black" style={{ color: '#fff' }} />
+								<RoundButton href="https://megadata.net.id/" title="MEGA ARTHA LINTAS DATA" bgcolor="#1D1815" className="bg-white text-black" style={{ color: '#F4F4F2' }} />
 							</div>
 							<div className="w-full">
 								<div className="w-full flex gap-[30px] h-full items-end sm:items-start sm:flex-col xm:items-start xm:flex-col">
@@ -102,7 +102,7 @@ export default function EducationAndExperience() {
 						<div className="flex flex-col gap-[30px] w-[50%]">
 							<Heading title="My Experience" className="blend-target" />
 							<div className="w-fit flex items-center justify-between bg-secondry cursor-pointer rounded-full group" onMouseEnter={() => setHovered('megadata')} onMouseLeave={() => setHovered(null)}>
-								<RoundButton href="https://megadata.net.id/" title="MEGA ARTHA LINTAS DATA" bgcolor="#000" className="bg-white text-black" style={{ color: '#fff' }} />
+								<RoundButton href="https://megadata.net.id/" title="MEGA ARTHA LINTAS DATA" bgcolor="#1D1815" className="bg-white text-black" style={{ color: '#F4F4F2' }} />
 							</div>
 							<div className="w-full">
 								<div className="w-full flex gap-[30px] h-full items-end sm:items-start sm:flex-col xm:items-start xm:flex-col">

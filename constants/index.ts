@@ -313,7 +313,11 @@ export const linksTree = [
 		url: 'https://www.instagram.com/_muhananaufal_/',
 		icon: Instagram,
 	},
-
+	{
+		name: 'WhatsApp',
+		url: 'https://wa.me/+6285799470985',
+		icon: MessageCircleMore,
+	},
 	{
 		name: 'Facebook',
 		url: 'https://www.facebook.com/profile.php?id=100022179201787/',
@@ -323,10 +327,5 @@ export const linksTree = [
 		name: 'Gmail',
 		url: 'https://mail.google.com/mail/?view=cm&to=muhananaufal8@gmail.com',
 		icon: Mail,
-	},
-	{
-		name: 'Whatsapp',
-		url: 'https://wa.me/6285799470985',
-		icon: MessageCircleMore,
 	},
 ];

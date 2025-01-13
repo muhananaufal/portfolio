@@ -16,7 +16,7 @@ export default function Faq() {
 				may want to ask us:
 			</h1>
 			{FaqItems.map((item) => (
-				<div key={item.id} className={`w-full flex py-[10px] flex-col ${item.id == 1 ? 'border-y border-[#21212155]' : 'border-b border-[#21212155]'}`}>
+				<div key={item.id} className={`w-full flex py-[10px] flex-col ${item.id == 1 ? 'border-y border-black' : 'border-b border-black'}`}>
 					<div className="w-full flex items-center justify-between sm:gap-[15px] xm:gap-[15px] py-[10px] padding-x">
 						<div className="w-[50%] sm:w-full xm:w-full">
 							<h1 className="paragraph font-normal font-NeueMontreal text-secondry blend-target">{item.question}</h1>

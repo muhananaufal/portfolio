@@ -16,7 +16,7 @@ export default function Rewinds2023() {
 
 	return (
 		<>
-			<Curve backgroundColor={'#DBE2EF'}>
+			<Curve backgroundColor={'#F4F4F2'}>
 				<MouseImageGallery images={images} />
 				<Gallery />
 			</Curve>

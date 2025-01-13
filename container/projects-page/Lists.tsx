@@ -8,10 +8,10 @@ export default function Lists() {
 	return (
 		<div className="w-full" ref={container}>
 			<div className="w-full flex flex-col items-center justify-center bg-about">
-				<div data-scroll data-scroll-speed="-.2" className="bg-[#393E46] w-[75%] py-[20px] rounded-t-[10px]	" />
-				<div className="bg-[#222831] relative z-20 w-[90%] py-[20px] rounded-t-[10px]" data-scroll data-scroll-speed="-.1" />
+				<div data-scroll data-scroll-speed="-.2" className="bg-[#F0CD69] w-[75%] py-[20px] rounded-t-[10px]	" />
+				<div className="bg-[#ecc044] relative z-20 w-[90%] py-[20px] rounded-t-[10px]" data-scroll data-scroll-speed="-.1" />
 			</div>
-			<section className="w-full relative z-30 padding-y rounded-t-[20px] bg-[#DBE2EF]">
+			<section className="w-full relative z-30 padding-y rounded-t-[20px] bg-white">
 				<div>
 					<h2 className="sub-heading font-normal padding-x font-NeueMontreal text-secondry blend-target">
 						Showcasing Your Vision. Dive into the projects that reflect your strategic thinking and creative excellence. Each project is crafted with purpose, designed to inspire action, and make a lasting impression.
@@ -27,7 +27,7 @@ export default function Lists() {
 							<ProjectCard item={item} key={item.id} />
 							<div className="flex flex-wrap items-center gap-[10px] mt-[20px]">
 								{item.links.map((link) => (
-									<Tags bgcolor="#212121" item={link} key={link.id} className="hover:text-white" />
+									<Tags bgcolor="#1D1815" item={link} key={link.id} className="hover:text-white" />
 								))}
 							</div>
 						</div>

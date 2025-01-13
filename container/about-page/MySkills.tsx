@@ -15,7 +15,7 @@ export default function MySkills() {
 				<h1 className="sub-heading font-medium font-NeueMontreal text-secondry blend-target">My Skills</h1>
 			</div>
 			{skillsItems.map((item) => (
-				<div key={item.id} className={`w-full flex py-[10px] flex-col ${item.id == 1 ? 'border-y border-[#21212155]' : 'border-b border-[#21212155]'}`}>
+				<div key={item.id} className={`w-full flex py-[10px] flex-col ${item.id == 1 ? 'border-y border-black' : 'border-b border-black'}`}>
 					<div className="w-full flex items-center justify-between py-[10px] padding-x">
 						<div className="w-[50%] sm:w-full xm:w-full">
 							<h3 className="paragraph font-normal font-NeueMontreal text-secondry blend-target">{item.phase}</h3>

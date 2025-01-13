@@ -12,7 +12,7 @@ export default function Projects() {
 	}, []);
 	return (
 		<>
-			<Curve backgroundColor={'#DBE2EF'}>
+			<Curve backgroundColor={'#F4F4F2'}>
 				<MaskCursor />
 				<HeroProjects />
 				<ListsProjects />

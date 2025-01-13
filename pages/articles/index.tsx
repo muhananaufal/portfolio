@@ -12,7 +12,7 @@ export default function Articles() {
 	}, []);
 	return (
 		<>
-			<Curve backgroundColor={'#DBE2EF'}>
+			<Curve backgroundColor={'#F4F4F2'}>
 				<HeroArticles />
 			</Curve>
 		</>

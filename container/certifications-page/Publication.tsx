@@ -25,12 +25,12 @@ export default function Publication() {
 			<div className="pl-[50px] sm:px-[20px] xm:px-[20px]">
 				<h2 className="sub-heading font-medium font-NeueMontreal text-white">
 					Get closer to my{' '}
-					<LinkView url="https://www.cloudskillsboost.google/public_profiles/3a633293-2b34-40d7-a7e0-cc2413ec4fad" className="sub-heading font-medium font-NeueMontreal dark link-flash blend-target text-white">
+					<LinkView url="https://www.cloudskillsboost.google/public_profiles/3a633293-2b34-40d7-a7e0-cc2413ec4fad" className="sub-heading font-medium font-NeueMontreal dark link-flash blend-target text-[#F0CD69]">
 						Google Cloud Profile:
 					</LinkView>
 				</h2>
 			</div>
-			<div className="w-full border-b border-[#21212155] md:my-[25px] md:py-[10px] lg:my-[50px] lg:py-[20px] xl:my-[50px] xl:py-[20px]"></div>
+			<div className="w-full border-b border-black md:my-[25px] md:py-[10px] lg:my-[50px] lg:py-[20px] xl:my-[50px] xl:py-[20px]"></div>
 			<motion.div
 				className="w-full padding-x py-[30px]"
 				layout
@@ -94,7 +94,7 @@ export default function Publication() {
 					<motion.div className="flex justify-center mt-[20px]" layout initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}>
 						<motion.button onClick={() => setShowAll(!showAll)} className="group" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
 							<div className="w-fit flex items-center justify-between bg-secondry cursor-pointer rounded-full group">
-								<RoundButton className="bg-white text-black" bgcolor="#000" title={showAll ? 'Show Less' : 'Show More'} href={showAll ? '#show-less' : '#show-more'} style={{ color: '#fff' }} />
+								<RoundButton className="bg-white text-black" bgcolor="#1D1815" title={showAll ? 'Show Less' : 'Show More'} href={showAll ? '#show-less' : '#show-more'} style={{ color: '#F4F4F2' }} />
 							</div>
 						</motion.button>
 					</motion.div>

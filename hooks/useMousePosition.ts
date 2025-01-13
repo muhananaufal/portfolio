@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
 
 export const useMousePosition = (callback: (x: number, y: number) => void) => {
 	const mouse = useRef({ x: 0, y: 0 });

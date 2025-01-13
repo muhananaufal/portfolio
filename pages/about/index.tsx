@@ -12,7 +12,7 @@ export default function About() {
 	}, []);
 	return (
 		<>
-			<Curve backgroundColor={'#DBE2EF'}>
+			<Curve backgroundColor={'#F4F4F2'}>
 				<MaskCursor />
 				<HeroAbout />
 				<MySkills />

@@ -11,7 +11,7 @@ export default function Hero() {
 				<div className="w-full flex flex-col justify-between h-[75vh] sm:h-[85vh] xm:h-[85vh]">
 					<div className="w-full flex sm:flex-col xm:flex-col justify-between gap-[20px] pl-[50px] md:pl-[30px] sm:pl-[20px] xm:pl-[20px]">
 						<div>
-							<h1 className="heading tracking-[-1.3px] text-[#212121] font-semibold font-FoundersGrotesk uppercase blend-target">
+							<h1 className="heading tracking-[-1.3px] text-black font-semibold font-FoundersGrotesk uppercase blend-target">
 								Seamless <br />
 								<div className="flex items-center gap-[5px]">
 									<motion.span
@@ -33,7 +33,7 @@ export default function Hero() {
 											unoptimized
 										/>
 									</motion.span>
-									<h1 className="heading tracking-[-1.3px] text-[#212121] font-semibold font-FoundersGrotesk uppercase blend-target">Experiences</h1>
+									<h1 className="heading tracking-[-1.3px] text-black font-semibold font-FoundersGrotesk uppercase blend-target">Experiences</h1>
 								</div>
 								via Fullstack
 							</h1>

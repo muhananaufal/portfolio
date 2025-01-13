@@ -5,10 +5,10 @@ export default function Hero() {
 				<div className="w-full flex flex-col">
 					<div className="w-full margin padding-x">
 						<div>
-							<h1 className="heading tracking-[-1.3px] text-[#212121] font-semibold font-FoundersGrotesk uppercase blend-target">ABOUT ME</h1>
+							<h1 className="heading tracking-[-1.3px] text-black font-semibold font-FoundersGrotesk uppercase blend-target">ABOUT ME</h1>
 						</div>
 					</div>
-					<div className="w-full border-t border-[#21212155]">
+					<div className="w-full border-t border-black">
 						<div className="w-[80%] sm:w-full xm:w-full sub-heading font-normal padding-x font-NeueMontreal text-secondry padding-y">
 							<p className="pb-4 tracking-wider">
 								A <span className="font-bold blend-target">Web Developer</span> and <span className="font-bold blend-target">Cloud Computing</span> enthusiast passionate about designing APIs, ensuring seamless system integration, and
