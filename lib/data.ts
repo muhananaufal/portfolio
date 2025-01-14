@@ -70,6 +70,9 @@ export const initialMessage = {
  - **GitHub:** [GitHub](https://github.com/muhananaufal/)  
  - **Instagram:** [Instagram](https://www.instagram.com/_muhananaufal_/)
  
+    9. **Curricular Vitae 📝**
+ - Please visit [muhananaufal.my.id/me](https://muhananaufal.my.id/me) and click the "Download CV" button to get Muhana Naufal's CV.
+ 
  ---
  
  ### **Response Rules:**
