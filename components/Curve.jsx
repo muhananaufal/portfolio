@@ -1,6 +1,5 @@
 'use client';
 import { motion } from 'framer-motion';
-import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { text, curve, translate } from '@/motion';
 import { usePathname } from 'next/navigation';
@@ -44,24 +43,24 @@ export default function Curve({ children, backgroundColor }) {
 	const greetingsDuration = 200;
 
 	useEffect(() => {
-		if (router.route === '/' && greetings.length > 1) {
+		if (router === '/' && greetings.length > 1) {
 			const interval = setInterval(() => {
 				setCurrentGreeting((prev) => (prev + 1 < greetings.length ? prev + 1 : prev));
 			}, greetingsDuration);
 			return () => clearInterval(interval);
 		}
-	}, [router.route]);
+	}, [router]);
 
 	const totalGreetingDuration = (greetings.length * greetingsDuration) / 1000;
 
 	return (
 		<div style={{ backgroundColor }}>
 			<div style={{ opacity: dimensions.width == null ? 1 : 0 }} className="fixed h w-full pointer-events-none left-0 top-0 z-8999 bg-black" />
-			<motion.p className="absolute left-1/2 top-[40%] text-white text-[50px] z-[9989] -translate-x-1/2 text-center" {...anim(text(router.route === '/' ? totalGreetingDuration : 0))}>
-				{router.route === '/' ? greetings[currentGreeting] : routes[router.route]}
+			<motion.p className="absolute left-1/2 top-[40%] text-white text-[50px] z-[9989] -translate-x-1/2 text-center" {...anim(text(router === '/' ? totalGreetingDuration : 0))}>
+				{router === '/' ? greetings[currentGreeting] : routes[router]}
 			</motion.p>
 
-			{dimensions.width != null && <SVG width={dimensions.width} height={dimensions.height} route={router.route} totalGreetingDuration={totalGreetingDuration} />}
+			{dimensions.width != null && <SVG width={dimensions.width} height={dimensions.height} route={router} totalGreetingDuration={totalGreetingDuration} />}
 			{children}
 		</div>
 	);

@@ -15,7 +15,7 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
 			{shouldShowLayout && <Navbar />}
 			<AnimatePresence mode="wait">
 				{children}
-				{/* {shouldShowChat && <Chat />} */}
+				{shouldShowChat && <Chat />}
 			</AnimatePresence>
 			{shouldShowLayout && <Footer />}
 		</>
