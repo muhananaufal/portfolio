@@ -33,7 +33,7 @@ export default function Navbar() {
 				</div>
 				<div className="flex gap-x-[20px] w-[50%]">
 					{navbarItems.map((item) => (
-						<Link key={item.id} className={`w-fit paragraph font-medium font-NeueMontreal text-black capitalize flex flex-col hover ${item.id === 7 && 'ml-auto'}`} href={item.href}>
+						<Link key={item.id} className={`w-fit paragraph font-medium font-NeueMontreal text-black capitalize flex flex-col hover ${item.id === 6 && 'ml-auto'}`} href={item.href}>
 							<TextHover titile1={item.title} titile2={item.title} />
 						</Link>
 					))}

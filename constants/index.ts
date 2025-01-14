@@ -20,21 +20,16 @@ export const navbarItems = [
 	},
 	{
 		id: 4,
-		title: 'Articles',
-		href: '/articles',
-	},
-	{
-		id: 5,
 		title: 'Rewinds',
 		href: '/rewinds',
 	},
 	{
-		id: 6,
+		id: 5,
 		title: 'LinkTree',
 		href: '/me',
 	},
 	{
-		id: 7,
+		id: 6,
 		title: 'Contact us',
 		href: '/contact',
 	},

@@ -13,7 +13,7 @@ export default function Rewinds() {
 		})();
 
 		const handleResize = () => {
-			setIsTabletOrBelow(window.innerWidth < 1024);
+			setIsTabletOrBelow(window.innerWidth <= 1024);
 		};
 
 		handleResize();

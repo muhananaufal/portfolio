@@ -64,9 +64,9 @@ const Form = () => {
 	return (
 		<section className="w-full padding-x padding-y">
 			<div className="w-full flex flex-col gap-[15px]">
-				<div className="w-full flex gap-[15px] sm:flex-col xm:flex-col">
-					<div className="flex gap-[10px] w-[50%] sm:w-full xm:w-full sm:flex-col xm:flex-col">
-						<div className="xl:min-w-max lg:min-w-max md:min-w-max">
+				<div className="w-full flex gap-[15px] sm:flex-col xm:flex-col md:flex-col">
+					<div className="flex gap-[10px] w-[50%] md:w-auto sm:w-auto xm:w-auto sm:flex-col xm:flex-col md:flex-col">
+						<div className="xl:min-w-max lg:min-w-max ">
 							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry blend-target">Hi! My name is</h2>
 						</div>
 						<div className="w-full">
@@ -78,8 +78,8 @@ const Form = () => {
 							/>
 						</div>
 					</div>
-					<div className="flex gap-[10px] w-[50%] sm:w-full xm:w-full sm:flex-col xm:flex-col">
-						<div className="xl:min-w-max lg:min-w-max md:min-w-max">
+					<div className="flex gap-[10px] w-[50%] md:w-auto sm:w-auto xm:w-auto sm:flex-col xm:flex-col md:flex-col">
+						<div className="xl:min-w-max lg:min-w-max ">
 							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry blend-target">, and I work with</h2>
 						</div>
 						<div className="w-full">
@@ -94,8 +94,8 @@ const Form = () => {
 				</div>
 				{/* Input lainnya */}
 				<div className="w-full flex gap-[10px]">
-					<div className="flex gap-[10px] w-full sm:flex-col xm:flex-col">
-						<div className="xl:min-w-max lg:min-w-max md:min-w-max">
+					<div className="flex gap-[10px] w-full sm:flex-col xm:flex-col md:flex-col">
+						<div className="xl:min-w-max lg:min-w-max ">
 							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry blend-target">I&apos;m seeking a partner to assist me with</h2>
 						</div>
 						<div className="w-full">
@@ -109,8 +109,8 @@ const Form = () => {
 					</div>
 				</div>
 				<div className="w-full flex gap-[10px]">
-					<div className="flex gap-[10px] w-full sm:flex-col xm:flex-col">
-						<div className="xl:min-w-max lg:min-w-max md:min-w-max">
+					<div className="flex gap-[10px] w-full sm:flex-col xm:flex-col md:flex-col">
+						<div className="xl:min-w-max lg:min-w-max ">
 							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry blend-target">Aiming to have it completed by</h2>
 						</div>
 						<div className="w-full">
@@ -124,8 +124,8 @@ const Form = () => {
 					</div>
 				</div>
 				<div className="w-full flex gap-[10px]">
-					<div className="flex gap-[10px] w-full sm:flex-col xm:flex-col">
-						<div className="xl:min-w-max lg:min-w-max md:min-w-max">
+					<div className="flex gap-[10px] w-full sm:flex-col xm:flex-col md:flex-col">
+						<div className="xl:min-w-max lg:min-w-max ">
 							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry blend-target">My budget for this project is approximately</h2>
 						</div>
 						<div className="w-full">
@@ -139,8 +139,8 @@ const Form = () => {
 					</div>
 				</div>
 				<div className="w-full flex gap-[10px]">
-					<div className="flex gap-[10px] w-full sm:flex-col xm:flex-col">
-						<div className="xl:min-w-max lg:min-w-max md:min-w-max">
+					<div className="flex gap-[10px] w-full sm:flex-col xm:flex-col md:flex-col">
+						<div className="xl:min-w-max lg:min-w-max ">
 							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry blend-target">Feel free to reach out to me at</h2>
 						</div>
 						<div className="w-full">
@@ -151,14 +151,14 @@ const Form = () => {
 								className="paragraph bg-transparent font-NeueMontreal font-normal text-secondry border-b border-black focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out w-full sm:w-full xm:w-full"
 							/>
 						</div>
-						<div className="xl:min-w-max lg:min-w-max md:min-w-max">
+						<div className="xl:min-w-max lg:min-w-max ">
 							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry blend-target">to discuss further.</h2>
 						</div>
 					</div>
 				</div>
 				<div className="w-full flex gap-[10px]">
-					<div className="flex gap-[10px] w-full sm:flex-col xm:flex-col">
-						<div className="xl:min-w-max lg:min-w-max md:min-w-max">
+					<div className="flex gap-[10px] w-full sm:flex-col xm:flex-col md:flex-col">
+						<div className="xl:min-w-max lg:min-w-max ">
 							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry blend-target">Optionally, I&apos;m sharing more:</h2>
 						</div>
 						<div className="w-full">
@@ -173,7 +173,7 @@ const Form = () => {
 				</div>
 			</div>
 			<div className="w-full flex items-center justify-end sm:justify-start xm:justify-start pt-[50px]">
-				<div className="flex sm:flex-col xm:flex-col gap-[25px]">
+				<div className="flex sm:flex-col xm:flex-col md:flex-col gap-[25px]">
 					<div className="w-fit flex items-center justify-between bg-secondry cursor-pointer rounded-full group">
 						<ButtonContact bgcolor="#35292E" title="send inquiry" className="bg-white" onClick={handleSendInquiry} />
 					</div>

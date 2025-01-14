@@ -15,9 +15,6 @@ export { default as ListsProjects } from './projects-page/Lists';
 export { default as HeroCertification } from './certifications-page/Hero';
 export { default as PublicationCertification } from './certifications-page/Publication';
 
-// articles page
-export { default as HeroArticles } from './articles-page/Hero';
-
 // contact page
 export { default as HeroContact } from './contact-page/Hero';
 export { default as Form } from './contact-page/Form';
