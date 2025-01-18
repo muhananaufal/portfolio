@@ -18,7 +18,7 @@ export default function Years() {
 	};
 
 	return (
-		<div onMouseMove={manageMouseMove} className="pt-[10%] pb-[12%] bg-about">
+		<div onMouseMove={manageMouseMove} className="pt-[10%] pb-[12%] bg-marquee">
 			<div className=" sm:w-full xm:w-full padding-x pb-[20px] w-max">
 				<h3 className="paragraph font-medium text-white font-NeueMontreal">Take a trip back in time! Pick a year</h3>
 			</div>

@@ -6,13 +6,25 @@ const config: Config = {
 	content: ['./pages/**/*.{js,ts,jsx,tsx,mdx}', './components/**/*.{js,ts,jsx,tsx,mdx}', './app/**/*.{js,ts,jsx,tsx,mdx}', './animation/**/*.{js,ts,jsx,tsx,mdx}', './container/**/*.{js,ts,jsx,tsx,mdx}'],
 	theme: {
 		extend: {
+			backgroundImage: {
+				about: 'linear-gradient(0deg, hsla(67, 55%, 85%, 1) 0%, hsla(172, 28%, 64%, 1) 100%)',
+				about2: 'linear-gradient(180deg, hsla(67, 55%, 85%, 1) 0%, hsla(172, 28%, 64%, 1) 100%)',
+			},
 			colors: {
 				black: '#35292E',
 				white: '#E1E1E1',
 				background: 'hsl(var(--background))',
 				secondry: '#35292E',
-				marquee: '#02354B',
-				about: '#4497AD',
+				marquee: '#2F6877',
+				about: {
+					DEFAULT: '#8ABDB6',
+					gradient: 'linear-gradient(0deg, hsla(67, 55%, 85%, 1) 0%, hsla(172, 28%, 64%, 1) 100%)',
+				},
+				about2: {
+					DEFAULT: '#8ABDB6',
+					gradient: 'linear-gradient(180deg, hsla(67, 55%, 85%, 1) 0%, hsla(172, 28%, 64%, 1) 100%)',
+				},
+				fire: '#ED901E',
 				foreground: 'hsl(var(--foreground))',
 				card: {
 					DEFAULT: 'hsl(var(--card))',

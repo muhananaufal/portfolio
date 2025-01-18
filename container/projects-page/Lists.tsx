@@ -7,9 +7,9 @@ export default function Lists() {
 	const container = useRef(null);
 	return (
 		<div className="w-full" ref={container}>
-			<div className="w-full flex flex-col items-center justify-center bg-about">
-				<div data-scroll data-scroll-speed="-.2" className="bg-[#DF9E4E] w-[75%] py-[20px] rounded-t-[10px]	" />
-				<div className="bg-[#ecc044] relative z-20 w-[90%] py-[20px] rounded-t-[10px]" data-scroll data-scroll-speed="-.1" />
+			<div className="w-full flex flex-col items-center justify-center bg-about2">
+				<div data-scroll data-scroll-speed="-.2" className="bg-fire w-[75%] py-[20px] rounded-t-[10px]	" />
+				<div className="bg-[#F8CC6B] relative z-20 w-[90%] py-[20px] rounded-t-[10px]" data-scroll data-scroll-speed="-.1" />
 			</div>
 			<section className="w-full relative z-30 padding-y rounded-t-[20px] bg-white">
 				<div>

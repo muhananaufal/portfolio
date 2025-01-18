@@ -29,7 +29,7 @@ export default function Publication() {
 						title="  Google Cloud Profile:"
 						url="https://www.cloudskillsboost.google/public_profiles/3a633293-2b34-40d7-a7e0-cc2413ec4fad"
 						imageSrc="/gcsb/public_profile.jpg"
-						className="sub-heading font-medium font-NeueMontreal dark link-flash blend-target text-[#DF9E4E] inline"
+						className="sub-heading font-medium font-NeueMontreal dark link-flash blend-target text-fire inline"
 					/>
 				</h2>
 			</div>

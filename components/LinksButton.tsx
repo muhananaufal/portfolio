@@ -7,7 +7,7 @@ export default function LinksButton() {
 	return (
 		<div className="w-full max-w-md space-y-4 mb-14 mt-4">
 			{linksTree.map((link, index) => {
-				const bgColor = index % 3 === 0 ? 'bg-[#4497AD]' : index % 3 === 1 ? 'bg-[#DF9E4E]' : 'bg-[#35292E]';
+				const bgColor = index % 3 === 0 ? 'bg-marquee' : index % 3 === 1 ? 'bg-fire' : 'bg-[#35292E]';
 
 				return (
 					<motion.a

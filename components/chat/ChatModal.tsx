@@ -57,8 +57,8 @@ export const ChatModal = ({ isOpen, onClose }: ChatModalProps) => {
 							Firefly AI
 							<Sparkles className="w-5 h-5" />
 						</h2>
-						<motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }} onClick={onClose} className="p-2 rounded-full hover:bg-gray-100">
-							<X className="w-5 h-5 md:w-6 md:h-6 lg:w-6 lg:h-6 xl:w-6 xl:h-6" />
+						<motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }} onClick={onClose} className="p-2 rounded-full bg-black hover:bg-white transition-colors">
+							<X className="w-5 h-5 md:w-6 md:h-6 lg:w-6 lg:h-6 xl:w-6 xl:h-6  text-white  hover:text-black transition-colors" />
 						</motion.button>
 					</div>
 
@@ -73,10 +73,10 @@ export const ChatModal = ({ isOpen, onClose }: ChatModalProps) => {
 							<div className="space-y-4 md:space-y-6 lg:space-y-6 xl:space-y-6">
 								{messages.map((message, index) => (
 									<motion.div key={index} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className={`flex items-center gap-3 md:gap-4 lg:gap-4 xl:gap-4 ${message.role === 'user' ? 'flex-row-reverse' : ''}`}>
-										<div className={`w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 xl:w-16 xl:h-16 rounded-full flex items-center justify-center ${message.role === 'user' ? 'bg-black' : 'bg-about'}`}>
+										<div className={`w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 xl:w-16 xl:h-16 rounded-full flex items-center justify-center ${message.role === 'user' ? 'bg-about' : 'bg-about'}`}>
 											{message.role === 'user' ? <Image className="text-white" src="/chat/march7-icon.gif" width={60} height={60} alt="User Icon" /> : <Image src="/chat/firefly-icon.gif" width={60} height={60} alt="AI Icon" />}
 										</div>
-										<div className={`max-w-[75%] rounded-lg p-3 text-base md:p-4 md:text-lg lg:p-4 lg:text-lg xl:p-4 xl:text-lg break-words ${message.role === 'user' ? 'bg-about text-black' : 'bg-black text-white'}`}>
+										<div className={`max-w-[75%] rounded-lg p-3 text-base md:p-4 md:text-lg lg:p-4 lg:text-lg xl:p-4 xl:text-lg break-words ${message.role === 'user' ? 'bg-marquee text-white' : 'bg-black text-white'}`}>
 											<ReactMarkdown
 												remarkPlugins={[remarkGfm]}
 												components={{

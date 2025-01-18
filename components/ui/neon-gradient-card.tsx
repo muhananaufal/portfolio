@@ -66,8 +66,8 @@ const NeonGradientCard: React.FC<NeonGradientCardProps> = ({
 	borderSize = 2,
 	borderRadius = 20,
 	neonColors = {
-		firstColor: '#4497AD',
-		secondColor: '#DF9E4E',
+		firstColor: '#E9EEC4',
+		secondColor: '#8ABDB6',
 	},
 	...props
 }) => {
@@ -115,7 +115,7 @@ const NeonGradientCard: React.FC<NeonGradientCardProps> = ({
 					'--after-blur': `${dimensions.width / 3}px`,
 				} as CSSProperties
 			}
-			className={cn('relative z-10 size-full rounded-lg', className)}
+			className={cn('relative z-10 size-full rounded-lg shadow-lg', className)}
 			{...props}
 		>
 			<div
