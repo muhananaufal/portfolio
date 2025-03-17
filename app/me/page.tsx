@@ -33,7 +33,7 @@ export default function Links() {
 
 const TitleComponent = ({ name, avatar }: { name: string; avatar: string }) => (
 	<div className="flex space-x-2 items-center">
-		<Image src={avatar} height="25" width="25" alt="thumbnail" className="rounded-full border-2 border-white" />
+		<Image src={avatar} height="25" width="25" alt="thumbnail" className="rounded-full border-2 border-white" unoptimized />
 		<p>{name}</p>
 	</div>
 );

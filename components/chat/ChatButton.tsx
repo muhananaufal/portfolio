@@ -31,6 +31,7 @@ export const ChatButton = ({ onClick }: ChatButtonProps) => {
 				onMouseEnter={() => setIsHovered(true)}
 				onMouseLeave={() => setIsHovered(false)}
 				className="relative w-14 h-14 md:w-15 md:h-15 lg:w-16 xl:w-16 lg:h-16 xl:h-16 bg-black rounded-full flex items-center justify-center cursor-pointer overflow-hidden"
+				aria-label='chat button'
 			>
 				<div ref={iconRef} className="absolute">
 					<Zap className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-8 xl:h-8 text-white " />

@@ -74,7 +74,11 @@ export const ChatModal = ({ isOpen, onClose }: ChatModalProps) => {
 								{messages.map((message, index) => (
 									<motion.div key={index} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className={`flex items-center gap-3 md:gap-4 lg:gap-4 xl:gap-4 ${message.role === 'user' ? 'flex-row-reverse' : ''}`}>
 										<div className={`w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 xl:w-16 xl:h-16 rounded-full flex items-center justify-center ${message.role === 'user' ? 'bg-about' : 'bg-about'}`}>
-											{message.role === 'user' ? <Image className="text-white" src="/chat/march7-icon.gif" width={60} height={60} alt="User Icon" /> : <Image src="/chat/firefly-icon.gif" width={60} height={60} alt="AI Icon" />}
+											{message.role === 'user' ? (
+												<Image className="text-white" src="/chat/march7-icon.gif" width={60} height={60} alt="User Icon" unoptimized />
+											) : (
+												<Image src="/chat/firefly-icon.gif" width={60} height={60} alt="AI Icon" unoptimized />
+											)}
 										</div>
 										<div className={`max-w-[75%] rounded-lg p-3 text-base md:p-4 md:text-lg lg:p-4 lg:text-lg xl:p-4 xl:text-lg break-words ${message.role === 'user' ? 'bg-marquee text-white' : 'bg-black text-white'}`}>
 											<ReactMarkdown
@@ -103,7 +107,7 @@ export const ChatModal = ({ isOpen, onClose }: ChatModalProps) => {
 								{isLoading && (
 									<motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="flex items-center gap-3 md:gap-4 lg:gap-4 xl:gap-4">
 										<div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 xl:w-16 xl:h-16 rounded-full flex items-center justify-center bg-about">
-											<Image src="/chat/firefly-icon.gif" width={60} height={60} alt="AI Icon" />
+											<Image src="/chat/firefly-icon.gif" width={60} height={60} alt="AI Icon" unoptimized />
 										</div>
 										<div className="max-w-[75%] rounded-lg p-3 md:p-4 bg-black text-white">
 											<motion.div animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 1.5, repeat: Infinity }} className="flex gap-2">

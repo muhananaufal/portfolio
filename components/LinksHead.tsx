@@ -117,7 +117,7 @@ export default function LinksHead() {
 					}}
 					className="relative w-56 h-56 mb-14 mt-10"
 				>
-					<img src="/gif/profile.gif" alt="Profile" className="object-cover scale-150 " />
+					<video src="/gif/profile.mp4" loop autoPlay muted className="object-cover scale-150 " />
 				</motion.div>
 			</div>
 

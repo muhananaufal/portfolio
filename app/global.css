@@ -18,11 +18,13 @@ body {
 @font-face {
 	src: url('../fonts/FoundersGrotesk.woff');
 	font-family: FoundersGrotesk;
+	font-display: swap;
 }
 
 @font-face {
 	src: url('../fonts/NeueMontreal.woff');
 	font-family: NeueMontreal;
+	font-display: swap;
 }
 
 @layer utilities {

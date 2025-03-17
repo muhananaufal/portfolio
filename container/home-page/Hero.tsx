@@ -1,7 +1,5 @@
 'use client';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { firefly1, naufal } from '@/public';
 
 export default function Hero() {
 	return (
@@ -24,13 +22,14 @@ export default function Hero() {
 										}}
 										className="leading-[130px]"
 									>
-										<Image
+										<video
 											width={120}
 											height={50}
-											src={firefly1}
-											alt="img"
+											src='/gif/firefly1.mp4'
 											className="w-auto h-[95px] lg:w-auto lg:h-auto md:w-[100px] md:h-[63px] sm:w-[74px] sm:h-[45px] xm:w-[64px] xm:h-[40px] object-cover xl:mt-[15px] mt-[10px] rounded-[10px]"
-											unoptimized
+											autoPlay
+											loop
+											muted
 										/>
 									</motion.span>
 									<h1 className="heading tracking-[-1.3px] text-black font-semibold font-FoundersGrotesk uppercase blend-target">Experiences</h1>
@@ -39,7 +38,7 @@ export default function Hero() {
 							</h1>
 						</div>
 						<div>
-							<Image src={naufal} alt="awwwards" width={60} height={60} className="w-fit h-fit" unoptimized />
+							<video src="/gif/naufal.mp4" width={60} height={60} className="w-fit h-fit" loop autoPlay muted />
 						</div>
 					</div>
 				</div>
