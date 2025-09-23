@@ -1,14 +1,14 @@
-// components/Footer.tsx (versi final)
+// components/Footer.tsx
 
 'use client';
 
 import Link from 'next/link';
 import Image from 'next/image';
 import logo from '@/public/logo.png';
+import { motion } from 'framer-motion';
 import { LinkHover, TextMask, LinkPreview } from '@/animation';
 import { footerItems } from '@/constants';
-import { useEffect, useRef, useState } from 'react';
-// PERUBAHAN: Impor usePathname
+import { useEffect, useRef, useState, useLayoutEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -16,38 +16,58 @@ import ScrollProgressCircle from './ui/ScrollProgressCircle';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// PERUBAHAN: Definisikan urutan rute Anda di sini
 const routeOrder = ['/', '/about', '/projects', '/certifications', '/rewinds', '/contact', '/me'];
+
+// Komponen kecil untuk konten marquee yang menerima ref
+const MarqueeContent = ({ pageName, forwardedRef }: { pageName: string; forwardedRef?: React.Ref<HTMLDivElement> }) => (
+	<div ref={forwardedRef} className="flex shrink-0">
+		<h3 className="blend-target text-secondry font-NeueMontreal text-6xl font-semibold uppercase py-4 px-8 shrink-0">Scroll to Discover • {pageName} PAGE</h3>
+		<h3 className="blend-target text-secondry font-NeueMontreal text-6xl font-semibold uppercase py-4 px-8 shrink-0">Scroll to Discover • {pageName} PAGE</h3>
+		<h3 className="blend-target text-secondry font-NeueMontreal text-6xl font-semibold uppercase py-4 px-8 shrink-0">Scroll to Discover • {pageName} PAGE</h3>
+		<h3 className="blend-target text-secondry font-NeueMontreal text-6xl font-semibold uppercase py-4 px-8 shrink-0">Scroll to Discover • {pageName} PAGE</h3>
+	</div>
+);
 
 export default function Footer() {
 	const phrase = ['get-', 'in-', 'touch'];
 	const phrase1 = ['more links'];
 	const router = useRouter();
-	const pathname = usePathname(); // Dapatkan path saat ini
+	const pathname = usePathname();
 
 	const [progress, setProgress] = useState(0);
+	const [nextPageName, setNextPageName] = useState('...');
 	const progressRef = useRef(0);
 	const indicatorRef = useRef<HTMLDivElement>(null);
 	const depleteAnimationRef = useRef<gsap.core.Tween | null>(null);
 	const isNavigating = useRef(false);
 
+	const marqueeRef = useRef<HTMLDivElement>(null);
+	const [marqueeWidth, setMarqueeWidth] = useState(0);
+
+	useLayoutEffect(() => {
+		if (marqueeRef.current) {
+			setMarqueeWidth(marqueeRef.current.getBoundingClientRect().width);
+		}
+	}, [nextPageName]);
+
 	useEffect(() => {
-		// Paksa sembunyikan dan reset state lingkaran saat halaman baru dimuat
 		gsap.set(indicatorRef.current, { scale: 0, opacity: 0 });
 		setProgress(0);
 		progressRef.current = 0;
-
-		// Reset flag navigasi di awal setiap kali useEffect berjalan (di halaman baru)
 		isNavigating.current = false;
 
-		// PERUBAHAN: Logika untuk menentukan halaman berikutnya
 		const currentIndex = routeOrder.indexOf(pathname);
-		// Jika halaman saat ini tidak ada di daftar, nonaktifkan fitur ini
-		if (currentIndex === -1) return;
+		let nextPage: string;
 
-		// Tentukan halaman berikutnya, jika terakhir, kembali ke awal
-		const nextIndex = (currentIndex + 1) % routeOrder.length;
-		const nextPage = routeOrder[nextIndex];
+		if (currentIndex === -1) {
+			setNextPageName('Home');
+			nextPage = '/';
+		} else {
+			const nextIndex = (currentIndex + 1) % routeOrder.length;
+			nextPage = routeOrder[nextIndex];
+			const formattedName = nextPage === '/' ? 'Home' : nextPage.replace('/', '').charAt(0).toUpperCase() + nextPage.slice(2);
+			setNextPageName(formattedName);
+		}
 
 		let observer: Observer | null = null;
 		const ctx = gsap.context(() => {
@@ -56,7 +76,7 @@ export default function Footer() {
 				target: window,
 				tolerance: 5,
 				onDown: () => {
-					if (ScrollTrigger.maxScroll(window) - window.scrollY < 1) {
+					if (ScrollTrigger.maxScroll(window) - window.scrollY < 1 && !isNavigating.current) {
 						if (depleteAnimationRef.current) {
 							depleteAnimationRef.current.kill();
 						}
@@ -67,23 +87,18 @@ export default function Footer() {
 						}
 						setProgress(progressRef.current);
 						if (progressRef.current >= 100 && !isNavigating.current) {
-							isNavigating.current = true; // Set flag agar animasi tidak berjalan ganda
-
-							// Buat timeline untuk animasi keluar
+							isNavigating.current = true;
 							const tl = gsap.timeline();
 							tl.to(indicatorRef.current, {
-								// Animasi pulsa/denyut
 								scale: 1.1,
 								duration: 0.2,
 								ease: 'power2.out',
 							}).to(indicatorRef.current, {
-								// Animasi mengecil dan hilang
 								scale: 0,
 								opacity: 0,
 								duration: 0.3,
 								ease: 'power2.in',
 								onComplete: () => {
-									// Pindah halaman SETELAH animasi selesai
 									router.push(nextPage);
 								},
 							});
@@ -91,6 +106,7 @@ export default function Footer() {
 					}
 				},
 				onStop: () => {
+					if (isNavigating.current) return;
 					depleteAnimationRef.current = gsap.to(progressRef, {
 						current: 0,
 						duration: 0.5,
@@ -105,7 +121,6 @@ export default function Footer() {
 		});
 
 		return () => {
-			// Hancurkan observer secara eksplisit saat komponen unmount/cleanup
 			if (observer) {
 				observer.kill();
 			}
@@ -115,8 +130,7 @@ export default function Footer() {
 
 	return (
 		<>
-			<footer className="w-full padding-x z-30 relative pt-[40px] bg-white flex flex-col justify-between rounded-t-[20px] mt-[-20px]">
-				{/* ... KONTEN FOOTER ANDA (TIDAK ADA PERUBAHAN) ... */}
+			<footer className="w-full padding-x z-30 relative pt-[40px] bg-white flex flex-col justify-between rounded-t-[20px] mt-[-20px] overflow-hidden">
 				<div className="w-full flex justify-between sm:flex-col xm:flex-col">
 					<div className="flex flex-col justify-between sm:w-full xm:w-full w-1/2">
 						<h1 className="text-[150px] leading-[115px] lg:text-[130px] lg:leading-[98px] md:text-[100px] md:leading-[75px] sm:text-[74px] sm:leading-[68px] xm:text-[64px] xm:leading-[48px] font-semibold font-FoundersGrotesk text-secondry uppercase blend-target">
@@ -125,7 +139,7 @@ export default function Footer() {
 					</div>
 					<div className="h-full flex flex-col justify-between sm:w-full xm:w-full w-1/2">
 						<div>
-							<h1 className="text-[150px] leading-[115px] lg:text-[130px] lg:leading-[98px] md:text-[100px] md:leading-[75px] sm:text-[74px] sm:leading-[68px] xm:text-[64px] xm:leading-[48px] font-semibold font-FoundersGrotesk text-secondry uppercase">
+							<h1 className="text-[150px] leading-[115px] lg:text-[130px] lg:leading-[98px] md:text-[100px] md:leading-[75px] sm:text-[74px] sm:leading-[68px] xm:text-[64px] xm:leading-[48px] font-semibold font-FoundersGrotesk text-secondry uppercase blend-target">
 								<TextMask>{phrase1}</TextMask>
 							</h1>
 							<div className="pt-[50px]">
@@ -158,6 +172,21 @@ export default function Footer() {
 							<h1 className="paragraph font-medium font-NeueMontreal text-secondry">2025 © All Rights Reserved.</h1>
 						</div>
 					</div>
+				</div>
+				<div className="w-full border-t border-black/10 overflow-hidden p-16">
+					<motion.div
+						className="flex whitespace-nowrap"
+						animate={{ x: [0, -marqueeWidth] }}
+						transition={{
+							duration: marqueeWidth > 0 ? marqueeWidth / 100 : 10,
+							repeat: Infinity,
+							repeatType: 'loop',
+							ease: 'linear',
+						}}
+					>
+						<MarqueeContent pageName={nextPageName} forwardedRef={marqueeRef} />
+						<MarqueeContent pageName={nextPageName} />
+					</motion.div>
 				</div>
 			</footer>
 			<ScrollProgressCircle ref={indicatorRef} progress={progress} />

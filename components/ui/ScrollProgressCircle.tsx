@@ -24,7 +24,7 @@ const ScrollProgressCircle = forwardRef<HTMLDivElement, ScrollProgressCircleProp
 	return (
 		<motion.div
 			ref={ref}
-			className="fixed bottom-8 left-1/2 w-32 h-32 z-50 bg-black/10 backdrop-blur-md rounded-full"
+			className="fixed bottom-11 left-1/2 w-32 h-32 z-50 bg-black/10 backdrop-blur-md rounded-full"
 			style={{ x: '-50%' }}
 			initial={{ scale: 0, opacity: 0 }}
 			animate={{ scale: progress > 0 ? 1 : 0, opacity: progress > 0 ? 1 : 0 }}
