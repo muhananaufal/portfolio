@@ -61,7 +61,7 @@ export default function Footer() {
 							depleteAnimationRef.current.kill();
 						}
 						gsap.to(indicatorRef.current, { scale: 1, opacity: 1, duration: 0.3 });
-						progressRef.current += 0.8;
+						progressRef.current += 1;
 						if (progressRef.current > 100) {
 							progressRef.current = 100;
 						}
