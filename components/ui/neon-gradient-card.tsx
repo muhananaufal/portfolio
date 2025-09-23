@@ -115,17 +115,17 @@ const NeonGradientCard: React.FC<NeonGradientCardProps> = ({
 					'--after-blur': `${dimensions.width / 3}px`,
 				} as CSSProperties
 			}
-			className={cn('relative z-10 size-full rounded-lg shadow-lg', className)}
+			className={cn('relative z-10 size-full rounded-full shadow-lg', className)}
 			{...props}
 		>
 			<div
 				className={cn(
 					'before:absolute before:-left-[var(--border-size)] before:-top-[var(--border-size)] before:-z-10 before:block',
-					"before:h-[var(--pseudo-element-height)] before:w-[var(--pseudo-element-width)] before:rounded-lg before:content-['']",
+					"before:h-[var(--pseudo-element-height)] before:w-[var(--pseudo-element-width)] before:rounded-full before:content-['']",
 					'before:bg-[linear-gradient(0deg,var(--neon-first-color),var(--neon-second-color))] before:bg-[length:100%_200%]',
 					'before:animate-background-position-spin',
 					'after:absolute after:-left-[var(--border-size)] after:-top-[var(--border-size)] after:-z-10 after:block',
-					"after:h-[var(--pseudo-element-height)] after:w-[var(--pseudo-element-width)] after:rounded-lg after:blur-[var(--after-blur)] after:content-['']",
+					"after:h-[var(--pseudo-element-height)] after:w-[var(--pseudo-element-width)] after:rounded-full after:blur-[var(--after-blur)] after:content-['']",
 					'after:bg-[linear-gradient(0deg,var(--neon-first-color),var(--neon-second-color))] after:bg-[length:100%_200%] after:opacity-80',
 					'after:animate-background-position-spin',
 					'dark:bg-neutral-900'

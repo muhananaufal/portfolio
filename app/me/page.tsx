@@ -5,6 +5,19 @@ import { FollowerPointerCard } from '@/components/ui/following-pointer';
 import Image from 'next/image';
 import { useEffect } from 'react';
 
+// Komponen Filter SVG yang akan kita tambahkan
+const GooeyFilter = () => (
+	<svg className="absolute w-0 h-0">
+		<defs>
+			<filter id="gooey">
+				<feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+				<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="gooey" />
+				<feBlend in="SourceGraphic" in2="gooey" />
+			</filter>
+		</defs>
+	</svg>
+);
+
 export default function Links() {
 	useEffect(() => {
 		(async () => {
@@ -27,6 +40,7 @@ export default function Links() {
 					<LinksButton />
 				</div>
 			</FollowerPointerCard>
+			<GooeyFilter /> {/* <-- TAMBAHKAN FILTER DI SINI */}
 		</Curve>
 	);
 }
