@@ -1,3 +1,4 @@
+// components/ClientLayout.tsx
 'use client';
 
 import { useLayoutConfig } from '@/hooks/useLayoutConfig';
@@ -7,17 +8,25 @@ import { Chat } from './Chat';
 import Footer from './Footer';
 import React from 'react';
 
-export function ClientLayout({ children }: { children: React.ReactNode }) {
+// Buat komponen baru untuk membungkus bagian yang dinamis
+function DynamicLayoutElements() {
 	const { shouldShowLayout, shouldShowChat } = useLayoutConfig();
 
 	return (
 		<>
 			{shouldShowLayout && <Navbar />}
-			<AnimatePresence mode="wait">
-				{children}
-				{shouldShowChat && <Chat />}
-			</AnimatePresence>
+			<AnimatePresence mode="wait">{shouldShowChat && <Chat />}</AnimatePresence>
 			{shouldShowLayout && <Footer />}
+		</>
+	);
+}
+
+// ClientLayout sekarang hanya bertugas menyusun layout
+export function ClientLayout({ children }: { children: React.ReactNode }) {
+	return (
+		<>
+			<DynamicLayoutElements />
+			{children}
 		</>
 	);
 }
