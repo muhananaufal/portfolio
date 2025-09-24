@@ -90,10 +90,10 @@ export default function QrCodePopup({ qrImageUrl, onClose }: QrCodePopupProps) {
 	return (
 		<motion.div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm" variants={backdropVariants} initial="hidden" animate="visible" exit="hidden" onClick={onClose}>
 			<motion.div ref={popupRef} variants={popupVariants} className="relative flex flex-col items-center p-8 bg-white/90 rounded-3xl shadow-2xl border border-gray-200" onClick={(e: React.MouseEvent) => e.stopPropagation()}>
-				<button onClick={onClose} className="absolute top-4 right-4 text-gray-500 hover:text-black transition-colors">
+				{/* <button onClick={onClose} className="absolute top-3 right-3 text-gray-500 hover:text-black transition-colors">
 					<X size={24} />
-				</button>
-				<Image src={qrImageUrl} alt="QR Code Muhana Naufal" className="qr-image w-48 h-48 md:w-64 md:h-64 rounded-xl object-cover" />
+				</button> */}
+				<Image src={qrImageUrl} alt="QR Code Muhana Naufal" className="qr-image w-64 h-64 md:w-96 md:h-96 rounded-xl object-cover" width={500} height={500} />
 				<p className="qr-text mt-4 font-semibold text-gray-800 font-NeueMontreal">Scan to connect!</p>
 				<button onClick={handleSave} className="save-button group mt-5 flex items-center gap-2 bg-black text-white font-NeueMontreal text-sm py-3 px-6 rounded-full hover:bg-gray-700 transition-all duration-300 transform hover:scale-105">
 					<Download size={16} className="transition-transform duration-300 group-hover:-rotate-12" />
