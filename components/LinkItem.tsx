@@ -1,18 +1,16 @@
-// components/LinkItem.tsx
-
 'use client';
 
 import { motion } from 'framer-motion';
 import { useMagneticEffect } from '@/hooks/useMagneticEffect';
 import FluidBackground from './FluidBackground';
-import { ElementType } from 'react'; // Impor ElementType untuk tipe ikon
+import { ComponentType } from 'react';
 
 // Definisikan tipe untuk props
 interface LinkItemProps {
 	link: {
 		name: string;
 		url: string;
-		icon: ElementType; // Tipe yang benar untuk komponen ikon
+		icon: ComponentType<{ className?: string }>;
 	};
 	index: number;
 }
