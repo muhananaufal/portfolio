@@ -5,6 +5,8 @@ import { Analytics } from '@vercel/analytics/next';
 import { Metadata } from 'next';
 import { DisableInteraction } from '@/components/DisableInteraction';
 import { ClientLayout } from '@/components/ClientLayout';
+import ToastContainer from '@/components/ui/ToastContainer';
+import EasterEgg from '@/components/ui/EasterEgg';
 
 export const metadata: Metadata = {
 	title: 'Muhana Naufal',
@@ -15,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 	return (
 		<html lang="en">
 			<body className="select-none">
-				<Toaster
+				{/* <Toaster
 					position="top-right"
 					richColors
 					closeButton
@@ -34,7 +36,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 							info: '!bg-blue-50 !border-blue-200 !text-blue-800',
 						},
 					}}
-				/>
+				/> */}
+				<ToastContainer />
+				<EasterEgg />
 				{/* <DisableInteraction /> */}
 				<ClientLayout>{children}</ClientLayout>
 				<SpeedInsights />

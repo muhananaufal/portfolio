@@ -2,12 +2,10 @@
 
 import React from 'react';
 import ButtonContact from '@/components/ButtonContact';
-import { toast } from 'sonner';
-
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { MailCheck, ThumbsDown } from 'lucide-react';
+import { useToastStore } from '@/store/useToastStore';
 
 // Skema validasi Zod (tidak berubah)
 const formSchema = z.object({
@@ -40,6 +38,8 @@ const Form = () => {
 		mode: 'onChange',
 	});
 
+	const addToast = useToastStore((state) => state.addToast);
+
 	// Fungsi onSubmit tidak perlu diubah
 	const onSubmit = (data: FormData) => {
 		const { name, company, goal, date, budget, email, details } = data;
@@ -53,19 +53,16 @@ const Form = () => {
 			`You can reach me at: ${email}\n` +
 			`Additional details: ${details || 'N/A'}`;
 		const mailtoURL = `https://mail.google.com/mail/u/0/?fs=0&to=muhananaufal8@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}&tf=cm`;
-		toast.success('Inquiry sent successfully!', {
-			icon: <MailCheck size={18} />,
-		});
-		window.location.href = mailtoURL;
+		addToast('Inquiry sent successfully!', 'success');
+
+		window.open(mailtoURL, '_blank');
 	};
 
 	const onError = () => {
 		// Ambil error pertama yang muncul untuk ditampilkan di toaster
 		const errorKeys = Object.keys(errors) as (keyof FormData)[];
 		if (errorKeys.length > 0) {
-			toast.error(errors[errorKeys[0]]?.message, {
-				icon: <ThumbsDown size={18} />,
-			});
+			addToast(errors[errorKeys[0]]?.message || 'An error occurred.', 'error');
 		}
 	};
 
