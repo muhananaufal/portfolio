@@ -7,7 +7,7 @@ export default function Hero() {
 			<div className="w-full flex flex-col">
 				<div className="w-full margin">
 					<h1 className="heading tracking-[-1.3px] text-black font-semibold font-FoundersGrotesk uppercase">
-						<div className="flex items-center gap-[5px]">
+						<div className="flex items-center gap-[10px]">
 							<motion.span
 								initial={{ width: 0 }}
 								animate={{ width: 'auto' }}
