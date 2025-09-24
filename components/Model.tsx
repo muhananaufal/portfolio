@@ -23,10 +23,11 @@ function Font() {
 	const src = '/fonts/PPNeueMontreal-Regular.ttf';
 	return (
 		<group>
-			<Text font={src} position={[0, 0, -0.1]} fontSize={0.4} color="white" anchorX="center" anchorY="middle">
+			<Text 
+			font={src} position={[0, 0, -0.1]} fontSize={0.4} color="white" anchorX="center" anchorY="middle">
 				404
 			</Text>
-			<Text font={src} position={[0, -0.15, -0.1]} fontSize={0.03} color="white" anchorX="center" anchorY="middle">
+			<Text font={src} position={[0, -0.18, -0.1]} fontSize={0.03} color="white" anchorX="center" anchorY="middle">
 				The link is broken
 			</Text>
 		</group>
