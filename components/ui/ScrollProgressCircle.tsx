@@ -24,7 +24,7 @@ const ScrollProgressCircle = forwardRef<HTMLDivElement, ScrollProgressCircleProp
 	return (
 		<motion.div
 			ref={ref}
-			className="fixed bottom-11 left-1/2 w-32 h-32 z-50 bg-black/10 backdrop-blur-md rounded-full"
+			className="fixed sm:bottom-11 md:bottom-8 bottom-16 left-1/2 w-32 h-32 z-50 bg-black/30 backdrop-blur-md rounded-full"
 			style={{ x: '-50%' }}
 			initial={{ scale: 0, opacity: 0 }}
 			animate={{ scale: progress > 0 ? 1 : 0, opacity: progress > 0 ? 1 : 0 }}
@@ -40,7 +40,7 @@ const ScrollProgressCircle = forwardRef<HTMLDivElement, ScrollProgressCircleProp
 					cy="60"
 					r={radius}
 					stroke="#E1E1E1"
-					strokeWidth="5"
+					strokeWidth="6"
 					fill="transparent"
 					initial={{ scale: 0, opacity: 0 }}
 					animate={{ scale: progress > 0 ? 1 : 0, opacity: progress > 0 ? 1 : 0 }}
@@ -53,7 +53,7 @@ const ScrollProgressCircle = forwardRef<HTMLDivElement, ScrollProgressCircleProp
 				<motion.circle cx="60" cy="60" r={radius} stroke="#35292E" strokeWidth="5" strokeLinecap="round" fill="transparent" transform="rotate(-90 60 60)" strokeDasharray="1" style={{ pathLength: smoothProgress }} />
 			</svg>
 			{/* Teks persentase */}
-			<motion.div className="absolute inset-0 flex items-center justify-center text-sm font-bold text-black" initial={{ opacity: 0 }} animate={{ opacity: progress > 0 ? 1 : 0 }} transition={{ duration: 0.2, delay: 0.2 }}>
+			<motion.div className="absolute inset-0 flex items-center justify-center text-sm font-bold text-white/90" initial={{ opacity: 0 }} animate={{ opacity: progress > 0 ? 1 : 0 }} transition={{ duration: 0.2, delay: 0.2 }}>
 				{Math.round(progress)}%
 			</motion.div>
 		</motion.div>
