@@ -1,21 +1,20 @@
+// components/ButtonContact.tsx
+
 import Rounded from './Rounded';
 import { ArrowUpRight } from 'lucide-react';
 
-interface ButtonContactProps {
+// PERBAIKAN 1: Ubah interface props agar bisa menerima semua properti standar tombol
+interface ButtonContactProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	title: string;
 	className?: string;
 	bgcolor: string;
 	style?: React.CSSProperties;
-	onClick?: () => void; // Added onClick as an optional property
 }
 
-export default function ButtonContact({ title, className, bgcolor, style, onClick }: ButtonContactProps) {
+export default function ButtonContact({ title, className, bgcolor, style, ...props }: ButtonContactProps) {
 	return (
-		<button
-			className="small-text uppercase font-normal font-NeueMontreal"
-			type="button"
-			onClick={onClick} // Added onClick handler
-		>
+		// PERBAIKAN 2: Gunakan {...props} untuk meneruskan semua prop tambahan (seperti type="submit")
+		<button {...props} className="small-text uppercase font-normal font-NeueMontreal">
 			<Rounded className="py-[6px]" backgroundColor={bgcolor}>
 				<p className="z-10 px-[10px] ml-[15px] py-[6px] text-white" style={style}>
 					{title}

@@ -15,8 +15,27 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 	return (
 		<html lang="en">
 			<body className="select-none">
-				<Toaster richColors closeButton expand={true} />
-				<DisableInteraction />
+				<Toaster
+					position="top-right"
+					richColors
+					closeButton
+					duration={3000}
+					toastOptions={{
+						classNames: {
+							toast: 'group toast bg-white text-black border-2 border-black shadow-lg rounded-xl font-NeueMontreal',
+							title: 'text-base font-semibold',
+							description: 'text-sm text-black/60',
+							actionButton: 'group-[.toast]:bg-black group-[.toast]:text-white',
+							cancelButton: 'group-[.toast]:bg-neutral-200 group-[.toast]:text-neutral-500',
+							closeButton: 'group-[.toast]:border-black/20 group-[.toast]:bg-white group-[.toast]:text-black',
+							error: '!bg-red-50 !border-red-200 !text-red-800',
+							success: '!bg-green-50 !border-green-200 !text-green-800',
+							warning: '!bg-yellow-50 !border-yellow-200 !text-yellow-800',
+							info: '!bg-blue-50 !border-blue-200 !text-blue-800',
+						},
+					}}
+				/>
+				{/* <DisableInteraction /> */}
 				<ClientLayout>{children}</ClientLayout>
 				<SpeedInsights />
 				<Analytics />
