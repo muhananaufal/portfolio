@@ -1,17 +1,27 @@
 // container/contact-page/Form.tsx
 
-import React from 'react';
+'use client';
+
+import React, { useRef } from 'react';
 import ButtonContact from '@/components/ButtonContact';
+// PERBAIKAN 1: Hapus import 'sonner'
+// import { toast } from 'sonner';
+// PERBAIKAN 2: Ganti dengan import store toast kustom kita
+import { useToastStore } from '@/store/useToastStore';
+
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { useToastStore } from '@/store/useToastStore';
 
-// Skema validasi Zod (tidak berubah)
+import { gsap } from 'gsap';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+
+gsap.registerPlugin(ScrollToPlugin);
+
 const formSchema = z.object({
-	name: z.string().min(3, 'Name is required'),
-	company: z.string().min(3, 'Company name is required'),
-	goal: z.string().min(3, 'Goal is required'),
+	name: z.string().min(1, 'Name is required'),
+	company: z.string().min(1, 'Company name is required'),
+	goal: z.string().min(1, 'Goal is required'),
 	date: z
 		.string()
 		.min(1, 'Date is required')
@@ -28,19 +38,19 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 
 const Form = () => {
+	const formRef = useRef<HTMLFormElement>(null);
+	const addToast = useToastStore((state) => state.addToast);
+
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
 	} = useForm<FormData>({
 		resolver: zodResolver(formSchema),
-		// PERUBAHAN 1: Tambahkan mode 'onChange' untuk validasi real-time
 		mode: 'onChange',
+		shouldFocusError: false,
 	});
 
-	const addToast = useToastStore((state) => state.addToast);
-
-	// Fungsi onSubmit tidak perlu diubah
 	const onSubmit = (data: FormData) => {
 		const { name, company, goal, date, budget, email, details } = data;
 		const subject = `Inquiry from ${name}`;
@@ -53,22 +63,41 @@ const Form = () => {
 			`You can reach me at: ${email}\n` +
 			`Additional details: ${details || 'N/A'}`;
 		const mailtoURL = `https://mail.google.com/mail/u/0/?fs=0&to=muhananaufal8@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}&tf=cm`;
-		addToast('Inquiry sent successfully!', 'success');
 
-		window.open(mailtoURL, '_blank');
+		// Panggil toast kustom kita untuk notifikasi sukses
+		addToast('Inquiry sent successfully!', 'success');
+		window.location.href = mailtoURL;
 	};
 
-	const onError = () => {
-		// Ambil error pertama yang muncul untuk ditampilkan di toaster
-		const errorKeys = Object.keys(errors) as (keyof FormData)[];
-		if (errorKeys.length > 0) {
-			addToast(errors[errorKeys[0]]?.message || 'An error occurred.', 'error');
+	const onError = (errorFields: typeof errors) => {
+		const firstErrorField = Object.keys(errorFields)[0];
+		if (firstErrorField) {
+			const errorMessage = errorFields[firstErrorField as keyof typeof errors]?.message;
+
+			// PERBAIKAN 4: Gunakan `addToast` untuk menampilkan error
+			if (errorMessage) {
+				addToast(errorMessage, 'error');
+			}
+
+			const element = document.querySelector(`[name="${firstErrorField}"]`) as HTMLElement;
+			if (element) {
+				gsap.to(window, {
+					duration: 1.2,
+					scrollTo: {
+						y: formRef.current,
+						offsetY: 120,
+					},
+					ease: 'power2.inOut',
+					onComplete: () => {
+						element.focus();
+					},
+				});
+			}
 		}
 	};
 
 	return (
-		// PERUBAHAN 2: Hapus 'onError' dari handleSubmit, karena error ditampilkan inline
-		<form onSubmit={handleSubmit(onSubmit, onError)} className="w-full padding-x padding-y">
+		<form ref={formRef} onSubmit={handleSubmit(onSubmit, onError)} className="w-full padding-x padding-y">
 			<div className="w-full flex flex-col gap-[15px]">
 				<div className="w-full flex gap-[15px] sm:flex-col xm:flex-col md:flex-col">
 					<div className="flex gap-[10px] w-[50%] md:w-auto sm:w-auto xm:w-auto sm:flex-col xm:flex-col md:flex-col">
@@ -82,8 +111,7 @@ const Form = () => {
 								{...register('name')}
 								className="paragraph bg-transparent w-full font-NeueMontreal font-normal text-secondry border-b border-black focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out sm:w-full xm:w-full"
 							/>
-							{/* PERUBAHAN 3: Tambahkan elemen untuk menampilkan pesan error */}
-							{errors.name && <p className="w-full absolute left-0 bottom-0 text-red-500 text-xs mt-1 text-center sm:text-left xm:text-left">{errors.name.message}</p>}
+							{errors.name && <p className="absolute left-0 bottom-0 w-full text-red-500 text-xs text-center sm:text-left">{errors.name.message}</p>}
 						</div>
 					</div>
 					<div className="flex gap-[10px] w-[50%] md:w-auto sm:w-auto xm:w-auto sm:flex-col xm:flex-col md:flex-col">
@@ -97,11 +125,10 @@ const Form = () => {
 								{...register('company')}
 								className="paragraph bg-transparent w-full font-NeueMontreal font-normal text-secondry border-b border-black focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out sm:w-full xm:w-full"
 							/>
-							{errors.company && <p className="w-full absolute left-0 bottom-0 text-red-500 text-xs mt-1 text-center sm:text-left xm:text-left">{errors.company.message}</p>}
+							{errors.company && <p className="absolute left-0 bottom-0 w-full text-red-500 text-xs text-center sm:text-left">{errors.company.message}</p>}
 						</div>
 					</div>
 				</div>
-				{/* --- Pola yang sama diulang untuk semua input di bawah --- */}
 				<div className="w-full flex gap-[10px]">
 					<div className="flex gap-[10px] w-full sm:flex-col xm:flex-col md:flex-col">
 						<div className="xl:min-w-max lg:min-w-max ">
@@ -114,7 +141,7 @@ const Form = () => {
 								{...register('goal')}
 								className="paragraph bg-transparent font-NeueMontreal font-normal text-secondry border-b border-black focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out w-full sm:w-full xm:w-full"
 							/>
-							{errors.goal && <p className="w-full absolute left-0 bottom-0 text-red-500 text-xs mt-1 text-center sm:text-left xm:text-left">{errors.goal.message}</p>}
+							{errors.goal && <p className="absolute left-0 bottom-0 w-full text-red-500 text-xs text-center sm:text-left">{errors.goal.message}</p>}
 						</div>
 					</div>
 				</div>
@@ -130,7 +157,7 @@ const Form = () => {
 								{...register('date')}
 								className="paragraph bg-transparent font-NeueMontreal font-normal text-secondry border-b border-black focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out w-full sm:w-full xm:w-full"
 							/>
-							{errors.date && <p className="w-full absolute left-0 bottom-0 text-red-500 text-xs mt-1 text-center sm:text-left xm:text-left">{errors.date.message}</p>}
+							{errors.date && <p className="absolute left-0 bottom-0 w-full text-red-500 text-xs text-center sm:text-left">{errors.date.message}</p>}
 						</div>
 					</div>
 				</div>
@@ -146,7 +173,7 @@ const Form = () => {
 								{...register('budget')}
 								className="paragraph bg-transparent font-NeueMontreal font-normal text-secondry border-b border-black focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out w-full sm:w-full xm:w-full"
 							/>
-							{errors.budget && <p className="w-full absolute left-0 bottom-0 text-red-500 text-xs mt-1 text-center sm:text-left xm:text-left">{errors.budget.message}</p>}
+							{errors.budget && <p className="absolute left-0 bottom-0 w-full text-red-500 text-xs text-center sm:text-left">{errors.budget.message}</p>}
 						</div>
 					</div>
 				</div>
@@ -162,7 +189,7 @@ const Form = () => {
 								{...register('email')}
 								className="paragraph bg-transparent font-NeueMontreal font-normal text-secondry border-b border-black focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out w-full sm:w-full xm:w-full"
 							/>
-							{errors.email && <p className="w-full absolute left-0 bottom-0 text-red-500 text-xs mt-1 text-center sm:text-left xm:text-left">{errors.email.message}</p>}
+							{errors.email && <p className="absolute left-0 bottom-0 w-full text-red-500 text-xs text-center sm:text-left">{errors.email.message}</p>}
 						</div>
 						<div className="xl:min-w-max lg:min-w-max ">
 							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry blend-target">to discuss further.</h2>
@@ -174,7 +201,7 @@ const Form = () => {
 						<div className="xl:min-w-max lg:min-w-max ">
 							<h2 className="sub-heading font-NeueMontreal font-normal text-secondry blend-target">Optionally, I&apos;m sharing more:</h2>
 						</div>
-						<div className="w-full">
+						<div className="w-full relative pb-5">
 							<input
 								type="text"
 								placeholder="Product details type here..."
@@ -186,7 +213,7 @@ const Form = () => {
 				</div>
 			</div>
 			<div className="w-full flex items-center justify-end sm:justify-start xm:justify-start pt-[50px]">
-				<div className="flex sm:flex-col xm:flex-col md:flex-col gap-[25px]">
+				<div className="flex sm:flex-col xm:flex-col md:flex-col gap-[25px] mb-12">
 					<div className="w-fit flex items-center justify-between bg-secondry cursor-pointer rounded-full group">
 						<ButtonContact bgcolor="#35292E" title="send inquiry" className="bg-white" type="submit" />
 					</div>

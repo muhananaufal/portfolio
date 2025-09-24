@@ -23,17 +23,15 @@ const getRandomValue = (min: number, max: number) => Math.random() * (max - min)
 
 interface ToastProps {
 	toast: ToastMessage;
+	stackIndex: number;
+	stackCount: number;
 }
 
-export default function Toast({ toast }: ToastProps) {
+export default function Toast({ toast, stackIndex, stackCount }: ToastProps) {
 	const removeToast = useToastStore((state) => state.removeToast);
 	const { icon, className } = toastConfig[toast.type];
 	const [isVisible, setIsVisible] = useState(true);
-
 	const [randomRotate] = useState(() => getRandomValue(-8, 8));
-
-	// PERBAIKAN: Hapus pengecekan `isCenterBottom`
-	// const isCenterBottom = toast.position.bottom === '2.5rem' && toast.position.left === '50%';
 
 	const handleClose = () => setIsVisible(false);
 
@@ -49,19 +47,30 @@ export default function Toast({ toast }: ToastProps) {
 		}
 	}, [isVisible, removeToast, toast.id]);
 
+	const yOffset = 16;
+	const scaleFactor = 0.08;
+	const reverseIndex = stackCount - 1 - stackIndex;
+
+	const animateProps = toast.isStacked
+		? {
+				opacity: 1,
+				y: reverseIndex * -yOffset,
+				scale: 1 - reverseIndex * scaleFactor,
+				rotate: 0,
+		  }
+		: {
+				opacity: 1,
+				scale: 1,
+				rotate: randomRotate,
+		  };
+
 	return (
 		<motion.div
 			className="absolute"
 			style={{ ...toast.position, pointerEvents: 'auto' }}
 			variants={{
-				initial: { opacity: 0, scale: 0.7, rotate: 0 },
-				animate: {
-					opacity: 1,
-					scale: 1,
-					// PERBAIKAN: Terapkan rotasi acak ke semua toast tanpa terkecuali
-					rotate: randomRotate,
-					transition: { type: 'spring', stiffness: 300, damping: 25 },
-				},
+				initial: { opacity: 0, scale: 0.7 },
+				animate: animateProps,
 				exit: { opacity: 0, scale: 0.7, transition: { duration: 0.3, ease: 'easeOut' } },
 			}}
 			initial="initial"

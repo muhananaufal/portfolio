@@ -9,14 +9,17 @@ import Toast from './Toast';
 export default function ToastContainer() {
 	const toasts = useToastStore((state) => state.toasts);
 
+	// Filter untuk menemukan toast yang bertumpuk
+	const stackedToasts = toasts.filter((t) => t.isStacked);
+
 	return (
-		// PERBAIKAN: Kontainer sekarang full-screen dan tidak mengganggu klik
 		<div className="fixed inset-0 z-[9999] pointer-events-none">
 			<AnimatePresence>
-				{/* Hapus 'ul' karena setiap toast akan diposisikan secara independen */}
-				{toasts.map((toast) => (
-					<Toast key={toast.id} toast={toast} />
-				))}
+				{toasts.map((toast) => {
+					const stackIndex = toast.isStacked ? stackedToasts.findIndex((t) => t.id === toast.id) : -1;
+
+					return <Toast key={toast.id} toast={toast} stackIndex={stackIndex} stackCount={stackedToasts.length} />;
+				})}
 			</AnimatePresence>
 		</div>
 	);

@@ -17,11 +17,12 @@ export interface ToastMessage {
 	message: string;
 	type: ToastType;
 	position: ToastPosition;
+	isStacked: boolean;
 }
 
 interface ToastState {
 	toasts: ToastMessage[];
-	// 'positionIndex' tidak lagi diperlukan
+	sessionToastCount: number;
 	addToast: (message: string, type: ToastType) => void;
 	removeToast: (id: number) => void;
 	easterEggCount: number;
@@ -52,8 +53,8 @@ const positions: ToastPosition[] = [
 	{ bottom: '40%', left: '20%' },
 
 	// --- Area Atas ---
-	{ top: '2.5rem', left: '50%', transform: 'translateX(-50%)' }, 
-	{ top: '2.5rem', left: '2.5rem' }, 
+	{ top: '2.5rem', left: '50%', transform: 'translateX(-50%)' },
+	{ top: '2.5rem', left: '2.5rem' },
 	{ top: '2.5rem', right: '2.5rem' },
 	{ top: '8rem', left: '15%' },
 	{ top: '8rem', right: '15%' },
@@ -79,6 +80,7 @@ const MAX_TOASTS = 40;
 
 export const useToastStore = create<ToastState>((set, get) => ({
 	toasts: [],
+	sessionToastCount: 0,
 	easterEggCount: 0,
 	easterEggVisible: false,
 	easterEggTimer: null,
@@ -88,9 +90,8 @@ export const useToastStore = create<ToastState>((set, get) => ({
 
 	addToast: (message, type) => {
 		const id = Date.now();
-
-		// Logika Easter Egg (tidak berubah)
 		const { easterEggTimer, easterEggCount } = get();
+
 		if (easterEggTimer) clearTimeout(easterEggTimer);
 		const newCount = easterEggCount + 1;
 		let showEgg = false;
@@ -102,20 +103,26 @@ export const useToastStore = create<ToastState>((set, get) => ({
 		}, 15000);
 
 		set((state) => {
-			// --- PERBAIKAN: Logika baru untuk posisi unik ---
+			const newSessionCount = state.sessionToastCount + 1;
+			let position: ToastPosition;
+			let isStacked: boolean;
 
-			// 1. Dapatkan semua posisi yang sedang digunakan
-			const occupiedPositions = new Set(state.toasts.map((t) => t.position));
+			// --- PERBAIKAN UTAMA: Logika Pemilihan Posisi ---
+			if (newSessionCount <= 3) {
+				// 3 toast pertama akan selalu di posisi tengah bawah dan ditandai sebagai 'stacked'
+				position = { bottom: '2.5rem', left: '40.75%', transform: 'translateX(-50%)' };
+				isStacked = true;
+			} else {
+				// Mulai dari toast ke-4, gunakan posisi acak
+				isStacked = false;
+				const occupiedPositions = new Set(state.toasts.map((t) => t.position));
+				const availablePositions = positions.filter((p) => !occupiedPositions.has(p));
+				const selectionPool = availablePositions.length > 0 ? availablePositions : positions;
+				const randomIndex = Math.floor(Math.random() * selectionPool.length);
+				position = selectionPool[randomIndex];
+			}
 
-			// 2. Filter untuk mendapatkan posisi yang masih tersedia
-			const availablePositions = positions.filter((p) => !occupiedPositions.has(p));
-
-			// 3. Jika ada posisi tersedia, pilih acak dari situ. Jika tidak, pilih acak dari semua posisi (sebagai fallback).
-			const selectionPool = availablePositions.length > 0 ? availablePositions : positions;
-			const randomIndex = Math.floor(Math.random() * selectionPool.length);
-			const position = selectionPool[randomIndex];
-
-			const newToast: ToastMessage = { id, message, type, position };
+			const newToast: ToastMessage = { id, message, type, position, isStacked };
 
 			let newToasts = [...state.toasts, newToast];
 			if (newToasts.length > MAX_TOASTS) {
@@ -124,6 +131,7 @@ export const useToastStore = create<ToastState>((set, get) => ({
 
 			return {
 				toasts: newToasts,
+				sessionToastCount: newSessionCount,
 				easterEggVisible: showEgg ? true : state.easterEggVisible,
 				easterEggCount: showEgg ? 0 : newCount,
 				easterEggTimer: showEgg ? null : newTimer,
