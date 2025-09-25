@@ -34,7 +34,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "components/Curve.jsx",
+    "components/Curve.tsx",
     "components/MouseImageGallery.tsx",
     "components/MIG.jsx"
   ],

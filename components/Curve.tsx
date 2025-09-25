@@ -1,5 +1,5 @@
 'use client';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { text, curve, translate } from '@/motion';
 import { usePathname } from 'next/navigation';
@@ -14,24 +14,44 @@ const routes = {
 	'/rewinds/2023': 'Rewinds 2023',
 	'/rewinds/2024': 'Rewinds 2024',
 	'/rewinds/2025': 'Rewinds 2025',
-	'/rewinds': 'Rewinds',
 	'/contact': 'Contact Us',
 	'/me': 'LinkTree',
 };
 
 const greetings = ['Welcome', 'Selamat datang', 'Bienvenido', 'Bienvenue', 'Willkommen', 'Benvenuto', 'ようこそ', '환영합니다', '欢迎', 'أهلاً وسهلاً', 'Добро пожаловать', 'Bem-vindo', 'स्वागत है', 'Hoş geldiniz', 'ยินดีต้อนรับ'];
 
-const anim = (variants) => ({
-	variants,
-	initial: 'initial',
-	animate: 'enter',
-	exit: 'exit',
-});
+// const anim = (variants) => ({
+// 	variants,
+// 	initial: 'initial',
+// 	animate: 'enter',
+// 	exit: 'exit',
+// });
 
-export default function Curve({ children, backgroundColor }) {
+interface CurveProps {
+	children: React.ReactNode;
+	backgroundColor: string;
+}
+
+export default function Curve({ children, backgroundColor }: CurveProps) {
 	const router = usePathname();
 	const [dimensions, setDimensions] = useState({ width: null, height: null });
 	const [currentGreeting, setCurrentGreeting] = useState(0);
+	const { isTransitioning } = useTransition();
+	const controls = useAnimation();
+	const pathControls = useAnimation();
+	const textControls = useAnimation();
+
+	useEffect(() => {
+		if (isTransitioning) {
+			controls.start('exit');
+			pathControls.start('exit');
+			textControls.start('exit');
+		} else {
+			controls.start('enter');
+			pathControls.start('enter');
+			textControls.start('enter');
+		}
+	}, [isTransitioning, controls, pathControls, textControls]);
 
 	useEffect(() => {
 		const resize = () => setDimensions({ width: window.innerWidth, height: window.innerHeight });
@@ -66,7 +86,14 @@ export default function Curve({ children, backgroundColor }) {
 	);
 }
 
-const SVG = ({ height, width, route, totalGreetingDuration }) => {
+interface SVGProps {
+	height: number | null;
+	width: number | null;
+	route: string;
+	totalGreetingDuration: number;
+}
+
+const SVG = ({ height, width, route, totalGreetingDuration }: SVGProps) => {
 	const initialPath = `
 		M0 300 
 		Q${width / 2} 0 ${width} 300

@@ -202,7 +202,7 @@ export default function Footer() {
 									className="paragraph font-medium font-NeueMontreal text-secondry group relative inline-flex flex-col justify-end overflow-hidden after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-current after:transition-all after:duration-300 hover:after:w-0"
 								>
 									<span className="transition-transform duration-300 ease-in-out group-hover:-translate-y-full">muhananaufal8@gmail.com</span>
-									<span className="absolute left-0 top-full transition-transform duration-300 ease-in-out group-hover:-translate-y-full normal-case">Let's Connect!</span>
+									<span className="absolute left-0 top-full transition-transform duration-300 ease-in-out group-hover:-translate-y-full normal-case">Let&apos;s Connect!</span>
 								</a>
 							</div>
 						</div>

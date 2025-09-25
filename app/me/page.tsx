@@ -19,13 +19,6 @@ const GooeyFilter = () => (
 );
 
 export default function Links() {
-	useEffect(() => {
-		(async () => {
-			const LocomotiveScroll = (await import('locomotive-scroll')).default;
-			const locomotiveScroll = new LocomotiveScroll();
-		})();
-	}, []);
-
 	const author = {
 		authorName: 'Muhana Naufal',
 		authorAvatar: '/gif/firefly_sm.gif',

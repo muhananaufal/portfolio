@@ -7,6 +7,7 @@ import { DisableInteraction } from '@/components/DisableInteraction';
 import { ClientLayout } from '@/components/ClientLayout';
 import ToastContainer from '@/components/ui/ToastContainer';
 import EasterEgg from '@/components/ui/EasterEgg';
+import SmoothScroll from '@/components/SmoothScroll';
 
 export const metadata: Metadata = {
 	title: 'Muhana Naufal',
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				<ToastContainer />
 				<EasterEgg />
 				{/* <DisableInteraction /> */}
+				{/* <SmoothScroll /> */}
 				<ClientLayout>{children}</ClientLayout>
 				<SpeedInsights />
 				<Analytics />
