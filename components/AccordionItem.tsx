@@ -93,7 +93,7 @@ export default function AccordionItem({ item, isPinned, isActive, isFirst, onCli
 					<div className="w-[50%] sm:w-full xm:w-full">
 						<AnimatePresence>
 							{isActive && (
-								<motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} transition={{ ease: [0.4, 0, 0.2, 1], duration: 1.3 }} onAnimationComplete={onAnimationComplete}>
+								<motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} transition={{ ease: [0.4, 0, 0.2, 1], duration: 1 }} onAnimationComplete={onAnimationComplete}>
 									<div className="flex flex-col gap-[20px] py-[30px]">
 										<div>
 											<p className={`paragraph tracking-wider font-normal font-NeueMontreal blend-target transition-colors duration-500 ${isPinned ? 'text-white' : 'text-secondry'}`}>{item.description}</p>
