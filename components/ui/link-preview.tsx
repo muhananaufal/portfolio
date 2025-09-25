@@ -17,7 +17,7 @@ type LinkPreviewProps = {
 	layout?: string;
 } & ({ isStatic: true; imageSrc: string } | { isStatic?: false; imageSrc?: never });
 
-export const LinkView = ({ children, url, className, width = 200, height = 125, quality = 50, layout = 'fixed', isStatic = false, imageSrc = '' }: LinkPreviewProps) => {
+export const LinkView = ({ children, url, className, width = 200, height = 125, quality = 75, isStatic = false, imageSrc = '' }: LinkPreviewProps) => {
 	let src;
 	if (!isStatic) {
 		const params = encode({
@@ -41,26 +41,49 @@ export const LinkView = ({ children, url, className, width = 200, height = 125, 
 	const [isMounted, setIsMounted] = React.useState(false);
 
 	React.useEffect(() => {
-		setIsMounted(true);
-	}, []);
+		if (isOpen) {
+			setIsMounted(true);
+		}
+	}, [isOpen]);
 
-	const springConfig = { stiffness: 100, damping: 15 };
+	const springConfig = { stiffness: 150, damping: 20, mass: 0.8 };
 	const x = useMotionValue(0);
+	const y = useMotionValue(0);
+	const rotateX = useSpring(useMotionValue(0), springConfig);
+	const rotateY = useSpring(useMotionValue(0), springConfig);
 
 	const translateX = useSpring(x, springConfig);
+	const translateY = useSpring(y, springConfig);
 
-	const handleMouseMove = (event: any) => {
-		const targetRect = event.target.getBoundingClientRect();
-		const eventOffsetX = event.clientX - targetRect.left;
-		const offsetFromCenter = (eventOffsetX - targetRect.width / 2) / 2; // Reduce the effect to make it subtle
-		x.set(offsetFromCenter);
+	const handleMouseMove = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+		const target = event.target as HTMLElement;
+		const rect = target.getBoundingClientRect();
+		const { clientX, clientY } = event;
+
+		const mouseX = clientX - rect.left;
+		const mouseY = clientY - rect.top;
+
+		const xPct = mouseX / rect.width - 0.5;
+		const yPct = mouseY / rect.height - 0.5;
+
+		x.set(xPct * 20);
+		y.set(yPct * 20);
+		rotateY.set(xPct * 25);
+		rotateX.set(-yPct * 25);
+	};
+
+	const handleMouseLeave = () => {
+		x.set(0);
+		y.set(0);
+		rotateY.set(0);
+		rotateX.set(0);
 	};
 
 	return (
 		<>
 			{isMounted ? (
 				<div className="hidden">
-					<Image src={src} width={width} height={height} quality={quality} layout={layout} priority={true} alt="hidden image" />
+					<Image src={src} width={width} height={height} quality={quality} priority alt="hidden image" />
 				</div>
 			) : null}
 
@@ -71,38 +94,53 @@ export const LinkView = ({ children, url, className, width = 200, height = 125, 
 					setOpen(open);
 				}}
 			>
-				<HoverCardPrimitive.Trigger onMouseMove={handleMouseMove} className={cn('text-black ', className)} href={url}>
-					{children}
+				<HoverCardPrimitive.Trigger asChild onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
+					<a href={url} className={cn('text-black', className)}>
+						{children}
+					</a>
 				</HoverCardPrimitive.Trigger>
 
-				<HoverCardPrimitive.Content className="[transform-origin:var(--radix-hover-card-content-transform-origin)]" side="top" align="center" sideOffset={10}>
-					<AnimatePresence>
-						{isOpen && (
-							<motion.div
-								initial={{ opacity: 0, y: 20, scale: 0.6 }}
-								animate={{
-									opacity: 1,
-									y: 0,
-									scale: 1,
-									transition: {
-										type: 'spring',
-										stiffness: 260,
-										damping: 20,
-									},
-								}}
-								exit={{ opacity: 0, y: 20, scale: 0.6 }}
-								className="shadow-xl rounded-xl"
-								style={{
-									x: translateX,
-								}}
-							>
-								<Link href={url} className="block p-1 bg-white border-2 border-transparent shadow rounded-xl hover:border-neutral-200" style={{ fontSize: 0 }}>
-									<Image src={isStatic ? imageSrc : src} width={width} height={height} quality={quality} layout={layout} priority={true} className="rounded-lg" alt="preview image" />
-								</Link>
-							</motion.div>
-						)}
-					</AnimatePresence>
-				</HoverCardPrimitive.Content>
+				{isMounted && (
+					<HoverCardPrimitive.Content asChild forceMount className="[transform-origin:var(--radix-hover-card-content-transform-origin)]" side="top" align="center" sideOffset={12}>
+						<AnimatePresence onExitComplete={() => setIsMounted(false)}>
+							{isOpen && (
+								<motion.div
+									initial={{
+										opacity: 0,
+										clipPath: 'inset(50% 50% 50% 50% round 12px)',
+									}}
+									animate={{
+										opacity: 1,
+										clipPath: 'inset(0% 0% 0% 0% round 12px)',
+										transition: {
+											duration: 0.4,
+											ease: [0.76, 0, 0.24, 1],
+										},
+									}}
+									exit={{
+										opacity: 0,
+										clipPath: 'inset(50% 50% 50% 50% round 12px)',
+										transition: {
+											duration: 0.3,
+											ease: [0.76, 0, 0.24, 1],
+										},
+									}}
+									style={{
+										x: translateX,
+										y: translateY,
+										rotateX,
+										rotateY,
+									}}
+									className="shadow-2xl rounded-xl"
+								>
+									<Link href={url} className="block p-1 bg-black/20 backdrop-blur-lg border border-white/20 shadow-lg rounded-xl" style={{ fontSize: 0 }}>
+										<Image src={isStatic ? imageSrc : src} width={width} height={height} quality={quality} priority={true} className="rounded-lg" alt="preview image" />
+									</Link>
+								</motion.div>
+							)}
+						</AnimatePresence>
+					</HoverCardPrimitive.Content>
+				)}
 			</HoverCardPrimitive.Root>
 		</>
 	);
