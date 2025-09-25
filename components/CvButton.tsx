@@ -1,16 +1,20 @@
 // components/CvButton.tsx
 
 import { motion } from 'framer-motion';
-import { toast } from 'sonner';
 import { NeonGradientCard } from './ui/neon-gradient-card';
 import { useMagneticEffect } from '@/hooks/useMagneticEffect';
-import FluidBackground from './FluidBackground'; // 1. Impor komponen FluidBackground
+import FluidBackground from './FluidBackground';
+import { toast } from 'sonner';
 
 export default function CvButton() {
 	const { ref, x, y, handleMouseMove, handleMouseLeave } = useMagneticEffect<HTMLButtonElement>();
 
 	const handleDownload = () => {
-		/* ... (fungsi tidak berubah) ... */
+		const link = document.createElement('a');
+		link.href = '/cv/CV_Muhana_Naufal.pdf';
+		link.download = 'CV_Muhana_Naufal.pdf';
+		link.click();
+		toast.success('CV downloaded successfully!');
 	};
 
 	return (

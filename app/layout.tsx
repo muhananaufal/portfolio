@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 	return (
 		<html lang="en">
 			<body className="select-none">
-				{/* <Toaster
+				<Toaster
 					position="top-right"
 					richColors
 					closeButton
@@ -25,7 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 					toastOptions={{
 						classNames: {
 							toast: 'group toast bg-white text-black border-2 border-black shadow-lg rounded-xl font-NeueMontreal',
-							title: 'text-base font-semibold',
+							title: 'text-base font-medium',
 							description: 'text-sm text-black/60',
 							actionButton: 'group-[.toast]:bg-black group-[.toast]:text-white',
 							cancelButton: 'group-[.toast]:bg-neutral-200 group-[.toast]:text-neutral-500',
@@ -36,7 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 							info: '!bg-blue-50 !border-blue-200 !text-blue-800',
 						},
 					}}
-				/> */}
+				/>
 				<ToastContainer />
 				<EasterEgg />
 				{/* <DisableInteraction /> */}

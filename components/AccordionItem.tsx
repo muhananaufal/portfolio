@@ -4,7 +4,6 @@ import { useRef, useState, useLayoutEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import HoverableText from './HoverableText';
 
-// Definisikan tipe untuk 'item' agar lebih rapi
 interface ItemProps {
 	id: number;
 	question: string;
@@ -12,7 +11,6 @@ interface ItemProps {
 	description: string;
 }
 
-// Definisikan tipe untuk props komponen ini
 interface AccordionItemProps {
 	item: ItemProps;
 	isPinned: boolean;
@@ -25,14 +23,11 @@ interface AccordionItemProps {
 }
 
 export default function AccordionItem({ item, isPinned, isActive, isFirst, onClick, onMouseEnter, onMouseLeave, onAnimationComplete }: AccordionItemProps) {
-	// ✨ 1. State untuk menyimpan koordinat asal animasi
 	const [originCoords, setOriginCoords] = useState({ x: '95%', y: '50%' });
 
-	// ✨ 2. Ref untuk menandai kontainer utama dan kontainer teks
 	const containerRef = useRef<HTMLDivElement>(null);
 	const textOriginRef = useRef<HTMLDivElement>(null);
 
-	// ✨ 3. Lakukan pengukuran posisi setelah render, sebelum browser paint
 	useLayoutEffect(() => {
 		if (containerRef.current && textOriginRef.current) {
 			const containerRect = containerRef.current.getBoundingClientRect();
@@ -52,10 +47,8 @@ export default function AccordionItem({ item, isPinned, isActive, isFirst, onCli
 
 			setOriginCoords({ x: `${xPercent}%`, y: `${yPercent}%` });
 		}
-		// Lakukan pengukuran ulang jika status aktif berubah (misal: saat membuka)
 	}, [isActive]);
 
-	// ✨ 4. Buat varian menjadi dinamis berdasarkan koordinat
 	const backgroundVariants = {
 		initial: {
 			clipPath: `circle(0% at ${originCoords.x} ${originCoords.y})`,
