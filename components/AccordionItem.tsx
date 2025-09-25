@@ -67,7 +67,7 @@ export default function AccordionItem({ item, isPinned, isActive, isFirst, onCli
 
 	return (
 		<div
-			ref={containerRef} // Tandai kontainer utama
+			ref={containerRef}
 			className={`relative w-full flex py-[10px] flex-col overflow-hidden ${isFirst ? 'border-y border-black' : 'border-b border-black'}`}
 		>
 			<motion.div className="absolute inset-0 bg-black -z-10" variants={backgroundVariants} initial="initial" animate={isPinned ? 'pinned' : 'initial'} transition={{ duration: 1, ease: 'easeInOut' }} />
@@ -81,7 +81,7 @@ export default function AccordionItem({ item, isPinned, isActive, isFirst, onCli
 							<h3 className={`paragraph font-normal font-NeueMontreal blend-target transition-colors duration-500 ${isPinned ? 'text-white' : 'text-secondry'}`}>{item.title}</h3>
 						</div>
 						<div
-							ref={textOriginRef} // Tandai kontainer teks
+							ref={textOriginRef}
 							className="flex items-center justify-end font-normal font-NeueMontreal uppercase paragraph blend-target"
 						>
 							<HoverableText key={isPinned ? 'close' : isActive ? 'pin' : 'read'} text={isPinned ? 'CLOSE' : isActive ? 'PIN' : 'READ'} isParentPinned={isPinned} />
@@ -96,7 +96,7 @@ export default function AccordionItem({ item, isPinned, isActive, isFirst, onCli
 								<motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} transition={{ ease: [0.4, 0, 0.2, 1], duration: 1 }} onAnimationComplete={onAnimationComplete}>
 									<div className="flex flex-col gap-[20px] py-[30px]">
 										<div>
-											<p className={`paragraph tracking-wider font-normal font-NeueMontreal blend-target transition-colors duration-500 ${isPinned ? 'text-white' : 'text-secondry'}`}>{item.description}</p>
+											<p className={`paragraph tracking-wider font-normal font-NeueMontreal transition-colors duration-500 ${isPinned ? 'text-white' : 'text-secondry'}`}>{item.description}</p>
 										</div>
 									</div>
 								</motion.div>

@@ -51,7 +51,7 @@ export default function MySkills() {
 												<Image src={item.src} alt="clientImg" className="w-full h-full object-cover rounded-[10px]" />
 											</div>
 											<div>
-												<p className="paragraph tracking-wider font-normal font-NeueMontreal text-secondry blend-target">{item.review}</p>
+												<p className="paragraph tracking-wider font-normal font-NeueMontreal text-secondry">{item.review}</p>
 											</div>
 										</div>
 									</motion.div>

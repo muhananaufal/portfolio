@@ -5,11 +5,12 @@ export default function Hero() {
 				<div className="w-full flex flex-col">
 					<div className="w-full margin padding-x">
 						<div className="gap-y-6 grid">
-							<h1 className="heading tracking-[-1.3px] text-black font-semibold font-FoundersGrotesk uppercase blend-target">ABOUT ME</h1>
+							<h1 className="w-fit heading tracking-[-1.3px] text-black font-semibold font-FoundersGrotesk uppercase blend-target">ABOUT ME</h1>
 							<h1 className="text-xl font-NeueMontreal text-secondry">
 								Officially Part of{' '}
 								<a
 									href="https://www.instagram.com/amccamikom/"
+									target="_blank"
 									className="group relative inline-flex flex-col justify-end overflow-hidden after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-current after:transition-all after:duration-300 hover:after:w-0"
 								>
 									<span className="transition-transform duration-300 ease-in-out group-hover:-translate-y-full">@amccamikom</span>
@@ -18,6 +19,7 @@ export default function Hero() {
 								&{' '}
 								<a
 									href="https://www.instagram.com/googleindonesia/"
+									target="_blank"
 									className="group relative inline-flex flex-col justify-end overflow-hidden after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-current after:transition-all after:duration-300 hover:after:w-0"
 								>
 									<span className="transition-transform duration-300 ease-in-out group-hover:-translate-y-full">@googleindonesia</span>

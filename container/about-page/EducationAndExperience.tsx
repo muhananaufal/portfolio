@@ -24,9 +24,9 @@ export default function EducationAndExperience() {
 			<div className="pl-[50px] sm:px-[20px] xm:px-[20px]">
 				<h2 className="sub-heading font-medium font-NeueMontreal text-secondry">
 					The fastest path to growth is through
-					<span className="sub-heading font-medium font-NeueMontreal link-flash blend-target"> trying </span>
+					<span className="sub-heading font-medium font-NeueMontreal link-flash"> trying </span>
 					and
-					<span className="sub-heading font-medium font-NeueMontreal link-flash blend-target"> failing.</span>
+					<span className="sub-heading font-medium font-NeueMontreal link-flash"> failing.</span>
 				</h2>
 			</div>
 			<div className="w-full border-b border-black my-[50px] py-[20px]"></div>

@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import logo from '@/public/logo.png';
 import { motion } from 'framer-motion';
-import { LinkHover, TextMask, LinkPreview } from '@/animation';
+import { LinkHover, TextMaskSmallContainer, LinkPreview } from '@/animation';
 import { footerItems } from '@/constants';
 import { useEffect, useRef, useState, useLayoutEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
@@ -173,13 +173,13 @@ export default function Footer() {
 				<div className="w-full flex justify-between sm:flex-col xm:flex-col">
 					<div className="flex flex-col justify-between sm:w-full xm:w-full w-1/2">
 						<h1 className="text-[150px] leading-[115px] lg:text-[130px] lg:leading-[98px] md:text-[100px] md:leading-[75px] sm:text-[74px] sm:leading-[68px] xm:text-[64px] xm:leading-[48px] font-semibold font-FoundersGrotesk text-secondry uppercase blend-target">
-							<TextMask>{phrase}</TextMask>
+							<TextMaskSmallContainer>{phrase}</TextMaskSmallContainer>
 						</h1>
 					</div>
 					<div className="h-full flex flex-col justify-between sm:w-full xm:w-full w-1/2">
 						<div>
 							<h1 className="text-[150px] leading-[115px] lg:text-[130px] lg:leading-[98px] md:text-[100px] md:leading-[75px] sm:text-[74px] sm:leading-[68px] xm:text-[64px] xm:leading-[48px] font-semibold font-FoundersGrotesk text-secondry uppercase blend-target">
-								<TextMask>{phrase1}</TextMask>
+								<TextMaskSmallContainer>{phrase1}</TextMaskSmallContainer>
 							</h1>
 							<div className="pt-[50px]">
 								<h1 className="paragraph font-medium font-NeueMontreal text-secondry pb-[20px]">Social Media:</h1>
@@ -193,9 +193,17 @@ export default function Footer() {
 									/>
 								))}
 							</div>
-							<div className="pt-[50px] flex gap-x-[20px]">
+							<div className="pt-[50px] flex gap-x-[5px]">
 								<h1 className="paragraph font-medium font-NeueMontreal text-secondry">Email:</h1>
-								<LinkHover title="muhananaufal8@gmail.com" href="https://mail.google.com/mail/?view=cm&to=muhananaufal8@gmail.com" className="before:h-[1px] after:h-[1px] paragraph font-medium before:bottom-[-3px] after:bottom-[-3px]" />
+								<LinkHover title="" href="" className="before:h-[1px] after:h-[1px] paragraph font-medium before:bottom-[-3px] after:bottom-[-3px]" />
+								<a
+									href="https://mail.google.com/mail/?view=cm&to=muhananaufal8@gmail.com"
+									target="_blank"
+									className="paragraph font-medium font-NeueMontreal text-secondry group relative inline-flex flex-col justify-end overflow-hidden after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-current after:transition-all after:duration-300 hover:after:w-0"
+								>
+									<span className="transition-transform duration-300 ease-in-out group-hover:-translate-y-full">muhananaufal8@gmail.com</span>
+									<span className="absolute left-0 top-full transition-transform duration-300 ease-in-out group-hover:-translate-y-full normal-case">Let's Connect!</span>
+								</a>
 							</div>
 						</div>
 					</div>

@@ -4,9 +4,7 @@ export default function Hero() {
 			<div className="w-full flex flex-col justify-between">
 				<div className="w-full flex flex-col ">
 					<div className="w-full margin padding-x">
-						<div>
-							<h1 className="heading tracking-[-1.3px] text-black font-semibold font-FoundersGrotesk uppercase blend-target">CERTIFICATIONS</h1>
-						</div>
+						<h1 className="w-fit heading tracking-[-1.3px] text-black font-semibold font-FoundersGrotesk uppercase blend-target">CERTIFICATIONS</h1>
 					</div>
 				</div>
 			</div>

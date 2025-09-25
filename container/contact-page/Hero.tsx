@@ -35,7 +35,7 @@ export default function Hero() {
 					</h1>
 				</div>
 				<div className="w-full">
-					<h3 className="paragraph font-medium text-secondry font-NeueMontreal blend-target">Fill the form below:</h3>
+					<h3 className="paragraph font-medium text-secondry font-NeueMontreal blend-target w-fit">Fill the form below:</h3>
 				</div>
 			</div>
 		</section>
