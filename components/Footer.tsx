@@ -15,6 +15,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ScrollProgressCircle from './ui/ScrollProgressCircle';
 import Icon from '@mdi/react';
 import { mdiStarFourPoints } from '@mdi/js';
+import TransitionLink from './TransitionLink';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -210,9 +211,9 @@ export default function Footer() {
 				</div>
 				<div className="w-full pt-[40px] sm:pb-[40px] md:pb-[60px] pb-[110px] flex justify-between sm:flex-col xm:flex-col sm:gap-[20px] xm:gap-[20px]">
 					<div className="w-1/2 sm:w-full xm:w-full">
-						<Link href={'/'}>
+						<TransitionLink href={'/'}>
 							<Image src={logo} alt="logo" width={200} height={200} />
-						</Link>
+						</TransitionLink>
 					</div>
 					<div className="w-1/2 h-full flex gap-[10px] justify-between items-end sm:w-full xm:w-full sm:flex-col xm:flex-col sm:items-start xm:items-start">
 						<div className="flex sm:flex-col xm:flex-col gap-[10px]">

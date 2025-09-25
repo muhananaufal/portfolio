@@ -9,6 +9,7 @@ import { TextHover } from '@/animation';
 import { navbarItems } from '@/constants';
 import { useMotionValueEvent, useScroll, motion } from 'framer-motion';
 import MobileNav from './MobileNav';
+import TransitionLink from './TransitionLink';
 
 export default function Navbar() {
 	const [hidden, setHidden] = useState(false);
@@ -27,15 +28,15 @@ export default function Navbar() {
 		<>
 			<motion.nav variants={navVariants} className="w-full h-[8vh] padding-x fixed top-0 left-0 z-50 backdrop-blur-[7px] flex items-center justify-between sm:hidden xm:hidden md:hidden" animate={hidden ? 'hidden' : 'vissible'}>
 				<div className="w-[50%]">
-					<Link href={'/'}>
+					<TransitionLink href={'/'}>
 						<Image src={logo} alt="ochi logo" width={200} height={200} />
-					</Link>
+					</TransitionLink>
 				</div>
 				<div className="flex gap-x-[20px] w-[50%]">
 					{navbarItems.map((item) => (
-						<Link key={item.id} className={`w-fit paragraph font-medium font-NeueMontreal text-black capitalize flex flex-col hover ${item.id === 6 && 'ml-auto'}`} href={item.href}>
+						<TransitionLink key={item.id} className={`w-fit paragraph font-medium font-NeueMontreal text-black capitalize flex flex-col hover ${item.id === 6 && 'ml-auto'}`} href={item.href}>
 							<TextHover titile1={item.title} titile2={item.title} />
-						</Link>
+						</TransitionLink>
 					))}
 				</div>
 			</motion.nav>

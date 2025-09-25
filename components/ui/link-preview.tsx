@@ -6,6 +6,7 @@ import React from 'react';
 import { AnimatePresence, motion, useMotionValue, useSpring } from 'framer-motion';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import TransitionLink from '../TransitionLink';
 
 type LinkPreviewProps = {
 	children: React.ReactNode;
@@ -133,9 +134,9 @@ export const LinkView = ({ children, url, className, width = 200, height = 125, 
 									}}
 									className="shadow-2xl rounded-xl"
 								>
-									<Link href={url} className="block p-1 bg-black/20 backdrop-blur-lg border border-white/20 shadow-lg rounded-xl" style={{ fontSize: 0 }}>
+									<TransitionLink href={url} className="block p-1 bg-black/20 backdrop-blur-lg border border-white/20 shadow-lg rounded-xl" style={{ fontSize: 0 }}>
 										<Image src={isStatic ? imageSrc : src} width={width} height={height} quality={quality} priority={true} className="rounded-lg" alt="preview image" />
-									</Link>
+									</TransitionLink>
 								</motion.div>
 							)}
 						</AnimatePresence>

@@ -1,7 +1,8 @@
-'use client'
+'use client';
 
 import Link from 'next/link';
 import React, { useRef } from 'react';
+import TransitionLink from './TransitionLink';
 
 interface Text3dProps {
 	primary: string;
@@ -16,14 +17,14 @@ export default function Text3d({ primary, secondary, href }: Text3dProps) {
 	return (
 		<div className="textContainer ">
 			<p className="primary" ref={text1}>
-				<Link href={href} className="blend-target">
+				<TransitionLink href={href} className="blend-target">
 					{primary}
-				</Link>
+				</TransitionLink>
 			</p>{' '}
 			<p className="secondary" ref={text2}>
-				<Link href={href} className="blend-target">
+				<TransitionLink href={href} className="blend-target">
 					{secondary}
-				</Link>
+				</TransitionLink>
 			</p>
 		</div>
 	);
