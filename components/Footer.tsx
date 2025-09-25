@@ -16,6 +16,7 @@ import ScrollProgressCircle from './ui/ScrollProgressCircle';
 import Icon from '@mdi/react';
 import { mdiStarFourPoints } from '@mdi/js';
 import TransitionLink from './TransitionLink';
+import { useTransition } from '@/context/TransitionContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -73,6 +74,7 @@ export default function Footer() {
 	const phrase1 = ['more links'];
 	const router = useRouter();
 	const pathname = usePathname();
+	const { transition } = useTransition();
 
 	const [progress, setProgress] = useState(0);
 	const [nextPageName, setNextPageName] = useState('...');
@@ -110,6 +112,7 @@ export default function Footer() {
 		}
 
 		let observer: Observer | null = null;
+
 		const ctx = gsap.context(() => {
 			observer = ScrollTrigger.observe({
 				type: 'wheel,touch',
@@ -139,7 +142,8 @@ export default function Footer() {
 								duration: 0.3,
 								ease: 'power2.in',
 								onComplete: () => {
-									router.push(nextPage);
+									window.scrollTo({ top: 0, behavior: 'instant' });
+									transition(nextPage);
 								},
 							});
 						}

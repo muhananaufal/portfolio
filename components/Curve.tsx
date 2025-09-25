@@ -53,12 +53,31 @@ export default function Curve({ children, backgroundColor }: CurveProps) {
 	}, [router]);
 
 	useEffect(() => {
+		const preventScroll = (e: Event) => {
+			e.preventDefault();
+			e.stopPropagation();
+			return false;
+		};
+
 		if (isTransitioning) {
 			document.body.style.pointerEvents = 'none';
+
+			// blok semua aksi scroll
+			window.addEventListener('wheel', preventScroll, { passive: false });
+			window.addEventListener('touchmove', preventScroll, { passive: false });
+			window.addEventListener('keydown', preventScroll, { passive: false });
 		} else {
 			document.body.style.pointerEvents = 'auto';
+
+			window.removeEventListener('wheel', preventScroll);
+			window.removeEventListener('touchmove', preventScroll);
+			window.removeEventListener('keydown', preventScroll);
 		}
+
 		return () => {
+			window.removeEventListener('wheel', preventScroll);
+			window.removeEventListener('touchmove', preventScroll);
+			window.removeEventListener('keydown', preventScroll);
 			document.body.style.pointerEvents = 'auto';
 		};
 	}, [isTransitioning]);
