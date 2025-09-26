@@ -262,3 +262,22 @@ body {
 	overflow: hidden; /* Hides both horizontal and vertical scrollbars */
 	resize: none; /* Prevents the user from resizing the textarea */
 }
+
+/* globals.css */
+
+.streaming-text::after {
+	content: '▋'; /* Karakter blok */
+	animation: blink 1s infinite;
+	display: inline-block;
+	margin-left: 2px;
+}
+
+@keyframes blink {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+}
