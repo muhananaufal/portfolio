@@ -25,7 +25,7 @@ export default function TrackInfo({ track, duration, progress, isVisible }: Trac
 					animate={{ opacity: 1, y: 0 }}
 					exit={{ opacity: 0, y: 20 }}
 					transition={{ duration: 0.5, ease: 'easeInOut' }}
-					className="fixed xm:bottom-28 sm:bottom-28 bottom-12 xm:left-4 sm:left-8 left-12 xm:w-[180px] sm:w-[280px] w-[500px] p-4 rounded-xl shadow-2xl overflow-hidden bg-gradient-to-t from-black/80 to-black/50 backdrop-blur-md z-[7000]"
+					className="fixed xm:bottom-28 sm:bottom-28 bottom-12 xm:left-4 sm:left-8 left-12 xm:w-[180px] sm:w-[280px] w-[550px] p-4 rounded-xl shadow-2xl overflow-hidden bg-gradient-to-t from-black/80 to-black/50 backdrop-blur-md z-[7000]"
 				>
 					<div className="text-white font-NeueMontreal">
 						<p className="text-lg font-bold truncate">{track.title}</p>

@@ -1,3 +1,5 @@
+// components/ui/InteractiveButton.tsx
+
 'use client';
 
 import { useState } from 'react';

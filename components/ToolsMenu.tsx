@@ -7,34 +7,20 @@ import { ChatModal } from './chat/ChatModal';
 import { useAudioPlayer } from '@/hooks/useAudioPlayer';
 import { InteractiveButton } from './ui/InteractiveButton';
 import { PlayIcon, PauseIcon, PrevIcon, NextIcon } from './ui/MusicIcons';
-import { CommandIcon } from './ui/UtilityIcons';
+import { CloseIconPath, CommandIcon, KeyboardIcon, ToolsIconPath } from './ui/UtilityIcons';
 import TrackInfo from './TrackInfo';
-
-const ToolsIconPath = () => (
-	<>
-		<motion.path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z" variants={iconPathVariants} />
-		<motion.path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" variants={iconPathVariants} />
-		<motion.path d="M12 2v2" variants={iconPathVariants} />
-		<motion.path d="M12 20v2" variants={iconPathVariants} />
-		<motion.path d="m4.93 4.93 1.41 1.41" variants={iconPathVariants} />
-		<motion.path d="m17.66 17.66 1.41 1.41" variants={iconPathVariants} />
-		<motion.path d="M2 12h2" variants={iconPathVariants} />
-		<motion.path d="M20 12h2" variants={iconPathVariants} />
-		<motion.path d="m4.93 19.07 1.41-1.41" variants={iconPathVariants} />
-		<motion.path d="m17.66 6.34 1.41-1.41" variants={iconPathVariants} />
-	</>
-);
-const CloseIconPath = () => (
-	<>
-		<motion.path d="M18 6 6 18" variants={iconPathVariants} />
-		<motion.path d="m6 6 12 12" variants={iconPathVariants} />
-	</>
-);
+import { useCommandStore } from '@/store/useCommandStore';
+import { CommandButton } from './CommandButton';
 
 const iconPathVariants: Variants = {
 	initial: { pathLength: 0, pathOffset: 1 },
 	animate: { pathLength: 1, pathOffset: 0, transition: { duration: 0.3, ease: 'easeOut', delay: 0.1 } },
 	exit: { pathLength: 0, pathOffset: 1, transition: { duration: 0.2, ease: 'easeIn' } },
+	hover: {
+		pathLength: [1, 0, 1],
+		pathOffset: [0, 1, 0],
+		transition: { duration: 0.5, ease: 'easeInOut' },
+	},
 };
 
 const mainButtonVariants: Variants = {
@@ -66,6 +52,7 @@ export default function ToolsMenu() {
 	const [showTrackInfo, setShowTrackInfo] = useState(false);
 
 	const { isPlaying, togglePlayPause, nextTrack, prevTrack, currentTrack, duration, trackProgress } = useAudioPlayer();
+	const { onToggle: onCommandPaletteToggle } = useCommandStore();
 
 	const toggleMenu = () => setMenuOpen(!isMenuOpen);
 	const toggleChat = () => {
@@ -90,6 +77,9 @@ export default function ToolsMenu() {
 					<AnimatePresence>
 						{isMenuOpen && (
 							<>
+								<motion.div className="absolute" variants={menuItemVariants(57, -40)}>
+									<CommandButton />
+								</motion.div>
 								<motion.div className="absolute" variants={menuItemVariants(0, -88)}>
 									<ChatButton onClick={toggleChat} />
 								</motion.div>
@@ -131,7 +121,7 @@ export default function ToolsMenu() {
 										<ToolsIconPath />
 									</motion.svg>
 								) : (
-									<motion.svg key="tools" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+									<motion.svg key="tools" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'white' }}>
 										<CommandIcon />
 									</motion.svg>
 								)}

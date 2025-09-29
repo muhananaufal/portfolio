@@ -16,12 +16,10 @@ export function useLayoutConfig() {
 		}
 	}, [pathname]);
 
-	const routesWithoutNavbarAndFooter = ['/articles', '/rewinds/2023', '/rewinds/2024', '/rewinds/2025', '/me'];
+	const routesWithoutAddons = ['/articles', '/rewinds/2023', '/rewinds/2024', '/rewinds/2025', '/me'];
 
-	const routesWithoutChat = ['/articles', '/rewinds/2023', '/rewinds/2024', '/rewinds/2025'];
+	const shouldShowLayout = !routesWithoutAddons.includes(pathname) && !isNotFound;
+	const shouldShowChat = !routesWithoutAddons.includes(pathname) && !isNotFound;
 
-	const shouldShowLayout = !routesWithoutNavbarAndFooter.includes(pathname) && !isNotFound;
-	const shouldShowChat = !routesWithoutChat.includes(pathname) && !isNotFound;
-
-	return { shouldShowLayout, shouldShowChat };
+	return { shouldShowLayout };
 }

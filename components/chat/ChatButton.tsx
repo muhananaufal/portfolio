@@ -1,5 +1,3 @@
-// components/chat/ChatButton.tsx
-
 'use client';
 
 import { useState } from 'react';

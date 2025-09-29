@@ -42,7 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 					/>
 					<ToastContainer />
 					<EasterEgg />
-					<DisableInteraction />
+					{/* <DisableInteraction /> */}
 					<SmoothScroll />
 					<ClientLayout>{children}</ClientLayout>
 					<SpeedInsights />

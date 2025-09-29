@@ -1,5 +1,3 @@
-// components/ui/ToastContainer.tsx
-
 'use client';
 
 import { useToastStore } from '@/store/useToastStore';
@@ -13,7 +11,7 @@ export default function ToastContainer() {
 	const stackedToasts = toasts.filter((t) => t.isStacked);
 
 	return (
-		<div className="fixed inset-0 z-[9999] pointer-events-none">
+		<div className="fixed inset-0 z-[9998] pointer-events-none">
 			<AnimatePresence>
 				{toasts.map((toast) => {
 					const stackIndex = toast.isStacked ? stackedToasts.findIndex((t) => t.id === toast.id) : -1;

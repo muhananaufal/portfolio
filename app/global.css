@@ -281,3 +281,137 @@ body {
 		opacity: 0;
 	}
 }
+
+/* Styling untuk CMDK Command Palette */
+[cmdk-dialog-overlay] {
+	position: fixed;
+	z-index: 99999;
+	inset: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(8px);
+	animation: fadeIn 0.2s ease;
+}
+
+[cmdk-dialog] {
+	position: fixed;
+	z-index: 99999;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%, 0);
+	width: 90%;
+	max-width: 640px;
+	background-color: #1a1a1a;
+	color: #f5f5f5;
+	border-radius: 12px;
+	box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+	animation: popIn 0.3s ease;
+	font-family: 'NeueMontreal', sans-serif;
+}
+
+[cmdk-input] {
+	width: 100%;
+	padding: 1.25rem;
+	font-size: 1.125rem;
+	background-color: transparent;
+	color: white;
+	border-bottom: 1px solid #333;
+	outline: none;
+}
+
+[cmdk-list] {
+	max-height: 400px;
+	overflow-y: auto;
+	padding: 0.5rem;
+}
+
+[cmdk-group-heading] {
+	padding: 0.5rem 1rem;
+	font-size: 0.75rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: #a3a3a3;
+}
+
+[cmdk-item] {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem;
+	padding: 0.75rem 1rem;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background-color 0.1s ease;
+}
+
+[cmdk-item][data-selected='true'] {
+	background-color: #333;
+}
+
+[cmdk-shortcut] {
+	display: flex;
+	gap: 0.2rem;
+}
+
+[cmdk-shortcut] kbd,
+.cmdk-footer kbd {
+	font-family: monospace;
+	padding: 0.1rem 0.4rem;
+	background-color: #333;
+	border-radius: 4px;
+	font-size: 0.75rem;
+}
+
+.cmdk-footer {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.5rem 1rem;
+	font-size: 0.8rem;
+	color: #a3a3a3;
+	border-top: 1px solid #333;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes popIn {
+	from {
+		transform: translate(-50%, 20px) scale(0.95);
+		opacity: 0;
+	}
+	to {
+		transform: translate(-50%, 0) scale(1);
+		opacity: 1;
+	}
+}
+
+/* --- Styling Scrollbar Elegan untuk CMDK --- */
+
+/* Menargetkan scrollbar di dalam daftar perintah */
+[cmdk-list]::-webkit-scrollbar {
+	width: 12px;
+}
+
+/* Bagian "rel" atau track di belakang handle scrollbar */
+[cmdk-list]::-webkit-scrollbar-track {
+	background: transparent;
+	margin-block: 0.5rem;
+}
+
+/* Handle scrollbar itu sendiri */
+[cmdk-list]::-webkit-scrollbar-thumb {
+	background: #444;
+	border-radius: 10px;
+	border: 2px solid #1a1a1a;
+}
+
+/* Efek saat handle scrollbar di-hover */
+[cmdk-list]::-webkit-scrollbar-thumb:hover {
+	background: #666;
+}
