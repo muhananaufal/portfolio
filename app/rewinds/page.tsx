@@ -23,7 +23,6 @@ export default function Rewinds() {
 	}, []);
 
 	return (
-		<>
 			<Curve backgroundColor={'#E1E1E1'}>
 				<MaskCursor />
 				<HeroRewinds />
@@ -39,6 +38,5 @@ export default function Rewinds() {
 					</>
 				)}
 			</Curve>
-		</>
 	);
 }

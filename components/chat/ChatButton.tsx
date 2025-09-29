@@ -40,53 +40,51 @@ export const ChatButton = ({ onClick }: ChatButtonProps) => {
 	const [isHovered, setIsHovered] = useState(false);
 
 	return (
-		<motion.div className="fixed bottom-6 right-6 z-[8000]" initial={{ scale: 0, y: 50 }} animate={{ scale: 1, y: 0 }} transition={{ type: 'spring', stiffness: 300, damping: 20, delay: 0.5 }}>
-			<motion.button
-				onClick={onClick}
-				onMouseEnter={() => setIsHovered(true)}
-				onMouseLeave={() => setIsHovered(false)}
-				className="group relative w-16 h-16 rounded-full flex items-center justify-center cursor-pointer overflow-hidden shadow-xl"
-				aria-label="chat button"
-				whileTap={{ scale: 0.95 }}
-			>
-				{/* LAPISAN 1: Background Awal (Hitam) */}
-				<div className="absolute inset-0 bg-black rounded-full" />
+		<motion.button
+			onClick={onClick}
+			onMouseEnter={() => setIsHovered(true)}
+			onMouseLeave={() => setIsHovered(false)}
+			className="group relative w-16 h-16 rounded-full flex items-center justify-center cursor-pointer overflow-hidden shadow-xl"
+			aria-label="chat button"
+			whileTap={{ scale: 0.95 }}
+		>
+			{/* LAPISAN 1: Background Awal (Hitam) */}
+			<div className="absolute inset-0 bg-black border-2 border-white rounded-full" />
 
-				{/* LAPISAN 2: Background Hover (Putih) dengan animasi Circular Reveal */}
-				<motion.div
-					className="absolute inset-0 bg-white rounded-full"
-					initial={{ clipPath: 'circle(0% at 50% 50%)' }}
-					animate={{ clipPath: isHovered ? 'circle(150% at 50% 50%)' : 'circle(0% at 50% 50%)' }}
-					transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-				/>
+			{/* LAPISAN 2: Background Hover (Putih) dengan animasi Circular Reveal */}
+			<motion.div
+				className="absolute inset-0 bg-white rounded-full"
+				initial={{ clipPath: 'circle(0% at 50% 50%)' }}
+				animate={{ clipPath: isHovered ? 'circle(150% at 50% 50%)' : 'circle(0% at 50% 50%)' }}
+				transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+			/>
 
-				{/* LAPISAN 3: Ikon */}
-				<div className="relative z-10 text-black group-hover:text-black transition-colors duration-200">
-					<AnimatePresence mode="wait">
-						{isHovered ? (
-							<motion.div
-								key="message"
-								initial="initial"
-								animate="animate"
-								exit="exit"
-								className="text-black" // Ikon saat hover (background putih)
-							>
-								<MessageIcon />
-							</motion.div>
-						) : (
-							<motion.div
-								key="zap"
-								initial="initial"
-								animate="animate"
-								exit="exit"
-								className="text-white" // Ikon default (background hitam)
-							>
-								<ZapIcon />
-							</motion.div>
-						)}
-					</AnimatePresence>
-				</div>
-			</motion.button>
-		</motion.div>
+			{/* LAPISAN 3: Ikon */}
+			<div className="relative z-10 text-black group-hover:text-black transition-colors duration-200">
+				<AnimatePresence mode="wait">
+					{isHovered ? (
+						<motion.div
+							key="message"
+							initial="initial"
+							animate="animate"
+							exit="exit"
+							className="text-black" // Ikon saat hover (background putih)
+						>
+							<MessageIcon />
+						</motion.div>
+					) : (
+						<motion.div
+							key="zap"
+							initial="initial"
+							animate="animate"
+							exit="exit"
+							className="text-white" // Ikon default (background hitam)
+						>
+							<ZapIcon />
+						</motion.div>
+					)}
+				</AnimatePresence>
+			</div>
+		</motion.button>
 	);
 };

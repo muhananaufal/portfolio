@@ -5,7 +5,6 @@ import { Curve, MaskCursor, Ready } from '@/components';
 
 export default function About() {
 	return (
-		<>
 			<Curve backgroundColor={'#E1E1E1'}>
 				<MaskCursor />
 				<HeroAbout />
@@ -14,6 +13,5 @@ export default function About() {
 				<Motto />
 				<Ready />
 			</Curve>
-		</>
 	);
 }

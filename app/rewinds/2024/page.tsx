@@ -8,11 +8,9 @@ export default function Rewinds2024() {
 	const images = listImage2024;
 
 	return (
-		<>
 			<Curve backgroundColor={'#E1E1E1'}>
 				<MouseImageGallery images={images} />
 				<Gallery />
 			</Curve>
-		</>
 	);
 }
