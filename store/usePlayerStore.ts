@@ -1,7 +1,7 @@
 'use client';
 
 import { create } from 'zustand';
-import { Track, playlist } from '@/hooks/useAudioPlayer';
+import { playlist } from '@/hooks/useAudioPlayer';
 
 // Variabel untuk menampung satu instance audio saja
 let audioInstance: HTMLAudioElement | null = null;
